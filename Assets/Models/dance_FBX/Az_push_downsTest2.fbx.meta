@@ -1,0 +1,3111 @@
+fileFormatVersion: 2
+guid: 959d9f9bdd1cc884ab8937765f4e9026
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ankle_L
+    100002: ankle_R
+    100004: //RootNode
+    100006: Ball_Heel_Rotation_L
+    100008: Ball_Heel_Rotation_R
+    100010: ball_L
+    100012: ball_R
+    100014: Bisep_L
+    100016: Bisep_R
+    100018: Eye_L
+    100020: Eye_R
+    100022: eyebase_L
+    100024: eyebase_R
+    100026: eyebrow2_L
+    100028: eyebrow2_R
+    100030: eyebrow_L
+    100032: eyebrow_R
+    100034: eyelid_bottom_L
+    100036: eyelid_bottom_R
+    100038: eyelid_top_L
+    100040: eyelid_top_R
+    100042: eyeTracker_L
+    100044: eyeTracker_R
+    100046: FaceMaquetteLoc
+    100048: faceroot
+    100050: fin_index_1_L
+    100052: fin_index_1_R
+    100054: fin_index_2_L
+    100056: fin_index_2_R
+    100058: fin_index_3_L
+    100060: fin_index_3_R
+    100062: fin_mid_1_L
+    100064: fin_mid_1_R
+    100066: fin_mid_2_L
+    100068: fin_mid_2_R
+    100070: fin_mid_3_L
+    100072: fin_mid_3_R
+    100074: fin_pinky_1_L
+    100076: fin_pinky_1_R
+    100078: fin_pinky_2_L
+    100080: fin_pinky_2_R
+    100082: fin_pinky_3_L
+    100084: fin_pinky_3_R
+    100086: fin_ring_1_L
+    100088: fin_ring_1_R
+    100090: fin_ring_2_L
+    100092: fin_ring_2_R
+    100094: fin_ring_3_L
+    100096: fin_ring_3_R
+    100098: fin_thumb_1_L
+    100100: fin_thumb_1_R
+    100102: fin_thumb_2_L
+    100104: fin_thumb_2_R
+    100106: fin_thumb_3_L
+    100108: fin_thumb_3_R
+    100110: FingerIndex_L
+    100112: FingerIndex_R
+    100114: FingerMiddle_L
+    100116: FingerMiddle_R
+    100118: FingerPinky_L
+    100120: FingerPinky_R
+    100122: FingerRing_L
+    100124: FingerRing_R
+    100126: Fingers_L
+    100128: Fingers_R
+    100130: FingerThumb_L
+    100132: FingerThumb_R
+    100134: Foot_L
+    100136: Foot_R
+    100138: Foot_Root_L
+    100140: Foot_Root_R
+    100142: footMech_L
+    100144: footMech_R
+    100146: Forearm_L
+    100148: Forearm_R
+    100150: Hand_L
+    100152: Hand_R
+    100154: handActuatorLoc
+    100156: Head
+    100158: headController
+    100160: HeadDeform
+    100162: HeadStretch
+    100164: HeadStretchControl
+    100166: heel_L
+    100168: heel_R
+    100170: Hip_L
+    100172: Hip_R
+    100174: IK_Arm_L
+    100176: IK_Arm_R
+    100178: IK_Spine
+    100180: lowerjaw
+    100182: ludwig_Face
+    100184: ludwigArmature
+    100186: neck
+    100188: neckloc
+    100190: necknull
+    100192: Pelvis
+    100194: Rib1_L
+    100196: Rib1_R
+    100198: Rib2_L
+    100200: Rib2_R
+    100202: Rib3_L
+    100204: Rib3_R
+    100206: Root
+    100208: Shin_L
+    100210: Shin_R
+    100212: Shoulder_L
+    100214: Shoulder_R
+    100216: ShoulderLoc_L
+    100218: ShoulderLoc_R
+    100220: Shoulders
+    100222: Spine_1
+    100224: Spine_2
+    100226: Spine_3
+    100228: Spine_4
+    100230: SpineStretch_002
+    100232: SpineStretch_003
+    100234: SpineStretch_004
+    100236: spineStretchNull
+    100238: Thigh_L
+    100240: Thigh_R
+    100242: toeDeform_L
+    100244: toeDeform_R
+    100246: Toes_L
+    100248: Toes_R
+    100250: tongue1
+    100252: tongue2
+    100254: tongue3
+    100256: Torso
+    100258: UpperBody
+    100260: upperjaw
+    400000: ankle_L
+    400002: ankle_R
+    400004: //RootNode
+    400006: Ball_Heel_Rotation_L
+    400008: Ball_Heel_Rotation_R
+    400010: ball_L
+    400012: ball_R
+    400014: Bisep_L
+    400016: Bisep_R
+    400018: Eye_L
+    400020: Eye_R
+    400022: eyebase_L
+    400024: eyebase_R
+    400026: eyebrow2_L
+    400028: eyebrow2_R
+    400030: eyebrow_L
+    400032: eyebrow_R
+    400034: eyelid_bottom_L
+    400036: eyelid_bottom_R
+    400038: eyelid_top_L
+    400040: eyelid_top_R
+    400042: eyeTracker_L
+    400044: eyeTracker_R
+    400046: FaceMaquetteLoc
+    400048: faceroot
+    400050: fin_index_1_L
+    400052: fin_index_1_R
+    400054: fin_index_2_L
+    400056: fin_index_2_R
+    400058: fin_index_3_L
+    400060: fin_index_3_R
+    400062: fin_mid_1_L
+    400064: fin_mid_1_R
+    400066: fin_mid_2_L
+    400068: fin_mid_2_R
+    400070: fin_mid_3_L
+    400072: fin_mid_3_R
+    400074: fin_pinky_1_L
+    400076: fin_pinky_1_R
+    400078: fin_pinky_2_L
+    400080: fin_pinky_2_R
+    400082: fin_pinky_3_L
+    400084: fin_pinky_3_R
+    400086: fin_ring_1_L
+    400088: fin_ring_1_R
+    400090: fin_ring_2_L
+    400092: fin_ring_2_R
+    400094: fin_ring_3_L
+    400096: fin_ring_3_R
+    400098: fin_thumb_1_L
+    400100: fin_thumb_1_R
+    400102: fin_thumb_2_L
+    400104: fin_thumb_2_R
+    400106: fin_thumb_3_L
+    400108: fin_thumb_3_R
+    400110: FingerIndex_L
+    400112: FingerIndex_R
+    400114: FingerMiddle_L
+    400116: FingerMiddle_R
+    400118: FingerPinky_L
+    400120: FingerPinky_R
+    400122: FingerRing_L
+    400124: FingerRing_R
+    400126: Fingers_L
+    400128: Fingers_R
+    400130: FingerThumb_L
+    400132: FingerThumb_R
+    400134: Foot_L
+    400136: Foot_R
+    400138: Foot_Root_L
+    400140: Foot_Root_R
+    400142: footMech_L
+    400144: footMech_R
+    400146: Forearm_L
+    400148: Forearm_R
+    400150: Hand_L
+    400152: Hand_R
+    400154: handActuatorLoc
+    400156: Head
+    400158: headController
+    400160: HeadDeform
+    400162: HeadStretch
+    400164: HeadStretchControl
+    400166: heel_L
+    400168: heel_R
+    400170: Hip_L
+    400172: Hip_R
+    400174: IK_Arm_L
+    400176: IK_Arm_R
+    400178: IK_Spine
+    400180: lowerjaw
+    400182: ludwig_Face
+    400184: ludwigArmature
+    400186: neck
+    400188: neckloc
+    400190: necknull
+    400192: Pelvis
+    400194: Rib1_L
+    400196: Rib1_R
+    400198: Rib2_L
+    400200: Rib2_R
+    400202: Rib3_L
+    400204: Rib3_R
+    400206: Root
+    400208: Shin_L
+    400210: Shin_R
+    400212: Shoulder_L
+    400214: Shoulder_R
+    400216: ShoulderLoc_L
+    400218: ShoulderLoc_R
+    400220: Shoulders
+    400222: Spine_1
+    400224: Spine_2
+    400226: Spine_3
+    400228: Spine_4
+    400230: SpineStretch_002
+    400232: SpineStretch_003
+    400234: SpineStretch_004
+    400236: spineStretchNull
+    400238: Thigh_L
+    400240: Thigh_R
+    400242: toeDeform_L
+    400244: toeDeform_R
+    400246: Toes_L
+    400248: Toes_R
+    400250: tongue1
+    400252: tongue2
+    400254: tongue3
+    400256: Torso
+    400258: UpperBody
+    400260: upperjaw
+    7400000: Default Take
+    7400002: Action_001
+    7400004: drv_FingerClose
+    7400006: drv_FingerSpread
+    7400008: drv_ToeHeelRoll
+    7400010: ludwigArmatureAction_001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 1145
+      lastFrame: 1147
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ludwigArmature
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerIndex_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerMiddle_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerPinky_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerRing_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerThumb_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerIndex_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerMiddle_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerPinky_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerRing_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerThumb_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_bottom_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_top_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_bottom_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_top_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L/eyebrow2_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R/eyebrow2_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L/Eye_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R/Eye_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2/tongue3
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/upperjaw
+        weight: 1
+      - path: ludwigArmature/Root
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_L
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L/footMech_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/Toes_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R/footMech_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/Toes_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/ankle_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/toeDeform_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/ankle_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/toeDeform_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4/spineStretchNull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L/fin_index_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L/fin_mid_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L/fin_pinky_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L/fin_ring_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L/fin_thumb_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R/fin_index_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R/fin_mid_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R/fin_pinky_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R/fin_ring_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R/fin_thumb_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/FaceMaquetteLoc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Head
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch/HeadDeform
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretchControl
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/necknull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neckloc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/IK_Spine
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L/ShoulderLoc_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R/ShoulderLoc_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Action_001
+      takeName: Action_001
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ludwigArmature
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerIndex_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerMiddle_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerPinky_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerRing_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerThumb_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerIndex_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerMiddle_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerPinky_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerRing_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerThumb_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_bottom_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_top_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_bottom_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_top_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L/eyebrow2_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R/eyebrow2_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L/Eye_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R/Eye_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2/tongue3
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/upperjaw
+        weight: 1
+      - path: ludwigArmature/Root
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_L
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L/footMech_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/Toes_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R/footMech_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/Toes_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/ankle_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/toeDeform_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/ankle_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/toeDeform_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4/spineStretchNull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L/fin_index_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L/fin_mid_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L/fin_pinky_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L/fin_ring_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L/fin_thumb_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R/fin_index_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R/fin_mid_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R/fin_pinky_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R/fin_ring_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R/fin_thumb_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/FaceMaquetteLoc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Head
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch/HeadDeform
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretchControl
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/necknull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neckloc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/IK_Spine
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L/ShoulderLoc_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R/ShoulderLoc_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: drv_FingerClose
+      takeName: drv_FingerClose
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ludwigArmature
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerIndex_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerMiddle_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerPinky_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerRing_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerThumb_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerIndex_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerMiddle_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerPinky_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerRing_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerThumb_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_bottom_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_top_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_bottom_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_top_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L/eyebrow2_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R/eyebrow2_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L/Eye_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R/Eye_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2/tongue3
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/upperjaw
+        weight: 1
+      - path: ludwigArmature/Root
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_L
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L/footMech_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/Toes_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R/footMech_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/Toes_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/ankle_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/toeDeform_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/ankle_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/toeDeform_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4/spineStretchNull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L/fin_index_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L/fin_mid_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L/fin_pinky_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L/fin_ring_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L/fin_thumb_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R/fin_index_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R/fin_mid_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R/fin_pinky_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R/fin_ring_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R/fin_thumb_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/FaceMaquetteLoc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Head
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch/HeadDeform
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretchControl
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/necknull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neckloc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/IK_Spine
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L/ShoulderLoc_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R/ShoulderLoc_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: drv_FingerSpread
+      takeName: drv_FingerSpread
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ludwigArmature
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerIndex_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerMiddle_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerPinky_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerRing_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerThumb_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerIndex_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerMiddle_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerPinky_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerRing_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerThumb_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_bottom_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_top_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_bottom_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_top_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L/eyebrow2_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R/eyebrow2_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L/Eye_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R/Eye_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2/tongue3
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/upperjaw
+        weight: 1
+      - path: ludwigArmature/Root
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_L
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L/footMech_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/Toes_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R/footMech_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/Toes_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/ankle_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/toeDeform_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/ankle_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/toeDeform_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4/spineStretchNull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L/fin_index_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L/fin_mid_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L/fin_pinky_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L/fin_ring_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L/fin_thumb_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R/fin_index_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R/fin_mid_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R/fin_pinky_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R/fin_ring_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R/fin_thumb_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/FaceMaquetteLoc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Head
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch/HeadDeform
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretchControl
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/necknull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neckloc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/IK_Spine
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L/ShoulderLoc_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R/ShoulderLoc_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: drv_ToeHeelRoll
+      takeName: drv_ToeHeelRoll
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ludwigArmature
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerIndex_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerMiddle_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerPinky_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerRing_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerThumb_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerIndex_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerMiddle_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerPinky_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerRing_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerThumb_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_bottom_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_top_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_bottom_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_top_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L/eyebrow2_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R/eyebrow2_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L/Eye_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R/Eye_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2/tongue3
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/upperjaw
+        weight: 1
+      - path: ludwigArmature/Root
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_L
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L/footMech_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/Toes_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R/footMech_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/Toes_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/ankle_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/toeDeform_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/ankle_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/toeDeform_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4/spineStretchNull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L/fin_index_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L/fin_mid_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L/fin_pinky_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L/fin_ring_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L/fin_thumb_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R/fin_index_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R/fin_mid_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R/fin_pinky_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R/fin_ring_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R/fin_thumb_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/FaceMaquetteLoc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Head
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch/HeadDeform
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretchControl
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/necknull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neckloc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/IK_Spine
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L/ShoulderLoc_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R/ShoulderLoc_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ludwigArmatureAction_001
+      takeName: ludwigArmatureAction_001
+      firstFrame: 1145
+      lastFrame: 1147
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ludwigArmature
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerIndex_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerMiddle_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerPinky_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerRing_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_L/FingerThumb_L
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerIndex_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerMiddle_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerPinky_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerRing_R
+        weight: 1
+      - path: ludwigArmature/handActuatorLoc/Fingers_R/FingerThumb_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_bottom_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_L/eyelid_top_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_bottom_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebase_R/eyelid_top_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_L/eyebrow2_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyebrow_R/eyebrow2_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_L/Eye_L
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/eyeTracker_R/Eye_R
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/lowerjaw/tongue1/tongue2/tongue3
+        weight: 1
+      - path: ludwigArmature/ludwig_Face/faceroot/upperjaw
+        weight: 1
+      - path: ludwigArmature/Root
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_L
+        weight: 1
+      - path: ludwigArmature/Root/Ball_Heel_Rotation_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/ball_L/footMech_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_L/heel_L/Toes_L
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/ball_R/footMech_R
+        weight: 1
+      - path: ludwigArmature/Root/Foot_Root_R/heel_R/Toes_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/IK_Arm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/ankle_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_L/Thigh_L/Shin_L/Foot_L/toeDeform_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/ankle_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Hip_R/Thigh_R/Shin_R/Foot_R/toeDeform_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4
+        weight: 1
+      - path: ludwigArmature/Root/Torso/Pelvis/Spine_1/Spine_2/Spine_3/Spine_4/spineStretchNull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_002/Rib3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_003/Rib2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/SpineStretch_004/Rib1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_index_1_L/fin_index_2_L/fin_index_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_mid_1_L/fin_mid_2_L/fin_mid_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_pinky_1_L/fin_pinky_2_L/fin_pinky_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_ring_1_L/fin_ring_2_L/fin_ring_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_L/Forearm_L/Hand_L/fin_thumb_1_L/fin_thumb_2_L/fin_thumb_3_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_index_1_R/fin_index_2_R/fin_index_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_mid_1_R/fin_mid_2_R/fin_mid_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_pinky_1_R/fin_pinky_2_R/fin_pinky_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_ring_1_R/fin_ring_2_R/fin_ring_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Bisep_R/Forearm_R/Hand_R/fin_thumb_1_R/fin_thumb_2_R/fin_thumb_3_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/FaceMaquetteLoc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Head
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretch/HeadDeform
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/headController/HeadStretchControl
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neck/necknull
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/neckloc
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/IK_Spine
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_L/ShoulderLoc_L
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R
+        weight: 1
+      - path: ludwigArmature/Root/Torso/UpperBody/Shoulders/Shoulder_R/ShoulderLoc_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Torso
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hip_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hip_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Shin_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Shin_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Foot_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Foot_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: UpperBody
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: headController
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bisep_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bisep_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Forearm_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Forearm_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: toeDeform_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: toeDeform_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: HeadStretchControl
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: HeadDeform
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_thumb_1_L
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_thumb_2_L
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_thumb_3_L
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_index_1_L
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_index_2_L
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_index_3_L
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_mid_1_L
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_mid_2_L
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_mid_3_L
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_ring_1_L
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_ring_2_L
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_ring_3_L
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_pinky_1_L
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_pinky_2_L
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_pinky_3_L
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_thumb_1_R
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_thumb_2_R
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_thumb_3_R
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_index_1_R
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_index_2_R
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_index_3_R
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_mid_1_R
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_mid_2_R
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_mid_3_R
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_ring_1_R
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_ring_2_R
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_ring_3_R
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_pinky_1_R
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_pinky_2_R
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: fin_pinky_3_R
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Az_push_downsTest2(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ludwigArmature
+      position: {x: 0, y: .0241864026, z: -.00188024901}
+      rotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: handActuatorLoc
+      position: {x: -5.8345484e-10, y: -.000646629254, z: .0219545327}
+      rotation: {x: .00111879292, y: .0011187928, z: -.707105875, w: .707105935}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Fingers_L
+      position: {x: .00140285934, y: -.0973233134, z: -.00596701913}
+      rotation: {x: -.00111879304, y: -.00111879304, z: .707105994, w: .707105875}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FingerIndex_L
+      position: {x: -.0116938986, y: -.00591084408, z: 1.94299403e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FingerMiddle_L
+      position: {x: -.0116938967, y: -.00153993524, z: 1.94299403e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FingerPinky_L
+      position: {x: -.0116938958, y: .00743193179, z: 1.94299403e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FingerRing_L
+      position: {x: -.0116938967, y: .00306102354, z: 1.94299403e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FingerThumb_L
+      position: {x: -.00306725642, y: -.00958514679, z: 1.78924289e-11}
+      rotation: {x: 2.90560406e-11, y: 4.94412584e-12, z: .167747155, w: .985830069}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Fingers_R
+      position: {x: .00140287413, y: .0973228589, z: -.00596701447}
+      rotation: {x: .0011187928, y: -.00111879327, z: -.707105994, w: .707105875}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FingerIndex_R
+      position: {x: -.0116938967, y: .00591084594, z: 1.94298588e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FingerMiddle_R
+      position: {x: -.0116938967, y: .00153993687, z: 1.94298588e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FingerPinky_R
+      position: {x: -.0116938967, y: -.00743192993, z: 1.94298588e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FingerRing_R
+      position: {x: -.0116938967, y: -.00306102191, z: 1.94298588e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FingerThumb_R
+      position: {x: -.00306725455, y: .00958514772, z: 1.78923491e-11}
+      rotation: {x: -2.90560319e-11, y: 4.9441254e-12, z: -.167747185, w: .985830069}
+      scale: {x: .999999881, y: .999999881, z: 1}
+      transformModified: 1
+    - name: ludwig_Face
+      position: {x: -.00958258752, y: .00303904433, z: .00413657911}
+      rotation: {x: .12713325, y: .0832009763, z: -.180520102, w: .971765041}
+      scale: {x: .999998868, y: .999998569, z: 1.00000179}
+      transformModified: 1
+    - name: faceroot
+      position: {x: -0, y: .00146734354, z: .0357464962}
+      rotation: {x: .252098441, y: .252098411, z: -.660640895, w: .660640895}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: eyebase_L
+      position: {x: .00303845853, y: -.00380246877, z: .0104680276}
+      rotation: {x: -.356420279, y: 3.10671822e-07, z: .934325755, w: 1.53408649e-07}
+      scale: {x: 1.00000048, y: 1, z: 1}
+      transformModified: 1
+    - name: eyelid_bottom_L
+      position: {x: -7.50052376e-09, y: 1.17966135e-08, z: -8.47372212e-06}
+      rotation: {x: .983363628, y: -1.70161748e-05, z: .181647867, w: -3.04267701e-06}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: eyelid_top_L
+      position: {x: -7.50052376e-09, y: 1.17966135e-08, z: -8.47372212e-06}
+      rotation: {x: .984018505, y: -1.69228697e-05, z: -.178066477, w: 3.81729933e-06}
+      scale: {x: 1, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: eyebase_R
+      position: {x: .00303857401, y: .0037999989, z: .0104679018}
+      rotation: {x: -.356507272, y: 1.99300658e-07, z: .934292555, w: 1.10940228e-07}
+      scale: {x: 1.00000036, y: 1, z: 1}
+      transformModified: 1
+    - name: eyelid_bottom_R
+      position: {x: 7.91911703e-10, y: -3.08832888e-08, z: -1.36282813e-06}
+      rotation: {x: .98305589, y: -4.74715625e-06, z: .183306143, w: 5.87311717e-07}
+      scale: {x: .999999762, y: 1, z: .999999881}
+      transformModified: 1
+    - name: eyelid_top_R
+      position: {x: 7.91911703e-10, y: -3.08832888e-08, z: -1.36282813e-06}
+      rotation: {x: .984318316, y: -4.75457273e-06, z: -.176401421, w: -9.87181465e-08}
+      scale: {x: .999999762, y: 1, z: .999999881}
+      transformModified: 1
+    - name: eyebrow_L
+      position: {x: .00259632431, y: -.00399325415, z: .0154517442}
+      rotation: {x: -.518419683, y: .751221657, z: .23204498, w: -.336247265}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: eyebrow2_L
+      position: {x: -6.14499207e-09, y: 4.49764448e-09, z: 6.83622381e-10}
+      rotation: {x: -.0760583729, y: .449489981, z: .767792165, w: .450187832}
+      scale: {x: .999999881, y: .999999881, z: .999999881}
+      transformModified: 1
+    - name: eyebrow_R
+      position: {x: .00259632501, y: .00398999965, z: .0154517442}
+      rotation: {x: .518156886, y: .751403213, z: -.231926918, w: -.336328268}
+      scale: {x: .999999762, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: eyebrow2_R
+      position: {x: -2.34787834e-09, y: -5.67838998e-10, z: 6.60411559e-10}
+      rotation: {x: -.0759478584, y: -.449509233, z: .767587841, w: -.450535566}
+      scale: {x: 1, y: .999999881, z: 1}
+      transformModified: 1
+    - name: eyeTracker_L
+      position: {x: .00304047368, y: -.00380248087, z: .0104657682}
+      rotation: {x: -.359643281, y: .0127103431, z: .932421148, w: -.0329540558}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Eye_L
+      position: {x: 5.04776843e-09, y: 1.19497997e-07, z: 1.3520314e-06}
+      rotation: {x: -.000130381275, y: -.0036904288, z: -.0353199057, w: .999369264}
+      scale: {x: 1, y: .999999881, z: .999999881}
+      transformModified: 1
+    - name: eyeTracker_R
+      position: {x: .00304047437, y: .0037999996, z: .0104657682}
+      rotation: {x: -.359647959, y: -.0125791989, z: .932433069, w: .0326144658}
+      scale: {x: 1, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: Eye_R
+      position: {x: -1.91479916e-08, y: 9.43429779e-09, z: 1.74066372e-06}
+      rotation: {x: .000125676961, y: -.00359731144, z: .0349559635, w: .999382377}
+      scale: {x: .99999994, y: .99999994, z: .999999821}
+      transformModified: 1
+    - name: lowerjaw
+      position: {x: .00258147717, y: -1.94894906e-10, z: .000793978164}
+      rotation: {x: 7.48730429e-08, y: .991724193, z: -1.13852544e-13, w: .128386587}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: tongue1
+      position: {x: -.0045791748, y: 3.45718232e-10, z: .000375995936}
+      rotation: {x: -2.2861391e-08, y: -.302807629, z: 7.4775845e-14, w: .953051686}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: tongue2
+      position: {x: -.00204973086, y: 1.54750449e-10, z: 2.98023217e-10}
+      rotation: {x: 6.44504272e-09, y: .0853672251, z: -1.71069792e-15, w: .996349573}
+      scale: {x: .999999881, y: 1, z: .999999881}
+      transformModified: 1
+    - name: tongue3
+      position: {x: -.00196227385, y: 1.4814755e-10, z: 2.04890965e-10}
+      rotation: {x: 1.07737081e-08, y: .142702162, z: -2.02190936e-15, w: .989765704}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: upperjaw
+      position: {x: .00258147717, y: -1.94896155e-10, z: .000793978164}
+      rotation: {x: 7.11878485e-08, y: .942926168, z: 3.08626735e-12, w: .333001882}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Root
+      position: {x: -3.74564435e-10, y: -.00250841095, z: -.110884473}
+      rotation: {x: 0, y: 0, z: -.707106769, w: .707106888}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Ball_Heel_Rotation_L
+      position: {x: -.00553666661, y: -.00996901933, z: .0305632576}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Ball_Heel_Rotation_R
+      position: {x: -.00553666521, y: .0099685695, z: .0305632576}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Foot_Root_L
+      position: {x: -.00553666661, y: -.00996901933, z: .0305632576}
+      rotation: {x: -2.66925433e-08, y: -.707106829, z: -2.66925433e-08, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: heel_L
+      position: {x: -.0043199067, y: 1.39308582e-07, z: .0022527026}
+      rotation: {x: -5.28187982e-08, y: -.699609041, z: 2.29136073e-13, w: .714525878}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ball_L
+      position: {x: -.0158785116, y: 9.34978761e-10, z: -.000335020421}
+      rotation: {x: 7.54763292e-08, y: .999714315, z: 3.41889116e-15, w: .0239033159}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: footMech_L
+      position: {x: -.0135095799, y: 1.5826529e-09, z: .0046832189}
+      rotation: {x: 7.44495949e-08, y: .98611486, z: 3.10810455e-16, w: -.166064858}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Toes_L
+      position: {x: -.0158785097, y: 9.3497865e-10, z: -.000335039425}
+      rotation: {x: -9.60063362e-10, y: -.0127164228, z: 3.8255846e-18, w: .999919176}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Foot_Root_R
+      position: {x: -.00553666521, y: .0099685695, z: .0305632576}
+      rotation: {x: -2.66925433e-08, y: -.707106829, z: -2.66925433e-08, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: heel_R
+      position: {x: -.0043199053, y: -1.3308464e-07, z: .0022527026}
+      rotation: {x: -5.28187982e-08, y: -.699609041, z: 2.29136073e-13, w: .714525878}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ball_R
+      position: {x: -.0158785116, y: 3.38932299e-10, z: -.000335020421}
+      rotation: {x: 7.54763292e-08, y: .999714315, z: 3.41889116e-15, w: .0239033159}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: footMech_R
+      position: {x: -.0135095799, y: 9.86606463e-10, z: .0046832189}
+      rotation: {x: 7.44495949e-08, y: .98611486, z: 3.10810455e-16, w: -.166064858}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Toes_R
+      position: {x: -.0158785097, y: 3.38932188e-10, z: -.000335039425}
+      rotation: {x: -9.60063362e-10, y: -.0127164228, z: 3.8255846e-18, w: .999919176}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Torso
+      position: {x: 2.30502373e-08, y: 3.74563158e-10, z: .161111668}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: IK_Arm_L
+      position: {x: -1.67229136e-05, y: -.0662752986, z: .0296533387}
+      rotation: {x: .397805691, y: .328530848, z: .660504699, w: .545482934}
+      scale: {x: 1, y: 1, z: .999999881}
+      transformModified: 1
+    - name: IK_Arm_R
+      position: {x: -1.67129074e-05, y: .0662799999, z: .0296533387}
+      rotation: {x: -.397670269, y: .328449786, z: -.660552144, w: .545573056}
+      scale: {x: .99999994, y: .99999994, z: .999999762}
+      transformModified: 1
+    - name: Pelvis
+      position: {x: 3.30591211e-05, y: -2.49588978e-12, z: -8.01205624e-06}
+      rotation: {x: 7.55292291e-08, y: .99999994, z: -1.90004923e-14, w: -.000299052394}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hip_L
+      position: {x: -.000919617771, y: -.00221379427, z: .00237252982}
+      rotation: {x: .480531007, y: .872732699, z: .027320873, w: .0817383453}
+      scale: {x: .999999881, y: 1, z: .999999881}
+      transformModified: 1
+    - name: Thigh_L
+      position: {x: -.00753005967, y: -1.24052164e-08, z: 1.36458944e-09}
+      rotation: {x: -.380524457, y: -.656654775, z: -.304903984, w: .57536006}
+      scale: {x: 1, y: 1, z: .999999821}
+      transformModified: 1
+    - name: Shin_L
+      position: {x: -.0361259989, y: 3.9488075e-09, z: 3.58248237e-10}
+      rotation: {x: .00969295856, y: .386397809, z: -.0122046303, w: .922200561}
+      scale: {x: 1, y: .999999881, z: 1}
+      transformModified: 1
+    - name: Foot_L
+      position: {x: -.0342114531, y: 1.90202002e-07, z: 4.47181918e-07}
+      rotation: {x: .00311855692, y: -.762918115, z: .0104636038, w: .646402955}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ankle_L
+      position: {x: -3.86920007e-08, y: -8.92771084e-08, z: 7.10259599e-07}
+      rotation: {x: -3.34672933e-07, y: .923066616, z: 1.6911099e-07, w: .384640098}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: toeDeform_L
+      position: {x: -.0142977685, y: 5.80567427e-10, z: 2.82334653e-08}
+      rotation: {x: 5.64988767e-08, y: -.155033544, z: 4.32488036e-07, w: .987909198}
+      scale: {x: .999999881, y: 1, z: .999999881}
+      transformModified: 1
+    - name: Hip_R
+      position: {x: -.000919579295, y: .002213347, z: .00237252982}
+      rotation: {x: -.480532497, y: .872731924, z: -.0273217987, w: .0817381516}
+      scale: {x: 1, y: .999999762, z: .999999762}
+      transformModified: 1
+    - name: Thigh_R
+      position: {x: -.00753004849, y: 1.35228033e-08, z: -7.11156078e-10}
+      rotation: {x: .380523115, y: -.656655908, z: .304906249, w: .57535845}
+      scale: {x: .999999762, y: .999999881, z: .99999994}
+      transformModified: 1
+    - name: Shin_R
+      position: {x: -.0361259095, y: 2.12341544e-09, z: -4.06468059e-09}
+      rotation: {x: -.00968956854, y: .386397451, z: .0122056557, w: .92220068}
+      scale: {x: 1, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: Foot_R
+      position: {x: -.0342115462, y: -1.88052056e-07, z: 4.98377119e-07}
+      rotation: {x: -.00312152505, y: -.762917578, z: -.0104659963, w: .646403491}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: ankle_R
+      position: {x: 7.00985581e-09, y: 9.5105122e-08, z: 7.4349407e-07}
+      rotation: {x: 1.67300186e-07, y: .923066735, z: -4.34815064e-08, w: .384639889}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: toeDeform_R
+      position: {x: -.0142979007, y: 9.64921032e-10, z: 3.37518031e-08}
+      rotation: {x: -2.94332274e-08, y: -.155033901, z: -1.03203838e-07, w: .987909138}
+      scale: {x: .999999821, y: 1, z: .999999821}
+      transformModified: 1
+    - name: Spine_1
+      position: {x: 3.48896712e-09, y: -8.64689993e-13, z: 5.23072963e-08}
+      rotation: {x: -5.36249516e-08, y: -.717018962, z: -5.37669687e-10, w: .697053671}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Spine_2
+      position: {x: -.00504219066, y: 3.80674936e-10, z: -9.31322519e-11}
+      rotation: {x: -1.15216574e-08, y: -.154311091, z: 6.39878095e-10, w: .988022327}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Spine_3
+      position: {x: -.00736427773, y: 5.55987589e-10, z: -2.56113707e-11}
+      rotation: {x: 8.20254975e-09, y: .107782066, z: 7.19539317e-10, w: .99417454}
+      scale: {x: .99999994, y: 1, z: .999999821}
+      transformModified: 1
+    - name: Spine_4
+      position: {x: -.0062999581, y: 4.75633588e-10, z: 2.04890965e-10}
+      rotation: {x: 7.89715138e-09, y: .103794232, z: -6.29550911e-10, w: .994598806}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: spineStretchNull
+      position: {x: -.0167941134, y: 1.26791999e-09, z: 4.84287739e-08}
+      rotation: {x: .737001002, y: -5.73163135e-08, z: -.675891638, w: -1.822135e-09}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: SpineStretch_002
+      position: {x: -.000208835598, y: -5.27991206e-10, z: .00503220828}
+      rotation: {x: 4.00086932e-08, y: .578306794, z: -5.15223908e-09, w: .815819442}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Rib3_L
+      position: {x: -.00161864189, y: -.00300941756, z: .000164342375}
+      rotation: {x: .608945847, y: .51326865, z: -.462414593, w: -.389760166}
+      scale: {x: .999999821, y: .999999821, z: .999999702}
+      transformModified: 1
+    - name: Rib3_R
+      position: {x: -.00161864632, y: .00300897891, z: .000164343408}
+      rotation: {x: .608946085, y: -.513269126, z: -.462414056, w: .389759988}
+      scale: {x: .999999881, y: .99999994, z: .999999881}
+      transformModified: 1
+    - name: SpineStretch_003
+      position: {x: -.00264730933, y: 2.07774048e-10, z: .0119810384}
+      rotation: {x: 5.04612139e-08, y: .662868381, z: 4.69909667e-10, w: .748735964}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Rib2_L
+      position: {x: -.00268732547, y: -.00192934065, z: .000165345933}
+      rotation: {x: .573981941, y: .496406376, z: -.492585272, w: -.426010758}
+      scale: {x: 1.00000024, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: Rib2_R
+      position: {x: -.00268731569, y: .00192890072, z: .000165345613}
+      rotation: {x: .573982716, y: -.496406972, z: -.492584556, w: .426009893}
+      scale: {x: .999999881, y: .999999881, z: 1}
+      transformModified: 1
+    - name: SpineStretch_004
+      position: {x: -.00341870775, y: -1.16459176e-10, z: .0182345267}
+      rotation: {x: 4.985678e-08, y: .737002611, z: -5.30555821e-09, w: .675889909}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Rib1_L
+      position: {x: -.00728137884, y: -.00191742869, z: -.00206086994}
+      rotation: {x: -.211504906, y: -.1506854, z: .786498845, w: .560338438}
+      scale: {x: .99999994, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: Rib1_R
+      position: {x: -.0072813849, y: .00191698386, z: -.00206086994}
+      rotation: {x: .211506516, y: -.150686905, z: -.786498964, w: .560337245}
+      scale: {x: .999999881, y: .999999881, z: 1.00000012}
+      transformModified: 1
+    - name: UpperBody
+      position: {x: -.00185827725, y: 1.40296039e-10, z: .0349661224}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Bisep_L
+      position: {x: -.00149147597, y: -.0117331622, z: -.000983500504}
+      rotation: {x: -.248253554, y: -.268583447, z: .631741941, w: .683472991}
+      scale: {x: .99999994, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: Forearm_L
+      position: {x: -.0283204988, y: 2.08616258e-09, z: 1.54213065e-09}
+      rotation: {x: .436744571, y: .00945211295, z: .0699357465, w: .896813214}
+      scale: {x: .99999994, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: Hand_L
+      position: {x: -.027540084, y: -5.54323201e-08, z: -7.6057546e-08}
+      rotation: {x: .357520998, y: -.0942339376, z: .00167115359, w: .92913723}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: fin_index_1_L
+      position: {x: -.00848112907, y: -.00173858972, z: .00308450614}
+      rotation: {x: -.295731992, y: .118870743, z: .115987293, w: .940722764}
+      scale: {x: 1, y: .999999881, z: 1.00000024}
+      transformModified: 1
+    - name: fin_index_2_L
+      position: {x: -.00297279772, y: -5.96046434e-10, z: 2.31174219e-10}
+      rotation: {x: .0330788717, y: -.0195024572, z: .0278292019, w: .998874843}
+      scale: {x: .99999994, y: .999999881, z: 1}
+      transformModified: 1
+    - name: fin_index_3_L
+      position: {x: -.00223547197, y: 4.17232515e-09, z: -3.94175004e-09}
+      rotation: {x: .182667375, y: -.126330256, z: .0433512405, w: .974060595}
+      scale: {x: .99999994, y: .999999821, z: .999999642}
+      transformModified: 1
+    - name: fin_mid_1_L
+      position: {x: -.00884821266, y: -.000223387775, z: .00168934418}
+      rotation: {x: -.102132708, y: .0335872993, z: .0578355864, w: .992519975}
+      scale: {x: 1, y: 1, z: 1.00000024}
+      transformModified: 1
+    - name: fin_mid_2_L
+      position: {x: -.00306430482, y: 4.17232515e-09, z: 2.54708654e-09}
+      rotation: {x: -.0283597801, y: .0110390568, z: -.00471841125, w: .999525726}
+      scale: {x: .999999881, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: fin_mid_3_L
+      position: {x: -.00266535697, y: 1.7881393e-09, z: -1.22456867e-09}
+      rotation: {x: .139642328, y: -.0641494617, z: .0633406267, w: .986089706}
+      scale: {x: .999999881, y: 1, z: 1}
+      transformModified: 1
+    - name: fin_pinky_1_L
+      position: {x: -.00807534996, y: .00201758859, z: -.00166602479}
+      rotation: {x: -.857009768, y: .038033817, z: .00994496886, w: .513798356}
+      scale: {x: .999999642, y: 1, z: .999999821}
+      transformModified: 1
+    - name: fin_pinky_2_L
+      position: {x: -.00345209916, y: 2.64495603e-09, z: -9.23849941e-10}
+      rotation: {x: -.0497059487, y: -.0105295582, z: -.0372655541, w: .9980129}
+      scale: {x: .999999881, y: 1, z: .999999821}
+      transformModified: 1
+    - name: fin_pinky_3_L
+      position: {x: -.00250588031, y: 9.49949008e-10, z: -7.23957769e-11}
+      rotation: {x: -.120007321, y: -.041136425, z: -.0833587348, w: .988411546}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: fin_ring_1_L
+      position: {x: -.00890445895, y: .000977576245, z: 5.79929401e-05}
+      rotation: {x: .143361121, y: .0148464851, z: -.00967235584, w: .989511788}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fin_ring_2_L
+      position: {x: -.00292567303, y: -8.94069652e-10, z: 1.77306e-11}
+      rotation: {x: -.0318056084, y: .00721867802, z: -.0061339722, w: .999449193}
+      scale: {x: 1, y: .99999994, z: .999999821}
+      transformModified: 1
+    - name: fin_ring_3_L
+      position: {x: -.00270373607, y: 0, z: -5.69571092e-11}
+      rotation: {x: .989902675, y: .117272653, z: .0261759274, w: -.0751978755}
+      scale: {x: .999999642, y: .999999821, z: .99999994}
+      transformModified: 1
+    - name: fin_thumb_1_L
+      position: {x: -.00211697747, y: -.0012984171, z: .00180498569}
+      rotation: {x: -.305169463, y: .290160567, z: .435384512, w: .795687616}
+      scale: {x: .99999994, y: .999999881, z: 1}
+      transformModified: 1
+    - name: fin_thumb_2_L
+      position: {x: -.00339574483, y: -7.11530435e-09, z: 9.32741329e-10}
+      rotation: {x: .023393685, y: -.0294698421, z: -.02633035, w: .998944998}
+      scale: {x: .99999994, y: .999999881, z: 1.00000012}
+      transformModified: 1
+    - name: fin_thumb_3_L
+      position: {x: -.00225616968, y: 2.98023217e-10, z: 3.72952752e-10}
+      rotation: {x: .0385868512, y: -.0778198913, z: -.0406966731, w: .995388806}
+      scale: {x: 1, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: Bisep_R
+      position: {x: -.00149147899, y: .0117326947, z: -.000983500504}
+      rotation: {x: .24825941, y: -.268589318, z: -.631737113, w: .683472991}
+      scale: {x: .99999994, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: Forearm_R
+      position: {x: -.0283200704, y: 2.08616258e-09, z: -1.76618364e-09}
+      rotation: {x: -.436758041, y: .00945345499, z: -.0699348599, w: .896806657}
+      scale: {x: .99999994, y: .999999821, z: .999999881}
+      transformModified: 1
+    - name: Hand_R
+      position: {x: -.0275399983, y: 5.43892362e-08, z: -7.72699238e-08}
+      rotation: {x: -.357524097, y: -.0942346603, z: -.00167370879, w: .929135919}
+      scale: {x: .99999994, y: 1, z: .999999881}
+      transformModified: 1
+    - name: fin_index_1_R
+      position: {x: -.00848113559, y: .00173859776, z: .00308454596}
+      rotation: {x: .295732886, y: .118871801, z: -.115987368, w: .940722346}
+      scale: {x: 1.00000012, y: 1.00000024, z: 1.00000024}
+      transformModified: 1
+    - name: fin_index_2_R
+      position: {x: -.00297279772, y: 5.96046434e-10, z: 1.24933075e-09}
+      rotation: {x: -.0330774747, y: -.0195020307, z: -.0278295018, w: .998874903}
+      scale: {x: 1, y: .999999881, z: 1.00000012}
+      transformModified: 1
+    - name: fin_index_3_R
+      position: {x: -.00223547756, y: -2.6822089e-09, z: -1.83221882e-09}
+      rotation: {x: -.18266654, y: -.126327544, z: -.0433463007, w: .97406131}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fin_mid_1_R
+      position: {x: -.00884821452, y: .000223380019, z: .00168935105}
+      rotation: {x: .102139108, y: .0335896164, z: -.0578347482, w: .992519259}
+      scale: {x: 1, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: fin_mid_2_R
+      position: {x: -.00306430995, y: -2.98023217e-10, z: 2.13515694e-09}
+      rotation: {x: .0283662919, y: .0110416096, z: .00471240561, w: .999525487}
+      scale: {x: .999999821, y: .99999994, z: 1.00000012}
+      transformModified: 1
+    - name: fin_mid_3_R
+      position: {x: -.0026653104, y: -6.55651089e-09, z: 8.08818179e-10}
+      rotation: {x: -.139643773, y: -.0641512126, z: -.0633376166, w: .986089528}
+      scale: {x: 1, y: .999999821, z: .99999994}
+      transformModified: 1
+    - name: fin_pinky_1_R
+      position: {x: -.00807535462, y: -.00201756228, z: -.00166611583}
+      rotation: {x: .857013762, y: .0380310379, z: -.00994551089, w: .513792098}
+      scale: {x: 1, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: fin_pinky_2_R
+      position: {x: -.00345210824, y: -1.34110445e-09, z: 2.2128005e-10}
+      rotation: {x: .0496998541, y: -.0105292732, z: .0372600369, w: .998013437}
+      scale: {x: 1.00000012, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: fin_pinky_3_R
+      position: {x: -.00250594458, y: -1.50874258e-09, z: 1.81080394e-11}
+      rotation: {x: .120011069, y: -.0411382765, z: .0833603367, w: .98841089}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: fin_ring_1_R
+      position: {x: -.00890446175, y: -.000977562624, z: 5.7941088e-05}
+      rotation: {x: -.143357873, y: .0148481997, z: .00967407506, w: .989512265}
+      scale: {x: 1, y: 1.00000024, z: 1.00000024}
+      transformModified: 1
+    - name: fin_ring_2_R
+      position: {x: -.00292567606, y: -5.96046434e-10, z: 1.29285582e-09}
+      rotation: {x: .0318112746, y: .00721964845, z: .00613281736, w: .999449015}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: fin_ring_3_R
+      position: {x: -.0027037363, y: 1.49011603e-09, z: -6.01721659e-11}
+      rotation: {x: .989902854, y: -.117273338, z: .0261749011, w: .0751944333}
+      scale: {x: 1, y: .99999994, z: 1}
+      transformModified: 1
+    - name: fin_thumb_1_R
+      position: {x: -.00211698469, y: .00129840279, z: .00180503912}
+      rotation: {x: .305175006, y: .290165633, z: -.435383141, w: .795684397}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: fin_thumb_2_R
+      position: {x: -.00339578139, y: 3.57627861e-09, z: 1.77919901e-10}
+      rotation: {x: -.0233953036, y: -.0294682793, z: .0263310391, w: .998944938}
+      scale: {x: 1, y: .999999881, z: 1.00000024}
+      transformModified: 1
+    - name: fin_thumb_3_R
+      position: {x: -.00225616782, y: -6.70552225e-10, z: 3.19383497e-09}
+      rotation: {x: -.0385857113, y: -.077821359, z: .0406949595, w: .995388806}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FaceMaquetteLoc
+      position: {x: .00122672552, y: -9.26152141e-11, z: .0544062331}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Head
+      position: {x: -.00211757421, y: 1.59872421e-10, z: .0137849785}
+      rotation: {x: 7.54925438e-08, y: 1, z: -6.22359681e-16, w: .000244096911}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: neck
+      position: {x: -.00127855293, y: 9.7520915e-11, z: .00445404043}
+      rotation: {x: 5.09584552e-08, y: .674702406, z: 2.16172115e-11, w: .738089859}
+      scale: {x: .999999821, y: 1, z: .999999821}
+      transformModified: 1
+    - name: headController
+      position: {x: -.00936916005, y: 7.08538339e-10, z: 1.38282772e-07}
+      rotation: {x: 9.52783097e-08, y: .738044381, z: 4.33600285e-08, w: .674752176}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HeadStretch
+      position: {x: -.00581072876, y: 5.73482817e-10, z: .0050179027}
+      rotation: {x: -1.60601431e-07, y: -.708005667, z: 2.47510155e-08, w: .706206739}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HeadDeform
+      position: {x: -.00313179521, y: 3.0425279e-10, z: .00597099401}
+      rotation: {x: -7.62151444e-08, y: -.342645764, z: -4.73500563e-08, w: .939464688}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HeadStretchControl
+      position: {x: -.00576077634, y: -4.66759609e-09, z: -.0146200107}
+      rotation: {x: -4.48280435e-09, y: -.704026222, z: -1.32578052e-07, w: .710173965}
+      scale: {x: 1.00000012, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: necknull
+      position: {x: -.00936875679, y: 7.0732159e-10, z: 2.98023217e-10}
+      rotation: {x: 3.62252517e-09, y: .0448209234, z: 5.26032817e-09, w: .998995066}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: neckloc
+      position: {x: -.0012785506, y: 9.75210676e-11, z: .00445404043}
+      rotation: {x: -6.91089574e-10, y: -.00307849632, z: 1.48990736e-07, w: .999995291}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Shoulders
+      position: {x: 1.1920929e-07, y: -9.00000035e-15, z: -7.62939436e-08}
+      rotation: {x: 0, y: 0, z: 1, w: 4.37091323e-08}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: IK_Spine
+      position: {x: -0, y: 0, z: -2.38418574e-09}
+      rotation: {x: .752276838, y: -1.15507454e-07, z: -.658847153, w: -6.70379521e-08}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Shoulder_L
+      position: {x: 1.1920929e-07, y: -1.71394995e-12, z: 7.62939436e-08}
+      rotation: {x: -.195137858, y: .163579866, z: -.741093218, w: .621243656}
+      scale: {x: 1.00000012, y: .99999994, z: 1}
+      transformModified: 1
+    - name: ShoulderLoc_L
+      position: {x: -.0118642021, y: -.000293516961, z: -.000121443445}
+      rotation: {x: .163579956, y: .195137814, z: -.621243656, w: .741093218}
+      scale: {x: 1.00000012, y: 1, z: .999999881}
+      transformModified: 1
+    - name: Shoulder_R
+      position: {x: 1.1920929e-07, y: -1.71394995e-12, z: 7.62939436e-08}
+      rotation: {x: .195137247, y: .163578138, z: .74109596, w: .621241033}
+      scale: {x: .999999762, y: 1, z: .999999821}
+      transformModified: 1
+    - name: ShoulderLoc_R
+      position: {x: -.0118610151, y: .000293033634, z: -.00012144135}
+      rotation: {x: -.163578406, y: .195137084, z: .621241093, w: .741095901}
+      scale: {x: .999999762, y: .99999994, z: .999999762}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  additionalBone: 0
+  userData: 
