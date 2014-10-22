@@ -18,37 +18,26 @@ public class DanceOffClick : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+
 	}
 
 	void OnClick(){
-		toggleWindow ();
-	}
 
-	void toggleWindow(){
-		toggleDanceWin = !toggleDanceWin;
-
-		if (toggleDanceWin) {
-				
-			showDanceOffWin();
-			
-		} else {
-			
-			StartCoroutine(closeDanceOffWin());
-			
-		}
-	}
-
-	void showDanceOffWin() {
 		danceOffWin.SetActive (true);
-
 		mainMenuAnimator.SetBool ("DanceOff", true);
 		danceOffWinAnimator.SetBool ("MoveDanceOffUp", true);
+
+		StartCoroutine (disableThisWindow ());
+
 	}
 
-	IEnumerator closeDanceOffWin() {
-		mainMenuAnimator.SetBool ("DanceOff", false);
-		danceOffWinAnimator.SetBool ("MoveDanceOffUp", false);
-		yield return new WaitForSeconds(1);
-		danceOffWin.SetActive (false);
+	IEnumerator disableThisWindow(){
+
+		yield return new WaitForSeconds(0.8f);
+		mainMenuAnimator.gameObject.SetActive (false);
+
 	}
+
+
 }

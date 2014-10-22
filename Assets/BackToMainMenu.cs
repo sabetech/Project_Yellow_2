@@ -22,8 +22,23 @@ public class BackToMainMenu : MonoBehaviour {
 	//clicking back to main menu
 	void OnClick(){
 
+
+
+	}
+
+	void showPreviousWindow(){
+
+		mainMenu_win.SetActive (true);
+
 		mainMenu_Anim.SetBool ("DanceOff", false);
 		danceType_Anim.SetBool ("MoveDanceOffUp", false);
+
+	}
+
+	IEnumerator disableThisWindow(){
+
+		yield return new WaitForSeconds (0.8f);
+		danceType_Anim.gameObject.SetActive (false);
 
 	}
 }

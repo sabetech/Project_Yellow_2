@@ -23,8 +23,25 @@ public class DanceWin_Next_btn : MonoBehaviour {
 
 	void OnClick () {
 
+		showNextWindow ();
+
+	}
+
+	void showNextWindow(){
+
+		nextWindow.SetActive (true);
+
 		danceOffWinAnimator.SetBool ("DanceWinSlide", true);
 		nextWinAnimator.SetBool ("MoveDanceOffUp",true);
+
+		StartCoroutine (disableThisWindow ());
+
+	}
+
+	IEnumerator disableThisWindow(){
+
+		yield return new WaitForSeconds (0.8f);
+		danceOffWinAnimator.gameObject.SetActive (false);
 
 	}
 }
