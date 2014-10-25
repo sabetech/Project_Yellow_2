@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\BackWin.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FetchMusicList.cs">
     <Files>
-      <File FileName="Assets\FetchMusicList.cs" Line="44" Column="38" />
+      <File FileName="Assets\FetchMusicList.cs" Line="135" Column="1" />
+      <File FileName="Assets\BackToMainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\FetchMusicList.cs" Line="46" Column="20" />
       <File FileName="Assets\SetupButton.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Runtime_Code\SearchForMp3Files.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\Audio_File.cs" Line="1" Column="1" />
@@ -18,8 +20,11 @@
       <File FileName="Assets\Scripts\Runtime_Code\Dance_GrdItem.cs" Line="1" Column="1" />
       <File FileName="Assets\PlayNow.cs" Line="1" Column="1" />
       <File FileName="Assets\DanceWin_Next_btn.cs" Line="1" Column="1" />
-      <File FileName="Assets\BackToMainMenu.cs" Line="27" Column="1" />
-      <File FileName="Assets\BackWin.cs" Line="6" Column="4" />
+      <File FileName="Assets\BackWin.cs" Line="1" Column="1" />
+      <File FileName="Assets\NGUI\Examples\Scripts\Other\DragDropSurface.cs" Line="1" Column="1" />
+      <File FileName="Assets\NGUI\Examples\Scripts\Other\DragDropRoot.cs" Line="1" Column="1" />
+      <File FileName="Assets\NGUI\Examples\Scripts\Other\DragDropItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\TapForBPM.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

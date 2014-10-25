@@ -1,19 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof (AudioSource))]
+//[RequireComponent (typeof (AudioSource))]
 public class MP3_Player : MonoBehaviour {
 
+	public static MP3_Player mp3Instance = null;
 
-	//public AudioClip audio_clip_toPlay;
-	// Use this for initialization
-	void Start () {
-		
+	public static MP3_Player getMp3Instance(){
+
+		return mp3Instance;
+
 	}
-	
+
+	void Awake (){
+
+		if ((mp3Instance != null) && (mp3Instance != this)) {
+				
+			return;
+		
+		} else {
+
+			mp3Instance = this;
+		
+		}
+		DontDestroyOnLoad (this.gameObject);
+	}
+	void Start () {
+
+
+	}
+
+
 	// Update is called once per frame
 	void Update () {	
 		
+	}
+
+	void getInstance(){
+
+
+
 	}
 
 	void play_audio(MP3File mp3file){

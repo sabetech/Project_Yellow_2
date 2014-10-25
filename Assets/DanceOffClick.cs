@@ -5,13 +5,13 @@ public class DanceOffClick : MonoBehaviour {
 	public GameObject danceOffWin;
 	private Animator mainMenuAnimator;
 	private Animator danceOffWinAnimator;
-	private bool toggleDanceWin = false;
+	
 	// Use this for initialization
 
 	void Start () {
 
 		mainMenuAnimator = GetComponentInParent<Animator> ();
-		danceOffWinAnimator = danceOffWin.GetComponent<Animator> ();
+
 
 	}
 
@@ -24,9 +24,17 @@ public class DanceOffClick : MonoBehaviour {
 
 	void OnClick(){
 
-		danceOffWin.SetActive (true);
-		mainMenuAnimator.SetBool ("DanceOff", true);
+
+		//GameObject danceWin = Instantiate (danceOffWin) as GameObject;
+
+		danceOffWin = NGUITools.AddChild (GetComponentInParent<UIAnchor> ().gameObject, danceOffWin);
+
+
+		danceOffWinAnimator = danceOffWin.GetComponent<Animator> ();
+
+		mainMenuAnimator.SetBool ("MoveMainMenu", false);
 		danceOffWinAnimator.SetBool ("MoveDanceOffUp", true);
+
 
 		StartCoroutine (disableThisWindow ());
 
@@ -35,7 +43,8 @@ public class DanceOffClick : MonoBehaviour {
 	IEnumerator disableThisWindow(){
 
 		yield return new WaitForSeconds(0.8f);
-		mainMenuAnimator.gameObject.SetActive (false);
+
+		Destroy (mainMenuAnimator.gameObject);
 
 	}
 

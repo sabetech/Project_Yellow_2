@@ -55,6 +55,7 @@
      <Compile Include="Assets\FT_FreeSample\Script\Button.cs" />
      <Compile Include="Assets\FetchMusicList.cs" />
      <Compile Include="Assets\MusicClick.cs" />
+     <Compile Include="Assets\MusicCollection.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -189,6 +190,7 @@
      <Compile Include="Assets\Scripts\Runtime_Code\MP3_Player.cs" />
      <Compile Include="Assets\Scripts\Runtime_Code\SearchForMp3Files.cs" />
      <Compile Include="Assets\SetupButton.cs" />
+     <Compile Include="Assets\TapForBPM.cs" />
      <Compile Include="Assets\buttonClick2.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />

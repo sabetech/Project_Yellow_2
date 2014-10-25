@@ -11,6 +11,9 @@ public class FetchMusicList : MonoBehaviour {
 	public GameObject audioFileGridItem;
 	public GameObject musicChoiceWindow;
 	private Animator musicChoiceWin;
+	public GameObject audioLibrary;
+
+
 	// Use this for initialization
 	void Start () {
 
@@ -25,8 +28,7 @@ public class FetchMusicList : MonoBehaviour {
 
 	bool toggleWindow = false;
 	void OnClick(){
-		//fetchMp3Files ();
-		Debug.Log ("fetching audio files");
+
 		toggleWindow = !toggleWindow;
 
 		if (toggleWindow)
@@ -43,6 +45,7 @@ public class FetchMusicList : MonoBehaviour {
 
 		musicChoiceWindow.SetActive (true);
 		musicChoiceWin.SetBool ("MusicSlideInOut",true);
+		fetchMp3Files ();
 
 	}
 
@@ -51,24 +54,13 @@ public class FetchMusicList : MonoBehaviour {
 		yield return new WaitForSeconds (1);
 		musicChoiceWindow.SetActive (false);
 
-
 	}
 
 	void fetchMp3Files(){
-		//unserialize and populate that window
-		try{
-			using(Stream aud_stream = File.Open (Application.persistentDataPath+"/audio_files_ref.dat", FileMode.Open))
-			{
-				BinaryFormatter binFormat = new BinaryFormatter();
-				var audiofiles = (List<Audio_File>)binFormat.Deserialize(aud_stream);
+
+		//now populate audio window with audio files
+		StartCoroutine (showMp3Files (audioLibrary.GetComponent<MusicCollection>().audioLibrary));
 				
-				//now populate audio window with audio files
-				StartCoroutine(showMp3Files(audiofiles));
-				
-			}
-		}catch(IOException ioex){
-			Debug.Log (ioex);	
-		}
 	}
 
 	//fix this function();
@@ -77,8 +69,6 @@ public class FetchMusicList : MonoBehaviour {
 		foreach(Audio_File audFile in audiofiles){
 			
 			GameObject gridItem = NGUITools.AddChild(gridItemParent.gameObject, audioFileGridItem);
-
-			//Debug.Log (audFile.getAudioFileName());
 
 			mp3info.mp3info mp3information = new mp3info.mp3info(audFile.getAudioFileName());
 			MusicClick mc = gridItem.GetComponent<MusicClick>();

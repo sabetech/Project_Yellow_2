@@ -10,7 +10,7 @@ public class BackWin : MonoBehaviour {
 	void Start () {
 	
 		thisWindow_Anim = GetComponentInParent<Animator> ();
-		previousWin_Anim = previousWin.GetComponent<Animator> ();
+
 	}
 	
 	// Update is called once per frame
@@ -20,15 +20,19 @@ public class BackWin : MonoBehaviour {
 
 	void OnClick () {
 
-
+		showPreviousWindow ();
 
 	}
 
 	void showPreviousWindow(){
 
-		previousWin.SetActive (true);
-		thisWindow_Anim.SetBool ("MoveDanceOffUp",false);
-		previousWin_Anim.SetBool ("DanceWinSlide", false);
+
+		previousWin = NGUITools.AddChild (GetComponentInParent<UIAnchor>().gameObject, previousWin);
+
+		previousWin_Anim = previousWin.GetComponent<Animator> ();
+
+		thisWindow_Anim.SetBool ("MoveDanceOffUp", false);
+		previousWin_Anim.SetBool ("DanceWinSlide", true);
 
 		StartCoroutine (disableThisWindow());
 
@@ -37,7 +41,7 @@ public class BackWin : MonoBehaviour {
 	IEnumerator disableThisWindow(){
 
 		yield return new WaitForSeconds (0.8f);
-		thisWindow_Anim.gameObject.SetActive (false);
+		Destroy (thisWindow_Anim.gameObject);
 
 	}
 

@@ -10,8 +10,7 @@ public class MusicClick : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		//mp3Player = mp3PlayGameObject.GetComponent<AudioSource> ();
-		mp3PlayerScript = mp3PlayGameObject.GetComponent<MP3_Player>();
+		//mp3PlayerScript = mp3PlayGameObject.GetComponent<MP3_Player> ();
 
 	}
 	
@@ -34,7 +33,13 @@ public class MusicClick : MonoBehaviour {
 
 	void play(string audio_filename){
 
-		mp3PlayerScript.play_audio_file (audio_filename);
+		//mp3PlayerScript.play_audio_file (audio_filename);
+		//mp3PlayerScript.play_audio_file (audio_filename);
+
+		MP3_Player.getMp3Instance ().play_audio_file (audio_filename);
+		Debug.Log (audio_filename);
+
+
 
 	}
 

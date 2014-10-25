@@ -3,14 +3,15 @@ using System.Collections;
 
 public class DanceWin_Next_btn : MonoBehaviour {
 
-	private Animator danceOffWinAnimator;
+	private Animator thisWinAnimator;
 	private Animator nextWinAnimator;
 	public GameObject nextWindow;
 	// Use this for initialization
 	void Start () {
+
 		//get animator from parent
-		danceOffWinAnimator = GetComponentInParent<Animator> ();
-		nextWinAnimator = nextWindow.GetComponent<Animator> ();
+		thisWinAnimator = GetComponentInParent<Animator> ();
+
 
 	}
 	
@@ -29,9 +30,12 @@ public class DanceWin_Next_btn : MonoBehaviour {
 
 	void showNextWindow(){
 
-		nextWindow.SetActive (true);
 
-		danceOffWinAnimator.SetBool ("DanceWinSlide", true);
+		nextWindow = NGUITools.AddChild (GetComponentInParent<UIAnchor>().gameObject, nextWindow);
+
+		nextWinAnimator = nextWindow.GetComponent<Animator> ();
+
+		thisWinAnimator.SetBool ("DanceWinSlide", true);
 		nextWinAnimator.SetBool ("MoveDanceOffUp",true);
 
 		StartCoroutine (disableThisWindow ());
@@ -41,7 +45,8 @@ public class DanceWin_Next_btn : MonoBehaviour {
 	IEnumerator disableThisWindow(){
 
 		yield return new WaitForSeconds (0.8f);
-		danceOffWinAnimator.gameObject.SetActive (false);
+		Destroy (thisWinAnimator.gameObject);
 
 	}
 }
+
