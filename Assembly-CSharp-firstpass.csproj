@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{96E9EE16-E46F-71EE-5B5C-9D96815E2467}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_1;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Plugins\Kamcord\Kamcord.cs" />
+     <Compile Include="Assets\Plugins\Kamcord\KamcordAndroidCameraAttachment.cs" />
+     <Compile Include="Assets\Plugins\Kamcord\KamcordAndroidPostRender.cs" />
+     <Compile Include="Assets\Plugins\Kamcord\KamcordAndroidPreRender.cs" />
+     <Compile Include="Assets\Plugins\Kamcord\KamcordAudioRecorder.cs" />
+     <Compile Include="Assets\Plugins\Kamcord\KamcordCallbackInterface.cs" />
+     <Compile Include="Assets\Plugins\Kamcord\KamcordJSON.cs" />
+     <Compile Include="Assets\Plugins\Kamcord\KamcordThumbnailUpdater.cs" />
+     <Compile Include="Assets\Plugins\Kamcord\Kamcord_Android.cs" />
+     <Compile Include="Assets\Plugins\Kamcord\Kamcord_IOS.cs" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_thumb_style.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_progress_style.xml" />
+     <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
+     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_sign_in.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\GUI - Text Shader (SoftClip).shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-es\kamcord_strings.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_share_gradient.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout-land\z_kamcord_activity.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_tab_background_selector.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-sw350dp-land\kamcord_dimens.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_watch_icon.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\AndroidManifest.xml" />
+     <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_background_gradient.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_title_gradient.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_player.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_rounded_top_right_selector.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_activity_login.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_forgot_password.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_edit_profile.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_buffer.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_toggle_selector.xml" />
+     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_share_grid_background.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_profile_settings.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-de\kamcord_strings.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_activity.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_background.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\GUI - Text Shader (AlphaClip).shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-land\kamcord_styles.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout-sw600dp\z_kamcord_activity.xml" />
+     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_rounded_top_left_selector.xml" />
+     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-ar\kamcord_strings.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-zh-rCN\kamcord_strings.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font (SoftClip).shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-ja\kamcord_styles.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_button_background.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_progress.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_change_creds.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_web.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-sw350dp-land\kamcord_styles.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout-sw600dp\z_kamcord_fragment_share.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\color\kamcord_share_widget_text.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_share_edit_background.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-tr\kamcord_strings.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font.shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-zh-rTW\kamcord_strings.xml" />
+     <None Include="Assets\NGUI\ReadMe - 2.7.0.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_share_icon.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_profile_icon.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_rounded_bottom_left_selector.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_rounded_bottom_right_selector.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-pt\kamcord_strings.xml" />
+     <None Include="Assets\NGUI\Examples\Other\English.txt" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-ru\kamcord_strings.xml" />
+     <None Include="Assets\NGUI\Examples\Other\French.txt" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-it\kamcord_strings.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-sw600dp\kamcord_styles.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-fr\kamcord_styles.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout-sw600dp\z_kamcord_activity_login.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-land\kamcord_dimens.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-pt-rPT\kamcord_strings.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_thumb.xml" />
+     <None Include="Assets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-sw600dp\kamcord_dimens.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
+     <None Include="Assets\NGUI\Examples\Shaders\Refractive.shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_create_profile.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values\kamcord_strings.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-th\kamcord_strings.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_media_controller.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout-land\z_kamcord_fragment_share.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_share.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
+     <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-ar\kamcord_styles.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-ko\kamcord_strings.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-pl\kamcord_strings.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-fr\kamcord_strings.xml" />
+     <None Include="Assets\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
+     <None Include="Assets\Plugins\Android\kamcord\res\values-ja\kamcord_strings.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_merge_platform.xml" />
+     <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_tabbar_back_selector.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

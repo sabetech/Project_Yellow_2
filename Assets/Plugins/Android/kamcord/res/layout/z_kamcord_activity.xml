@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kamcord_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kamcordActivityBackground"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/tabbar_items"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/kamcordTabbarHeight"
+            android:background="@color/kamcordTabbarBackground"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/tabbar_back"
+                android:layout_width="@dimen/kamcordTabbarHeight"
+                android:layout_height="@dimen/kamcordTabbarHeight"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:background="@drawable/kamcord_tabbar_back_selector"
+                android:padding="@dimen/kamcordTabbarBackPadding"
+                android:src="@drawable/kamcord_back_icon" />
+        </LinearLayout>
+        
+        <View 
+            android:id="@+id/tabbar_progress"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/kamcordTabbarProgressSize"
+            android:layout_alignBottom="@id/tabbar_items"
+            android:layout_alignParentLeft="true"
+            android:background="@color/kamcordButtonActive" />
+    </RelativeLayout>
+
+    <com.kamcord.android.CustomViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.kamcord.android.CustomViewPager>
+
+</LinearLayout>

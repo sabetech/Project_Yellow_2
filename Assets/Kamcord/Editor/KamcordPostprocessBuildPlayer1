@@ -1,0 +1,148 @@
+#!/usr/bin/perl
+use warnings;
+use strict;
+use Cwd;
+use File::Basename qw(basename dirname fileparse);
+
+# Unity-Provided Publish Arguments
+my $PublishFile = $ARGV[0];
+my $kamcordUnityVersion = "";
+if (scalar(@ARGV) > 1)
+{
+    my $version = $ARGV[1];
+    $version =~ s/\s*(\S*)\s*/$1/g;
+    if (length($version) > 0)
+    {
+        $kamcordUnityVersion = quotemeta($version);
+    }
+}
+print "Kamcord Unity version: " . $kamcordUnityVersion . "\n";
+print "length(Kamcord Unity version): " . length($kamcordUnityVersion) . "\n";
+
+# Parse the published web player file path into a file name, folder and suffix
+my ($PublishFileName, $PublishFolder, $PublishSuffix) = fileparse($PublishFile, qr/\.[^.]*/);   
+
+
+print "PublishFile:   $PublishFile\n";
+
+### Tasks
+#
+# 1. Add the following frameworks and Resources to the project:
+#       - Kamcord
+#       - Resources (for Kamcord)
+my $curdir               = getcwd();
+my $unityAssetsXcodePath = $curdir . "/Assets/Kamcord/Xcode/";
+my $xcodeOutputPath      = $PublishFile;
+
+print "Unity Assets/Kamcord/Xcode path: " . $unityAssetsXcodePath . "\n";
+
+# Copy files from Unity Assets/Kamcord/Xcode/ to the generated Xcode project.
+# Erase .meta files afterwards.
+my $toPath = $PublishFile . "/Kamcord/";
+`mkdir -p "$toPath"`;
+`cp -R "$unityAssetsXcodePath" "$toPath"`;
+`find "$toPath" -type f -name '*.meta' -exec rm -f {} \\;`; # Normal ending is \; but have to escape the \ so we have \\;
+
+# 2. Find the first #import statement and import KamcordUnityImport.h above that for simplicity
+sub addKamcordImports
+{
+    my @filesToModify = @_;
+    my $includeToMatch = quotemeta("#include");
+    my $KamcordImport = "#import \"KamcordUnityImport.h\"";
+
+    foreach my $targetFile (@filesToModify)
+    {
+        my $fileToAddImport = $PublishFile . $targetFile;
+        print "File to add import: $fileToAddImport\n";
+
+        # Does the file exist?
+        if (!(-e $fileToAddImport))
+        {
+            print "$fileToAddImport doesn't exist. Going to next.\n";
+        }
+
+        # Open and read the web player template file
+        open(TargetFH, "+<" . $fileToAddImport) or next;
+        print "Successfully opened $fileToAddImport\n";
+
+        # Read the entire file into memory
+        my @file = <TargetFH>;
+        print "NumLines: ", scalar(@file), "\n";
+
+        # Seek to the beginning of the file
+        seek (TargetFH, 0, 0);
+
+        my $importedKamcord = 0;
+
+        # Start substituting
+        foreach my $line (@file)
+        {
+            # while (my ($key, $value) = each(%replaceMapping))
+            {
+                if ($line =~ /$KamcordImport/)
+                {
+                    $importedKamcord = 1;
+                }
+
+                # Insert the Kamcord import above this specific line
+                if (!$importedKamcord)
+                {
+                    if ($line =~ /$includeToMatch/)
+                    {
+                        print TargetFH $KamcordImport, "\n\n";
+
+                        if ($targetFile =~ /AppController/i)
+                        {
+                            print TargetFH "#import <Kamcord/KamcordRecorder+Unity.h>", "\n\n";
+                        }
+
+                        $importedKamcord = 1;
+                    }
+                }
+            }
+
+            print TargetFH $line;
+
+            # Add Kamcord Metal import
+            if ($line =~ /#include\s*"UnityMetalSupport.h"/)
+            {
+                print TargetFH "#import <Kamcord/KamcordRecorder+Metal.h>", "\n\n";                
+            }
+
+            # Configure metal layer for Kamcord integration
+            if ($line =~ /surface->layer.framebufferOnly\s*=\s*NO;/)
+            {
+                print TargetFH "    [KamcordRecorder configureLayer:surface->layer fromDevice:surface->device];", "\n";
+            }
+
+            # Set drawable, and add Kamcord commands for integration
+            if ($line =~ /int\s*frameNumber\s*=\s*s_MetalFrameCounter;/)
+            {
+                print TargetFH "                [KamcordRecorder setCurrentDrawable:surface->drawable];", "\n", "                [KamcordRecorder addMetalCommands:commandBuffer];", "\n\n";
+            }
+        }
+        close(TargetFH);
+    }
+}
+
+# A mix of Unity 3.5 and Unity 4.X files
+my @filesToModify = (
+    "/Classes/AppController.mm",
+    "/Classes/UnityAppController.mm",
+    "/Classes/Unity/DisplayManager.mm",
+    "/Classes/Unity/MetalHelper.mm",
+    "/Classes/UI/UnityView.mm"
+);
+addKamcordImports(@filesToModify);
+
+
+### Now execute the second post process build player script
+my $secondScriptExecutor        = "python";
+my $secondPostProcesScriptName  = '"' . join("/", $curdir,"Assets", "Kamcord", "Editor", "KamcordPostprocessBuildPlayer2") . '"';
+my $pbxProjLocation             = '"' . $PublishFile . "/Unity-iPhone.xcodeproj/project.pbxproj" . '"';
+my $cmd = join(" ", $secondScriptExecutor, $secondPostProcesScriptName, $pbxProjLocation, $kamcordUnityVersion);
+
+print "[Executing $cmd.]\n";
+system($cmd);
+print "[Finished executing $cmd.]\n";
+

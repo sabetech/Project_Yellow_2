@@ -8,9 +8,6 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Examples/Drag and Drop Item")]
 public class DragDropItem : MonoBehaviour
 {
-	/// <summary>
-	/// Prefab object that will be instantiated on the DragDropSurface if it receives the OnDrop event.
-	/// </summary>
 
 	public GameObject prefab;
 

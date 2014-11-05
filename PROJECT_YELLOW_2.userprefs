@@ -1,30 +1,22 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FetchMusicList.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RecordGame.cs">
     <Files>
-      <File FileName="Assets\FetchMusicList.cs" Line="135" Column="1" />
-      <File FileName="Assets\BackToMainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\FetchMusicList.cs" Line="46" Column="20" />
-      <File FileName="Assets\SetupButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Runtime_Code\SearchForMp3Files.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\Audio_File.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\MP3File.cs" Line="1" Column="1" />
-      <File FileName="Assets\MusicClick.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Libraries\MP3\mp3info.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Libraries\MP3\ID3v2.cs" Line="1" Column="1" />
+      <File FileName="Assets\Boogie.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Runtime_Code\MP3_Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\FT_FreeSample\Script\Button.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\SetupButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\SearchForMp3Files.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Runtime_Code\InitGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\DanceOffClick.cs" Line="1" Column="1" />
-      <File FileName="Assets\NGUI\Scripts\Interaction\UICenterOnChild.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\DanceOffClick.cs" Line="1" Column="1" />
+      <File FileName="Assets\MenuControls.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Runtime_Code\Dance_GrdItem.cs" Line="1" Column="1" />
-      <File FileName="Assets\PlayNow.cs" Line="1" Column="1" />
-      <File FileName="Assets\DanceWin_Next_btn.cs" Line="1" Column="1" />
-      <File FileName="Assets\BackWin.cs" Line="1" Column="1" />
-      <File FileName="Assets\NGUI\Examples\Scripts\Other\DragDropSurface.cs" Line="1" Column="1" />
-      <File FileName="Assets\NGUI\Examples\Scripts\Other\DragDropRoot.cs" Line="1" Column="1" />
-      <File FileName="Assets\NGUI\Examples\Scripts\Other\DragDropItem.cs" Line="1" Column="1" />
-      <File FileName="Assets\TapForBPM.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\FetchMusicList.cs" Line="1" Column="1" />
+      <File FileName="Assets\DancerWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets\NextWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets\PreviousWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\DanceDragItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\DanceDropSurface.cs" Line="18" Column="3" />
+      <File FileName="Assets\RecordGame.cs" Line="20" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
