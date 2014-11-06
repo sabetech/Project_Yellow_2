@@ -68,6 +68,8 @@ public class TapForBPM : MonoBehaviour {
 		globalBpm = Math.Round (avgOfBpm, 3);
 		currentBpm.text =  globalBpm+ " ";
 
+		bpmAnimation.speed = ((bpmAnimation.speed * (float)TapForBPM.globalBpm) / (float)TapForBPM.prevGlobalBpm);
+
 	}
 
 	void pushIntoBpmArray(decimal bpmValue){

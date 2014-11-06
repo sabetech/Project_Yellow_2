@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using System;
 
 [AddComponentMenu("NGUI/Examples/Drag and Drop Item")]
 public class DanceDragItem : MonoBehaviour
@@ -128,13 +129,118 @@ public class DanceDragItem : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// OnClick on a dance move logic starts here
+	/// </summary>
+	float currentTime;
+	float prevTime;
+	float timeDiff, prevTimeDiff;
+	bool firstClick = true;
+	float[] timeDiffs = new float[15];
+	int currentTimeDiffIndex = 0;
+
 	void OnClick(){
 		float normalizedTime = myAnimatorStateInfo.normalizedTime;
 		if (this.isActiveDance) {
 
 			dancerAnimator.Play(danceHash,-1, normalizedTime);
+
+			currentTime = Time.time;
+			
+			timeDiff = currentTime - prevTime;
+			prevTime = currentTime;
+
+			if (timeDiff >= (prevTimeDiff * 2)){
+
+				Debug.Log ("u have rested u taps");	
+				Array.Clear (timeDiffs,0,timeDiffs.Length);
+				//clear the array to put in new values
+
+			}
+
+			prevTimeDiff = timeDiff;
+
+			if (firstClick) {
+				firstClick = false;
+				return;		
+			}
+			
+			timeDiffs [currentTimeDiffIndex % 15] = timeDiff;
+
+			currentTimeDiffIndex++;
 		
 		}
+
+
+
+	}
+
+	//this must be a coroutine;;
+	void calcStandardDeviation(){
+
+		float avg = calcAvg ();
+		float variance = calcVariance (avg);
+
+		float stdD = (float)Math.Sqrt (variance);
+
+
+	}
+
+	float calcAvg(){
+
+		//first check if timeDiff is not null first before you continue;
+		float sum = 0f;
+		for (int i=0; i < ((currentTimeDiffIndex <= 15) ? currentTimeDiffIndex : 15); i++) {
+				
+			sum += timeDiffs[i];
+
+		}
+		return sum / ((currentTimeDiffIndex <= 15) ? currentTimeDiffIndex : 15);
+
+	}
+
+	float calcVariance(float avg){
+
+		float[] varianceNums = new float[15];
+		float sum = 0f;
+		for (int i=0; i < ((currentTimeDiffIndex <= 15) ? currentTimeDiffIndex : 15); i++) {
+				
+			varianceNums[i] = (float)Math.Pow((timeDiffs[i] - avg), 2);
+			sum += varianceNums[i];
+		}
+
+		return sum / ((currentTimeDiffIndex <= 15) ? currentTimeDiffIndex : 15);
+	}
+
+	float timeDiffCheck;
+	void Update(){
+
+		if (this.isActiveDance) {
+				
+			if (!firstClick){
+
+				timeDiffCheck = Time.time - prevTime;
+				//use a range here so  you catch the person if he increases speed :D
+				if (timeDiffCheck >= (prevTimeDiff * 2)){ //make this * 1.5f
+
+					firstClick = true;
+
+					//fire up a discrepancy check!!
+					//after that show the awesome effect
+					awesomeEffect();
+
+				}
+
+			}
+		
+		}
+
+	}
+
+	void awesomeEffect(){
+		Debug.Log ("Awesome Code running");
+		//do score calculation here and determine how much to award the player
+		//awesomeEffect goes here!
 
 	}
 }
