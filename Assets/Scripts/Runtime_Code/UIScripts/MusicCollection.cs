@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections.Generic;
+
 
 public class MusicCollection : MonoBehaviour{
 
@@ -10,10 +12,16 @@ public class MusicCollection : MonoBehaviour{
 	public GameObject mp3Player;
 
 	void Start (){
+		//please please try and catch
+		try{
 
-		fetchMp3Files ();
-		int audioIndex = Random.Range (0, audioLibrary.Count - 1);
-		mp3Player.GetComponent<MP3_Player> ().play_audio_file(audioLibrary[audioIndex].getAudioFileName());
+			fetchMp3Files ();
+			int audioIndex = UnityEngine.Random.Range (0, audioLibrary.Count - 1);
+			mp3Player.GetComponent<MP3_Player> ().play_audio_file(audioLibrary[audioIndex].getAudioFileName());
+
+		}catch(Exception){
+
+		}
 
 	}
 

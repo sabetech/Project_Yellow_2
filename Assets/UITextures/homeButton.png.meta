@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 183a1d46df7e95e4d85a30d5d945aae1
+guid: 6934b280c08a7044d8fb3b48827d0452
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -37,12 +37,12 @@ TextureImporter:
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   textureType: -1
   buildTargetSettings:
   - buildTarget: Android
-    maxTextureSize: 128
-    textureFormat: 4
+    maxTextureSize: 32
+    textureFormat: -1
     compressionQuality: 50
   spriteSheet:
     sprites: []
