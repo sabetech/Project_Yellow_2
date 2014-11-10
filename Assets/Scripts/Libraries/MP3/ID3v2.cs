@@ -199,8 +199,10 @@ namespace mp3info
 					br.BaseStream.Position = System.Convert.ToInt64(headerSize);
 					break;
 				}
+				try{
 				this.frames.Add(f);
 				this.framesHash.Add(f.frameName, f);
+				}catch(Exception){}
 				#region frameprocessing
 
 				/*

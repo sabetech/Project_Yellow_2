@@ -2,11 +2,15 @@
 
 [AddComponentMenu("NGUI/Examples/Drag and Drop Surface")]
 public class DanceDropSurface : MonoBehaviour {
+
 	public GameObject energyBar;
-	private float currentEnergyRate = 0.011f;
+	private float currentEnergyRate = 0.011f;//modify this to the character specific
 	private int thePreviousDanceHash = 0;
 	private GameObject previousDroppedDance = null;
 	public float stamina = 0.03f;
+	private int score = 0;
+
+	public UILabel theScore;
 
 	UISlider energyLevel;
 	Animator dancerAnimator;
@@ -14,7 +18,7 @@ public class DanceDropSurface : MonoBehaviour {
 	void Start () {
 		energyLevel = energyBar.GetComponent<UISlider> ();
 		dancerAnimator = GetComponentInParent<Animator> ();
-		//dancerAnimator.speed = 0.6f
+
 	}
 
 
@@ -48,6 +52,9 @@ public class DanceDropSurface : MonoBehaviour {
 
 		}
 		previousDroppedDance = go;
+
+		score++; //very not correct!!
+		theScore.text = score + "";
 	}
 
 

@@ -1,4 +1,4 @@
-﻿
+﻿using System.Collections;
 using UnityEngine;
 using System;
 
@@ -17,6 +17,9 @@ public class DanceDragItem : MonoBehaviour
 	public Animator dancerAnimator;
 	AnimatorStateInfo myAnimatorStateInfo;
 	int danceHash;
+
+	public GameObject groundEffect;
+	public Transform dancerTransform;
 
 	void Start(){
 
@@ -241,6 +244,14 @@ public class DanceDragItem : MonoBehaviour
 		Debug.Log ("Awesome Code running");
 		//do score calculation here and determine how much to award the player
 		//awesomeEffect goes here!
+		StartCoroutine (showEffect());
+
+	}
+
+	IEnumerator showEffect(){
+
+		yield return null;
+		Instantiate (groundEffect, dancerTransform.position, Quaternion.identity);
 
 	}
 }

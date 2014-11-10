@@ -9,6 +9,9 @@ public class TapForBPM : MonoBehaviour {
 	private int bpmAnimationHash;
 	public static decimal globalBpm = 125.000m;
 	public static decimal prevGlobalBpm = 125.000m;
+	private float timeleft = 45f;
+
+	public UISprite timeLeftSprite;//set this in settings :D 2mins left
 
 	// Use this for initialization
 	void Start () {
@@ -16,11 +19,43 @@ public class TapForBPM : MonoBehaviour {
 		currentBpm = GetComponentInChildren<UILabel> ();
 		bpmAnimation = GetComponentInChildren<Animator> ();
 		bpmAnimationHash = Animator.StringToHash ("BeatRythmLoop");
+
+		// InvokeRepeating("countDown", )
+
 	}
+
+	void countDown(){
+
+
 	
+	}
+
+	float previousTimetime = 0f;
+	bool stopPlaying = false;
 	// Update is called once per frame
 	void Update () {
-	
+
+		if (stopPlaying)
+			return;
+
+		if (previousTimetime <= 0f) {
+
+			previousTimetime = Time.time;
+			return;
+		}
+
+		timeleft = Math.Abs ((Time.time - previousTimetime) - 45f); 
+
+		timeLeftSprite.fillAmount = (1 * timeleft) / 45f;
+
+
+		if (timeleft <= 2f) {
+			stopPlaying = true;
+			Kamcord.StopRecording();		
+			Kamcord.ShowView();
+
+		}
+
 	}
 
 	float prevTime = 0f;
@@ -69,6 +104,7 @@ public class TapForBPM : MonoBehaviour {
 		currentBpm.text =  globalBpm+ " ";
 
 		bpmAnimation.speed = ((bpmAnimation.speed * (float)TapForBPM.globalBpm) / (float)TapForBPM.prevGlobalBpm);
+		//TapForBPM.prevGlobalBpm = TapForBPM.globalBpm;
 
 	}
 

@@ -13,7 +13,7 @@ public class SearchForMp3Files{
 		//call DirSearch here with a starting directory
 
 		audio_files = new List<Audio_File> ();
-		DirSearch(persDataPath);//+"\\Music"
+		DirSearch(persDataPath+"\\Music");//+"\\Music"
 		//serialization goes here :D
 		//after you get all mp3, create a tree with it and serialize the tree
 
@@ -33,6 +33,10 @@ public class SearchForMp3Files{
 					if (!f.EndsWith(".mp3")){
 						continue;
 					}
+					//check if its bitrate can be converted to an int and less than 128
+					//check i get an int or long as length and do something
+					//thank you Lord
+
 					audio_files.Add(new Audio_File(f));
 				}
 				DirSearch(d);

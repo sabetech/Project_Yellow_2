@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//[RequireComponent (typeof (AudioSource))]
+[RequireComponent (typeof (AudioSource))]
 public class MP3_Player : MonoBehaviour {
 
 	public static MP3_Player mp3Instance = null;
+	public string currentMp3File = "";
+	public MP3File currentMp3Instance = null;
 
 	public static MP3_Player getMp3Instance(){
 
@@ -12,7 +14,7 @@ public class MP3_Player : MonoBehaviour {
 
 	}
 
-	void Awake (){
+	void Awake (){ //singleton things
 
 		if ((mp3Instance != null) && (mp3Instance != this)) {
 				
@@ -36,13 +38,17 @@ public class MP3_Player : MonoBehaviour {
 		
 	}
 
-	void getInstance(){
-
-
+	void play_audio(MP3File mp3file){
 
 	}
 
-	void play_audio(MP3File mp3file){
+	/// <summary>
+	/// 	Play the current mp3 song currently in the audio clip in the audio source
+	/// </summary>
+
+	void play_audio(){
+
+		audio.Play ();
 
 	}
 
@@ -57,11 +63,16 @@ public class MP3_Player : MonoBehaviour {
 			audio.Stop (); //if the audio is playing, stop it...
 		}
 
+		this.currentMp3File = audioFilename;
+		this.currentMp3Instance = getID3TagInfo (audioFilename);
+
 		string url = "file:///" + audioFilename;
+
 		WWW wwwAudioClip = new WWW (url);
+
 		yield return wwwAudioClip;
 
-		audio.clip = wwwAudioClip.GetAudioClip (true,true);
+		audio.clip = wwwAudioClip.GetAudioClip (true,true); //do this for local songs
 
 		audio.Play ();
 	}
@@ -97,13 +108,14 @@ public class MP3_Player : MonoBehaviour {
 		if (mp3ID3TagInfo.hasID3v1) {
 			
 			mp3file = new MP3File(mp3ID3TagInfo);
+			Debug.Log ("I am ID3v1");
 			
 		}else if (mp3ID3TagInfo.hasID3v2){
-			
+			Debug.Log ("I am ID3v2");
 			mp3file = new MP3File(mp3ID3TagInfo);
 			
 		}
-		
+
 		return mp3file;
 	}
 }

@@ -48,8 +48,13 @@
   <ItemGroup>
      <Compile Include="Assets\BeatTimerTest.cs" />
      <Compile Include="Assets\Boogie.cs" />
+     <Compile Include="Assets\CameraLookAt.cs" />
+     <Compile Include="Assets\CloseMusicWindow.cs" />
+     <Compile Include="Assets\DanceGameManager.cs" />
+     <Compile Include="Assets\DancerAI.cs" />
      <Compile Include="Assets\DancerWindow.cs" />
      <Compile Include="Assets\FT_FreeSample\Script\Button.cs" />
+     <Compile Include="Assets\GamePlayRec.cs" />
      <Compile Include="Assets\Kamcord\ExampleScripts\CaptureFrame.cs" />
      <Compile Include="Assets\Kamcord\ExampleScripts\RecordingGUI.cs" />
      <Compile Include="Assets\MenuControls.cs" />
@@ -172,6 +177,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\NextWindow.cs" />
+     <Compile Include="Assets\PopulateMusicWindow.cs" />
      <Compile Include="Assets\PreviousWindow.cs" />
      <Compile Include="Assets\RecordGame.cs" />
      <Compile Include="Assets\ResetSpeedSlider.cs" />

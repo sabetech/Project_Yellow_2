@@ -17,19 +17,17 @@ public class NextWindow : MonoBehaviour {
 	
 	}
 
-	public static int currentWindow = 0;
-	void OnClick(){
-
-
+	public static int currentWindow = 0;//checked
+	void OnClick() {
 
 		gridies [currentWindow].SetActive (false);
 		gridies [++currentWindow].SetActive (true);
 
-		if (currentWindow > 1) {
+		if (currentWindow > 0) {
 
 			this.gameObject.SetActive(false);		
 
 		}
-		Debug.Log ("go next "+currentWindow);
+
 	}
 }

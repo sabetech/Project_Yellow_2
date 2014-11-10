@@ -7,6 +7,7 @@ public class MP3File : Audio_File{
 	string artist;
 	string year;
 	string album;
+	string bitrate;
 
 	public MP3File(string mp3Filename, string title, 
 	                  long length, 
@@ -28,8 +29,9 @@ public class MP3File : Audio_File{
 	}
 	
 	//this is the constructor i will be using most often
-	public MP3File(mp3info.mp3info mp3Information){
+	public MP3File(mp3info.mp3info mp3Information):base(mp3Information.filename){
 		this.length = mp3Information.length;
+		this.bitrate = mp3Information.mpeg.Bitrate;
 		
 		if (mp3Information.hasID3v1) {
 			this.title = mp3Information.id3v1.Title;
@@ -54,5 +56,17 @@ public class MP3File : Audio_File{
 
 	public string getMp3FileName(){
 		return base.getAudioFileName ();
+	}
+
+	public long getAudioLength(){
+
+		return this.length;
+
+	}
+
+	public string getBitrate(){
+
+		return this.bitrate;
+
 	}
 }

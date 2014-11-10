@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -10,10 +11,14 @@ public class SetupButton : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
+
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
 	
 	}
 
@@ -21,16 +26,13 @@ public class SetupButton : MonoBehaviour {
 	List<Audio_File> audio_files;
 	void OnClick(){
 
+		Debug.Log ("has audio files "+PlayerPrefs.GetInt ("has_audio_files", 0));
+
 		if (PlayerPrefs.GetInt ("has_audio_files", 0) == 0) {
 			//put this in a coroutine
-			searchForMp3s ();
-			//serialize audio_files
-			serializeAudioFiles ();
-			//remember to put in an IEnumerator to mimic loading ...
-			//After you are done setting up, load the next scene
-			Application.LoadLevel (1);
-		} else {
-			Application.LoadLevel(1);				
+			StartCoroutine(searchForMp3s ());
+
+			closePopUp.SetBool("close", false);
 		}
 
 	}
@@ -43,7 +45,9 @@ public class SetupButton : MonoBehaviour {
 				BinaryFormatter binformat = new BinaryFormatter();
 				binformat.Serialize(audioFilesStream, audio_files);
 			}
+
 			PlayerPrefs.SetInt ("has_audio_files",1);
+
 		}catch(IOException){
 
 		}catch(Exception){
@@ -52,21 +56,9 @@ public class SetupButton : MonoBehaviour {
 
 	}
 
-	void OnGUI(){
 
-		/*if (finished) {
+	IEnumerator searchForMp3s() {
 
-			foreach (Audio_File audiofile in audio_files) {
-
-				GUILayout.Label (audiofile.getAudioFileName()+" ");
-			}
-		} else {
-			//GUILayout.Label("Searching...");		
-		}*/
-
-	}
-
-	void searchForMp3s(){
 		SearchForMp3Files searchDir = new SearchForMp3Files ();
 		closePopUp.SetBool ("close", false);
 		string persDataPath = Application.persistentDataPath;
@@ -75,7 +67,13 @@ public class SetupButton : MonoBehaviour {
 		searchDir.searchDirectory(preferredDir);
 		
 		audio_files = searchDir.getAudioFiles ();
-		
+
+		serializeAudioFiles ();
+		//remember to put in an IEnumerator to mimic loading ...
+		//After you are done setting up, load the next scene
+		Application.LoadLevel (1);
+
+		yield return new WaitForEndOfFrame ();
 
 
 	}

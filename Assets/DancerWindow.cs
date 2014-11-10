@@ -6,6 +6,7 @@ public class DancerWindow : MonoBehaviour {
 
 	public GameObject nextBtn;
 	public GameObject previousBtn;
+	public GameObject backTomainMenu;
 	public GameObject myHeading;
 	public string theWindowHeading;
 	// Use this for initialization
@@ -21,10 +22,19 @@ public class DancerWindow : MonoBehaviour {
 	void OnEnable(){
 
 		nextBtn.SetActive (true);
+		backTomainMenu.SetActive (true);
 
 		if (NextWindow.currentWindow > 0) {
 				
 			previousBtn.SetActive (true);
+
+		} else {
+		
+			if (NextWindow.currentWindow < 0){
+
+				NextWindow.currentWindow = 0;
+
+			}
 
 		}
 

@@ -1,25 +1,33 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Runtime_Code\UIScripts\DanceDropSurface.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Runtime_Code\UIScripts\TapForBPM.cs">
     <Files>
-      <File FileName="Assets\Boogie.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Runtime_Code\MP3_Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\SetupButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\MP3_Player.cs" Line="111" Column="26" />
       <File FileName="Assets\Scripts\Runtime_Code\SearchForMp3Files.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Runtime_Code\InitGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\DanceOffClick.cs" Line="1" Column="1" />
-      <File FileName="Assets\MenuControls.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Runtime_Code\Dance_GrdItem.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Runtime_Code\UIScripts\FetchMusicList.cs" Line="1" Column="1" />
       <File FileName="Assets\DancerWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\DanceDropSurface.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\MusicCollection.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\PlayNow.cs" Line="1" Column="1" />
+      <File FileName="Assets\PopulateMusicWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets\CloseMusicWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\BackToMainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\DanceGameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Classes\Audio_File.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Classes\MP3File.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Libraries\MP3\mp3info.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Libraries\MP3\ID3v2.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Libraries\MP3\MPEG.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Libraries\MP3\ID3v1.cs" Line="1" Column="1" />
+      <File FileName="Assets\DancerAI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Boogie.cs" Line="1" Column="1" />
       <File FileName="Assets\NextWindow.cs" Line="1" Column="1" />
       <File FileName="Assets\PreviousWindow.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\DanceDragItem.cs" Line="112" Column="5" />
-      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\DanceDropSurface.cs" Line="63" Column="36" />
-      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\TapForBPM.cs" Line="91" Column="55" />
-      <File FileName="Assets\NGUI\Scripts\Interaction\UISlider.cs" Line="168" Column="1" />
-      <File FileName="Assets\ResetSpeedSlider.cs" Line="23" Column="1" />
-      <File FileName="Assets\NGUI\Scripts\Interaction\UIDraggablePanel.cs" Line="12" Column="20" />
+      <File FileName="Assets\MenuControls.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\DanceDragItem.cs" Line="247" Column="31" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\TapForBPM.cs" Line="33" Column="30" />
+      <File FileName="Assets\CameraLookAt.cs" Line="11" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

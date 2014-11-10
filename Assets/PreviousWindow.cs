@@ -29,8 +29,5 @@ public class PreviousWindow : MonoBehaviour {
 			
 		}
 
-		Debug.Log ("value of currentWin "+NextWindow.currentWindow);
-
-
 	}
 }
