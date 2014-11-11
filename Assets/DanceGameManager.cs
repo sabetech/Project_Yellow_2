@@ -21,8 +21,10 @@ public class DanceGameManager : MonoBehaviour {
 
 	private MP3_Player myMp3Player;
 	long musicLength;
+	private bool isVerseAI = false;
+	public GameObject[] danceCharacters;
 
-	public static int turn = 0;
+	public static int turn = 0; //used for determining whose turn it is to dance
 
 	void Start () {
 		//First First, check if the song is long enough to be danced to.
@@ -37,7 +39,6 @@ public class DanceGameManager : MonoBehaviour {
 			Debug.Log ("The title name is " + myMp3Player.currentMp3Instance.getTitle ());
 			Debug.Log ("The file name is " + myMp3Player.currentMp3Instance.getAudioFileName ());
 			Debug.Log ("the bitrate is " + myMp3Player.currentMp3Instance.getBitrate ());
-			Debug.Log ("What ID3Tag r u? ");
 		}
 
 		if (musicLength < 60L) {
@@ -46,12 +47,24 @@ public class DanceGameManager : MonoBehaviour {
 		}
 		//get playerprefs infomation ie character, dance, AI or Not,
 
-		Debug.Log ("Is verse AI? " + PlayerPrefs.GetInt ("isVerseAI", 0));
-		if (PlayerPrefs.GetInt ("isVerseAI", 0) == 1) {
-				
-			Debug.Log ("We are playing we AI"); //so setup the dance floor to accomodate AI
 
+		Debug.Log ("Is verse AI? " + PlayerPrefs.GetInt ("isVerseAI", 0));
+		Debug.Log ("What Dancer? " + PlayerPrefs.GetInt ("Dancer" ,0));
+
+		if (PlayerPrefs.GetInt ("isVerseAI", 0) == 1) {
+			isVerseAI = true;			
+			//instantiate player and AI
+		} else {
+			//instantiate the only player				
 		}
+
+		//position camera 
+
+
+
+
+
+
 
 	}
 	

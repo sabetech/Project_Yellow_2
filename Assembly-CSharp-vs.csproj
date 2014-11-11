@@ -49,10 +49,12 @@
      <Compile Include="Assets\BeatTimerTest.cs" />
      <Compile Include="Assets\Boogie.cs" />
      <Compile Include="Assets\CameraLookAt.cs" />
+     <Compile Include="Assets\CharacterSelection.cs" />
      <Compile Include="Assets\CloseMusicWindow.cs" />
      <Compile Include="Assets\DanceGameManager.cs" />
      <Compile Include="Assets\DancerAI.cs" />
      <Compile Include="Assets\DancerWindow.cs" />
+     <Compile Include="Assets\Dancer_Player.cs" />
      <Compile Include="Assets\FT_FreeSample\Script\Button.cs" />
      <Compile Include="Assets\GamePlayRec.cs" />
      <Compile Include="Assets\Kamcord\ExampleScripts\CaptureFrame.cs" />

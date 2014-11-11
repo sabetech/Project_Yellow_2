@@ -5,6 +5,7 @@ public class MenuControls : MonoBehaviour {
 
 	public GameObject nextBtn, previousBtn, HomeBtn;
 	public string whichWindow;
+	public UILabel menuHeader;
 	// Use this for initialization
 	void Start () {
 
@@ -22,6 +23,8 @@ public class MenuControls : MonoBehaviour {
 			nextBtn.SetActive (true);
 			previousBtn.SetActive (false);
 			HomeBtn.SetActive (true);
+
+			menuHeader.text = "Choose Dancer";
 		
 		}
 
@@ -30,6 +33,8 @@ public class MenuControls : MonoBehaviour {
 			nextBtn.SetActive (false);
 			previousBtn.SetActive (true);
 			HomeBtn.SetActive (true);
+
+			menuHeader.text = "Choose Dance";
 
 		}
 
