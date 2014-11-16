@@ -4,27 +4,31 @@ using System.Collections;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections.Generic;
+using System.Linq;
 
 
 public class MusicCollection : MonoBehaviour{
 
 	public List<Audio_File> audioLibrary;
-	public GameObject mp3Player;
+	public static MusicCollection musicCollectionInstance;
+	//public GameObject mp3Player;
+	//public bool isDoneLoadingMusic = false;
 
-	void Start (){
+	void Awake(){
+
 		DontDestroyOnLoad (this.gameObject);
-
-		try{
-			//this part has to finish loading before any music related stuff happens
-			fetchMp3Files ();
-			int audioIndex = UnityEngine.Random.Range (0, audioLibrary.Count - 1);
-			mp3Player.GetComponent<MP3_Player> ().play_audio_file(audioLibrary[audioIndex].getAudioFileName());
-
-		}catch(Exception){
-
-		}
-
+		musicCollectionInstance = this;
+	
 	}
+
+
+	public static MusicCollection GetMusicCollectionInstance(){
+
+		return musicCollectionInstance;
+	
+	}
+
+
 
 	public void fetchMp3Files(){
 		//unserialize and populate the audioLibrary;
@@ -39,5 +43,14 @@ public class MusicCollection : MonoBehaviour{
 			Debug.Log (ioex);
 			//remember if the user doesn't have a song, use a default song
 		}
+	}
+
+	public List<Audio_File> search(string searchString){
+
+		var searchResultList = (List<Audio_File>)audioLibrary.Where (aud =>
+		                   			 aud.getAudioFileName().Contains(
+					searchString)).ToList();
+
+		return searchResultList;
 	}
 }

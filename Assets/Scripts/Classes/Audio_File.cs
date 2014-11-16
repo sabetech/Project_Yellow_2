@@ -25,6 +25,38 @@ public class Audio_File {
 		return this.filename;
 	}
 
+	public string getShortAudioFilename(){
+
+		int backSlashIndex = this.filename.LastIndexOf (@"\");
+		int forwardSlashIndex = this.filename.LastIndexOf (@"/");
+		string shortFileName = "";
+
+		if (backSlashIndex != -1) {
+		
+			shortFileName = this.filename.Substring(backSlashIndex);
+			if (shortFileName.Length >= 20){
+
+				shortFileName = shortFileName.Substring(0, 20)+"...";
+
+			}
+
+		}
+
+		if (forwardSlashIndex != -1) {
+				
+			shortFileName = this.filename.Substring(backSlashIndex);
+			if (shortFileName.Length >= 20){
+				
+				shortFileName = shortFileName.Substring(0, 20)+"...";
+				
+			}
+		
+		}
+
+		return shortFileName;
+	
+	}
+
 	public void setAudioFileName(string filename){
 		this.filename = filename;
 	}

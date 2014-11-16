@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Audio_VisualizerMainMenu.cs" />
      <Compile Include="Assets\BeatTimerTest.cs" />
      <Compile Include="Assets\Boogie.cs" />
      <Compile Include="Assets\CameraLookAt.cs" />
@@ -55,6 +56,7 @@
      <Compile Include="Assets\DancerAI.cs" />
      <Compile Include="Assets\DancerWindow.cs" />
      <Compile Include="Assets\Dancer_Player.cs" />
+     <Compile Include="Assets\DisplayTitle.cs" />
      <Compile Include="Assets\FT_FreeSample\Script\Button.cs" />
      <Compile Include="Assets\GamePlayRec.cs" />
      <Compile Include="Assets\Kamcord\ExampleScripts\CaptureFrame.cs" />
@@ -183,6 +185,7 @@
      <Compile Include="Assets\PreviousWindow.cs" />
      <Compile Include="Assets\RecordGame.cs" />
      <Compile Include="Assets\ResetSpeedSlider.cs" />
+     <Compile Include="Assets\SaveSettings.cs" />
      <Compile Include="Assets\Scripts\Classes\Audio_File.cs" />
      <Compile Include="Assets\Scripts\Classes\Dance.cs" />
      <Compile Include="Assets\Scripts\Classes\MP3File.cs" />
@@ -210,6 +213,7 @@
      <Compile Include="Assets\Scripts\Runtime_Code\UIScripts\PlayNow.cs" />
      <Compile Include="Assets\Scripts\Runtime_Code\UIScripts\SetupButton.cs" />
      <Compile Include="Assets\Scripts\Runtime_Code\UIScripts\TapForBPM.cs" />
+     <Compile Include="Assets\SearchForAudio.cs" />
      <Compile Include="Assets\buttonClick2.cs" />
      <Compile Include="Assets\stopRec.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />

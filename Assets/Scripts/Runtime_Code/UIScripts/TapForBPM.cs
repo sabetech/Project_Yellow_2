@@ -9,7 +9,7 @@ public class TapForBPM : MonoBehaviour {
 	private int bpmAnimationHash;
 	public static decimal globalBpm = 125.000m;
 	public static decimal prevGlobalBpm = 125.000m;
-	private float timeleft = 45f;
+	private float timeleft = 45f;//total time to be used currently at 45 mins for test
 
 	public UISprite timeLeftSprite;//set this in settings :D 2mins left
 
@@ -20,14 +20,6 @@ public class TapForBPM : MonoBehaviour {
 		bpmAnimation = GetComponentInChildren<Animator> ();
 		bpmAnimationHash = Animator.StringToHash ("BeatRythmLoop");
 
-		// InvokeRepeating("countDown", )
-
-	}
-
-	void countDown(){
-
-
-	
 	}
 
 	float previousTimetime = 0f;
@@ -44,15 +36,15 @@ public class TapForBPM : MonoBehaviour {
 			return;
 		}
 
-		timeleft = Math.Abs ((Time.time - previousTimetime) - 45f); 
+		timeleft = Math.Abs ((Time.time - previousTimetime) - timeleft); 
 
-		timeLeftSprite.fillAmount = (1 * timeleft) / 45f;
+		timeLeftSprite.fillAmount = (1 * timeleft) / timeleft;
 
 
 		if (timeleft <= 2f) {
 			stopPlaying = true;
-			Kamcord.StopRecording();		
-			Kamcord.ShowView();
+			//Kamcord.StopRecording();		
+			//Kamcord.ShowView();
 
 		}
 
@@ -82,7 +74,7 @@ public class TapForBPM : MonoBehaviour {
 
 		//if the current time difference and the previous time difference r very wide
 		if (timeDiff >= (prevTimeDiff * 2)) {
-			Debug.Log ("u have rested u taps");	
+			Debug.Log ("u have rested ur taps");	
 			isFirstClick = true;
 		}
 
@@ -104,7 +96,12 @@ public class TapForBPM : MonoBehaviour {
 		currentBpm.text =  globalBpm+ " ";
 
 		bpmAnimation.speed = ((bpmAnimation.speed * (float)TapForBPM.globalBpm) / (float)TapForBPM.prevGlobalBpm);
-		//TapForBPM.prevGlobalBpm = TapForBPM.globalBpm;
+		float dancerAnimatorSpeed = Dancer_Player.getDancerPlayerInstance ().dancerAnimator.speed;
+
+		//modify dance speed here!!!;
+		dancerAnimatorSpeed = ((dancerAnimatorSpeed * (float)TapForBPM.globalBpm) / (float)TapForBPM.prevGlobalBpm);
+
+		TapForBPM.prevGlobalBpm = TapForBPM.globalBpm;
 
 	}
 

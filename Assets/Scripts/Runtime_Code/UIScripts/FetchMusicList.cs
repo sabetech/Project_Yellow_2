@@ -8,7 +8,8 @@ using System.Collections;
 public class FetchMusicList : MonoBehaviour {
 
 	public GameObject musicChoiceWindow;
-	private Animator musicChoiceWin;
+	private Transform musicChoiceWindowTransform;
+
 	public GameObject playNowButton;
 	public GameObject contextLabel;
 
@@ -18,8 +19,7 @@ public class FetchMusicList : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		musicChoiceWin = musicChoiceWindow.GetComponent<Animator> ();
-
+		musicChoiceWindowTransform = musicChoiceWindow.transform;
 
 	}
 	
@@ -31,7 +31,8 @@ public class FetchMusicList : MonoBehaviour {
 
 	void showWindow(){
 
-		musicChoiceWin.SetBool ("MusicSlideInOut",true);
+		TweenPosition.Begin(musicChoiceWindow,0.5f, new Vector3(-809.9696f, 406.3738f, 0f));
+
 		this.gameObject.SetActive (false);
 		playNowButton.SetActive (false);
 

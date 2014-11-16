@@ -60,11 +60,13 @@ namespace mp3info
 			{
 				nameSize = 4;
 			}
-			
-			id3v2Frame f1 = new id3v2Frame();
-			f1.frameName = new string (br.ReadChars(nameSize));
-			f1.MajorVersion = version;
 
+			id3v2Frame f1 = null;
+			try{
+				f1 = new id3v2Frame();
+				f1.frameName = new string (br.ReadChars(nameSize));
+				f1.MajorVersion = version;
+			}catch(Exception){}
 
 			// in order to check for padding I have to build a string of 4 (or 3 if v2.2) null bytes
 			// there must be a better way to do this
@@ -89,31 +91,34 @@ namespace mp3info
 			{
 				// only have 3 bytes for size ;
 
+				try{
+					tagSize = br.ReadChars(3);    // I use this to read the bytes in from the file
+					bytes = new int[3];      // for bit shifting
+					newSize = 0;    // for the final number
+					// The ID3v2 tag size is encoded with four bytes
+					// where the most significant bit (bit 7)
+					// is set to zero in every byte,
+					// making a total of 28 bits.
+					// The zeroed bits are ignored
+					//
+					// Some bit grinding is necessary.  Hang on.
+				
 
-				tagSize = br.ReadChars(3);    // I use this to read the bytes in from the file
-				bytes = new int[3];      // for bit shifting
-				newSize = 0;    // for the final number
-				// The ID3v2 tag size is encoded with four bytes
-				// where the most significant bit (bit 7)
-				// is set to zero in every byte,
-				// making a total of 28 bits.
-				// The zeroed bits are ignored
-				//
-				// Some bit grinding is necessary.  Hang on.
-			
+					bytes[3] =  tagSize[2]             | ((tagSize[1] & 1) << 7) ;
+					bytes[2] = ((tagSize[1] >> 1) & 63) | ((tagSize[0] & 3) << 6) ;
+					bytes[1] = ((tagSize[0] >> 2) & 31) ;
 
-				bytes[3] =  tagSize[2]             | ((tagSize[1] & 1) << 7) ;
-				bytes[2] = ((tagSize[1] >> 1) & 63) | ((tagSize[0] & 3) << 6) ;
-				bytes[1] = ((tagSize[0] >> 2) & 31) ;
-
-				newSize  = ((UInt64)bytes[3] |
-					((UInt64)bytes[2] << 8)  |
-					((UInt64)bytes[1] << 16));
-				//End Dan Code
-			}
+					newSize  = ((UInt64)bytes[3] |
+						((UInt64)bytes[2] << 8)  |
+						((UInt64)bytes[1] << 16));
+					//End Dan Code
+				}catch(Exception){
 
 
-			else if (version == 3 || version == 4)
+				}
+
+
+			}else if (version == 3 || version == 4)
 			{
 				// version  2.4
 				tagSize = br.ReadChars(4);    // I use this to read the bytes in from the file

@@ -11,7 +11,8 @@ public class InitGame : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		Debug.Log ("PlaerPref "+PlayerPrefs.GetInt ("has_audio_files", 0));
+		//this side has to change to... try to find the file that has my audio file.. if u fail ... get a new one
+		Debug.Log ("PlayerPref "+PlayerPrefs.GetInt ("has_audio_files", 0));
 		if (PlayerPrefs.GetInt ("has_audio_files", 0) == 0) {
 		
 			Instantiate (loading);
@@ -22,6 +23,8 @@ public class InitGame : MonoBehaviour {
 			StartCoroutine(goToMainMenu());
 
 		}
+
+
 
 	}
 	
@@ -61,7 +64,7 @@ public class InitGame : MonoBehaviour {
 		
 		yield return new WaitForEndOfFrame ();
 
-		Application.LoadLevel (1);
+		StartCoroutine(goToMainMenu());
 
 	}
 	
@@ -76,9 +79,12 @@ public class InitGame : MonoBehaviour {
 		return tmpDirectoryPath;
 	}
 
-	IEnumerator goToMainMenu(){
-		//splash screen ... :D
-		yield return new WaitForSeconds (1);
+	IEnumerator goToMainMenu() {
+		//then deserilize and go to main menu
+
+		MusicCollection.GetMusicCollectionInstance ().fetchMp3Files ();
+
+		yield return new WaitForSeconds (0.5f);
 
 		Application.LoadLevel (1);
 

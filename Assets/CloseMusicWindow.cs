@@ -2,15 +2,15 @@
 using System.Collections;
 
 public class CloseMusicWindow : MonoBehaviour {
-
-	private Animator musicChoiceWin;
-	public GameObject playNowBtn, chooseMusicBtn;
+	
+	public GameObject playNowBtn, chooseMusicBtn, lblContextLabel;
 
 	public GameObject mainMenuWin;
+	public GameObject musicChoiceWin;
 	// Use this for initialization
 	void Start () {
 
-		musicChoiceWin = GetComponentInParent<Animator> ();
+
 
 	}
 
@@ -22,9 +22,11 @@ public class CloseMusicWindow : MonoBehaviour {
 
 	void closeWindow(){
 		
-		musicChoiceWin.SetBool ("MusicSlideInOut",false);
+		TweenPosition.Begin (musicChoiceWin, 0.5f, new Vector3 (351.5482f, 406.3738f, 0f));
+	
 		playNowBtn.SetActive (true);
 		chooseMusicBtn.SetActive (true);
+		lblContextLabel.SetActive (true);
 		StartCoroutine (showCurrentMenuWin ());
 
 	}

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System;
 
 [RequireComponent (typeof (AudioSource))]
 public class MP3_Player : MonoBehaviour {
@@ -27,9 +29,14 @@ public class MP3_Player : MonoBehaviour {
 		}
 		DontDestroyOnLoad (this.gameObject);
 	}
+
+	private List<Audio_File> audLib;
 	void Start () {
 
+		audLib = MusicCollection.GetMusicCollectionInstance().audioLibrary;
 
+		play_audio_file (audLib[UnityEngine.Random.Range (0, audLib.Count - 1)].getAudioFileName());
+	
 	}
 
 
@@ -50,6 +57,13 @@ public class MP3_Player : MonoBehaviour {
 
 		audio.Play ();
 
+	}
+
+	public void restart_Audio(){
+
+		stop_audio ();
+		play_audio ();
+	
 	}
 
 	public void play_audio_file(string filename){
@@ -75,12 +89,24 @@ public class MP3_Player : MonoBehaviour {
 		audio.clip = wwwAudioClip.GetAudioClip (true,true); //do this for local songs
 
 		audio.Play ();
+
+		//raise audio is playing custom event here
+		onAudioPlayed (EventArgs.Empty);
+
+	}
+
+	IEnumerator play_audio_online(string url, bool stream){
+
+		yield return null;//wait for rasheeda :-)
+
 	}
 
 	public void stop_audio(){
+
 		if (audio.isPlaying) {
 			audio.Stop (); //if the audio is playing, stop it...
 		}
+
 	}
 
 	public void volume_up(){
@@ -118,4 +144,17 @@ public class MP3_Player : MonoBehaviour {
 
 		return mp3file;
 	}
+
+	protected virtual void onAudioPlayed(EventArgs e){
+
+		EventHandler handler = audioPlayed;
+		if (handler != null) {
+				
+			handler(this, e);
+
+		}
+
+	}
+
+	public event EventHandler audioPlayed;
 }

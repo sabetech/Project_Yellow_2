@@ -414,7 +414,7 @@ namespace mp3info
 					StringBuilder sb = new StringBuilder();
 					byte textEncoding;
 					
-
+					try{
 					for (int i = 1; i < bytes.Length; i++)
 					{
 						if (i == 0)
@@ -430,6 +430,7 @@ namespace mp3info
 						//this.Title = myString.Substring(1);
 						this.Title = sb.ToString();
 					}
+					}catch(Exception){}
 				}
 			
 		
@@ -539,7 +540,7 @@ namespace mp3info
 					StringBuilder sb = new StringBuilder();
 					byte [] bytes = ((id3v2Frame)this.framesHash["COM"]).frameContents;
 					byte textEncoding;
-
+					try{
 					for (int i = 0; i < bytes.Length; i++)
 					{
 						if (i == 0)
@@ -553,6 +554,8 @@ namespace mp3info
 						}
 						this.Comment = sb.ToString();
 					}
+
+					}catch(Exception){}
 				}
 			}
 			else 
@@ -564,21 +567,21 @@ namespace mp3info
 					StringBuilder sb = new StringBuilder();
 					byte textEncoding;
 					
+					try{
+						for (int i = 1; i < bytes.Length; i++){
+							if (i == 0) {
+								//read the text encoding.
+								textEncoding = bytes[i];
+							}
+							else {
+								sb.Append(System.Convert.ToChar(bytes[i]));
+							}
+							
+							//this.Title = myString.Substring(1);
+							this.Title = sb.ToString();
+						}
+					}catch(Exception){
 
-					for (int i = 1; i < bytes.Length; i++)
-					{
-						if (i == 0)
-						{
-							//read the text encoding.
-							textEncoding = bytes[i];
-						}
-						else
-						{
-							sb.Append(System.Convert.ToChar(bytes[i]));
-						}
-						
-						//this.Title = myString.Substring(1);
-						this.Title = sb.ToString();
 					}
 				}
 			
