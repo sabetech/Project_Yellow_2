@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.IO;
 
 [RequireComponent (typeof (AudioSource))]
 public class MP3_Player : MonoBehaviour {
@@ -19,7 +20,7 @@ public class MP3_Player : MonoBehaviour {
 	void Awake (){ //singleton things
 
 		if ((mp3Instance != null) && (mp3Instance != this)) {
-				
+			Destroy (this.gameObject);
 			return;
 		
 		} else {
@@ -28,6 +29,7 @@ public class MP3_Player : MonoBehaviour {
 		
 		}
 		DontDestroyOnLoad (this.gameObject);
+
 	}
 
 	private List<Audio_File> audLib;
@@ -53,16 +55,18 @@ public class MP3_Player : MonoBehaviour {
 	/// 	Play the current mp3 song currently in the audio clip in the audio source
 	/// </summary>
 
-	void play_audio(){
+	IEnumerator play_audio(){
 
+		yield return new WaitForEndOfFrame ();
 		audio.Play ();
+
 
 	}
 
 	public void restart_Audio(){
 
 		stop_audio ();
-		play_audio ();
+		StartCoroutine (play_audio ());
 	
 	}
 
@@ -73,11 +77,21 @@ public class MP3_Player : MonoBehaviour {
 	}
 
 	IEnumerator play_audio_coroutine(string audioFilename){
+
+		//check if file name exists before you continue koraa
+		if (!File.Exists (audioFilename)) {
+				
+			Debug.Log("Thrown an error");
+			return false;
+		}
+
+
 		if (audio.isPlaying) {
 			audio.Stop (); //if the audio is playing, stop it...
 		}
 
 		this.currentMp3File = audioFilename;
+
 		this.currentMp3Instance = getID3TagInfo (audioFilename);
 
 		string url = "file:///" + audioFilename;
@@ -125,6 +139,12 @@ public class MP3_Player : MonoBehaviour {
 	//Supports Mp3 files only for now... 
 	
 	MP3File getID3TagInfo(string filename){
+
+		if (!File.Exists (filename)) {
+			Debug.Log("Throw Similar error");
+			return null;
+		}
+
 		//check for when any of the info has no value
 		mp3info.mp3info mp3ID3TagInfo = new mp3info.mp3info (filename);
 		

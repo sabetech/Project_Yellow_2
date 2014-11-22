@@ -28,8 +28,6 @@ public class MusicCollection : MonoBehaviour{
 	
 	}
 
-
-
 	public void fetchMp3Files(){
 		//unserialize and populate the audioLibrary;
 		try{
@@ -49,7 +47,7 @@ public class MusicCollection : MonoBehaviour{
 
 		var searchResultList = (List<Audio_File>)audioLibrary.Where (aud =>
 		                   			 aud.getAudioFileName().Contains(
-					searchString)).ToList();
+					searchString)).ToList(); //fix this fix this fix this
 
 		return searchResultList;
 	}

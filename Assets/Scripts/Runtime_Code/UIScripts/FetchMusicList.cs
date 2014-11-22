@@ -10,9 +10,6 @@ public class FetchMusicList : MonoBehaviour {
 	public GameObject musicChoiceWindow;
 	private Transform musicChoiceWindowTransform;
 
-	public GameObject playNowButton;
-	public GameObject contextLabel;
-
 	public GameObject mainMenuWin;
 
 
@@ -31,15 +28,11 @@ public class FetchMusicList : MonoBehaviour {
 
 	void showWindow(){
 
-		TweenPosition.Begin(musicChoiceWindow,0.5f, new Vector3(-809.9696f, 406.3738f, 0f));
-
-		this.gameObject.SetActive (false);
-		playNowButton.SetActive (false);
-
+		TweenPosition.Begin(musicChoiceWindow,0.5f, new Vector3(-809.9696f, 406.3738f, 0f));//this is bad I know ... will be fixed later
 
 		//also set the current main menu window to inactive
 		mainMenuWin.SetActive (false);
-		contextLabel.SetActive (false);
+
 
 	}
 

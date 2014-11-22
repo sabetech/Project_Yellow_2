@@ -91,6 +91,7 @@
      <None Include="Assets\Plugins\Android\kamcord\res\values-de\kamcord_strings.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_activity.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_background.xml" />
+     <None Include="Assets\StreamingAssets\build_info.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\GUI - Text Shader (AlphaClip).shader" />
      <None Include="Assets\Plugins\Android\kamcord\res\values-land\kamcord_styles.xml" />

@@ -14,12 +14,12 @@ public class DanceDragItem : MonoBehaviour
 	bool mSticky = false;
 	Transform mParent;
 
-	public Animator dancerAnimator;
+	private Animator dancerAnimator;
 	AnimatorStateInfo myAnimatorStateInfo;
 	int danceHash;
 
 	public GameObject groundEffect;
-	public Transform dancerTransform;
+	private Transform dancerTransform;
 	GameObject theActivePlayer;
 
 
@@ -27,12 +27,16 @@ public class DanceDragItem : MonoBehaviour
 
 		theActivePlayer = DanceGameManager.activeDancePlayer;
 
+		try{
 		//get information about the human player so these draggable dances can work on him/her
 		dancerAnimator = theActivePlayer.GetComponent<Animator> ();
 		dancerTransform = theActivePlayer.transform;
 
 		danceHash = Animator.StringToHash (dance);
 		myAnimatorStateInfo = dancerAnimator.GetCurrentAnimatorStateInfo(0);
+		}catch(Exception){
+				
+		}
 	
 	}
 
@@ -182,8 +186,6 @@ public class DanceDragItem : MonoBehaviour
 		
 		}
 
-
-
 	}
 
 	//this must be a coroutine;;
@@ -193,7 +195,6 @@ public class DanceDragItem : MonoBehaviour
 		float variance = calcVariance (avg);
 
 		float stdD = (float)Math.Sqrt (variance);
-
 
 	}
 
@@ -218,6 +219,7 @@ public class DanceDragItem : MonoBehaviour
 				
 			varianceNums[i] = (float)Math.Pow((timeDiffs[i] - avg), 2);
 			sum += varianceNums[i];
+
 		}
 
 		return sum / ((currentTimeDiffIndex <= 15) ? currentTimeDiffIndex : 15);
@@ -252,7 +254,7 @@ public class DanceDragItem : MonoBehaviour
 		Debug.Log ("Awesome Code running");
 		//do score calculation here and determine how much to award the player
 		//awesomeEffect goes here!
-		StartCoroutine (showEffect());
+		//StartCoroutine (showEffect());
 
 	}
 

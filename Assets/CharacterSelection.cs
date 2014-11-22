@@ -15,7 +15,17 @@ public class CharacterSelection : MonoBehaviour {
 		myCurrentVector = transform.localScale;
 
 		dancerCenter = GetComponentInParent<UICenterOnChild> ();
-	
+
+		dancerCenter.Recenter ();
+
+		if (this.gameObject == dancerCenter.centeredObject) {
+
+			focusedCharacter = Instantiate(dancer, dancerPosition.position, dancerPosition.localRotation) as GameObject;		
+			PlayerPrefs.SetInt("chosenPlayer", focusedCharacter.GetComponent<Dancer_Player>().characterNumber);
+			this.instantiated = true;
+
+		}
+
 	}
 
 	bool instantiated = false;
@@ -33,6 +43,7 @@ public class CharacterSelection : MonoBehaviour {
 				return;
 
 			focusedCharacter = Instantiate(dancer, dancerPosition.position, dancerPosition.localRotation) as GameObject;
+			PlayerPrefs.SetInt("chosenPlayer", focusedCharacter.GetComponent<Dancer_Player>().characterNumber);
 			this.instantiated = true;
 		
 		} else {
@@ -47,10 +58,7 @@ public class CharacterSelection : MonoBehaviour {
 
 			}
 
-
 		}
-
-
 
 	}
 

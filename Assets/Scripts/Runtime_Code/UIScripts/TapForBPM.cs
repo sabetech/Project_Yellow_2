@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Globalization;
 
 public class TapForBPM : MonoBehaviour {
 
@@ -9,16 +10,66 @@ public class TapForBPM : MonoBehaviour {
 	private int bpmAnimationHash;
 	public static decimal globalBpm = 125.000m;
 	public static decimal prevGlobalBpm = 125.000m;
-	private float timeleft = 45f;//total time to be used currently at 45 mins for test
+	private float timeleft;//total time to be used currently at 45 secs for test
+	private float totalTime;
+	private float swapTimer;
 
 	public UISprite timeLeftSprite;//set this in settings :D 2mins left
 
+	private static TapForBPM gameTimerInstance = null;
+
+	void Awake(){
+
+		gameTimerInstance = this;
+		string danceTime = PlayerPrefs.GetString("danceTime", "2");
+		try{
+
+			totalTime = float.Parse (danceTime, CultureInfo.InvariantCulture.NumberFormat) * 60f;
+			timeleft =  float.Parse (danceTime, CultureInfo.InvariantCulture.NumberFormat) * 60f;
+			swapTimer = float.Parse (danceTime, CultureInfo.InvariantCulture.NumberFormat) * 60f;
+			Debug.Log (danceTime);
+
+			Debug.Log ("lenght of time amdancing "+ totalTime);
+
+		}catch(Exception){
+
+			totalTime = 120f;
+			timeleft = 120f;
+			swapTimer = 120f;
+		
+		}
+
+	}
+
+	public static TapForBPM getGameTimerInstance(){
+
+		return gameTimerInstance;
+	
+	}
+	
 	// Use this for initialization
 	void Start () {
 
 		currentBpm = GetComponentInChildren<UILabel> ();
 		bpmAnimation = GetComponentInChildren<Animator> ();
 		bpmAnimationHash = Animator.StringToHash ("BeatRythmLoop");
+		try{
+			currentBpm.text = globalBpm +"";
+			/*decimal audTempo = MP3_Player.getMp3Instance ().currentMp3Instance.getTempo ();
+
+			if (audTempo == 0m) {
+				
+				currentBpm.text = globalBpm + "";
+				
+			} else {
+				
+				currentBpm.text = audTempo + "";
+				
+			}*/
+
+		}catch(Exception){
+			Debug.Log ("yet to get heree");		
+		}
 
 	}
 
@@ -36,16 +87,29 @@ public class TapForBPM : MonoBehaviour {
 			return;
 		}
 
-		timeleft = Math.Abs ((Time.time - previousTimetime) - timeleft); 
+		timeleft = Math.Abs ((Time.time - previousTimetime) - totalTime); 
 
-		timeLeftSprite.fillAmount = (1 * timeleft) / timeleft;
+		timeLeftSprite.fillAmount = (1 * timeleft) / totalTime;
 
-
-		if (timeleft <= 2f) {
+		if (timeleft <= 0.1f) {
 			stopPlaying = true;
-			//Kamcord.StopRecording();		
-			//Kamcord.ShowView();
 
+			//throw an event to stop the game
+			//disable the animator for the tempo visual
+			GetComponentInChildren<Animator>().enabled = false;
+			hideBPMInfo();
+			onGameFinished(EventArgs.Empty);
+			
+		}
+
+		//over here, check the time left is 60 seconds already
+		//if so try and swap players ie if it is versus AI
+
+		if ((swapTimer - timeleft) >=  60f){//make this 1 min
+
+			swapTimer = timeleft;
+			//throw an event to swap player
+			onTurnChanged(EventArgs.Empty);
 		}
 
 	}
@@ -96,10 +160,12 @@ public class TapForBPM : MonoBehaviour {
 		currentBpm.text =  globalBpm+ " ";
 
 		bpmAnimation.speed = ((bpmAnimation.speed * (float)TapForBPM.globalBpm) / (float)TapForBPM.prevGlobalBpm);
-		float dancerAnimatorSpeed = Dancer_Player.getDancerPlayerInstance ().dancerAnimator.speed;
+		float dancerAnimatorSpeed = DanceGameManager.activeAnimator.speed;
 
-		//modify dance speed here!!!;
+		//modify dance speed here!!!; here here
 		dancerAnimatorSpeed = ((dancerAnimatorSpeed * (float)TapForBPM.globalBpm) / (float)TapForBPM.prevGlobalBpm);
+
+		DanceGameManager.changeSpeedOfActiveDance (dancerAnimatorSpeed);
 
 		TapForBPM.prevGlobalBpm = TapForBPM.globalBpm;
 
@@ -124,5 +190,43 @@ public class TapForBPM : MonoBehaviour {
 		return sum/((currentIndex <= 15) ? currentIndex : 15);
 
 	}
+
+	public void hideBPMInfo(){
+
+		this.gameObject.SetActive (false);
+	
+	}
+
+	public void bringBackBPMInfo(){
+
+		this.gameObject.SetActive (true);
+
+	}
+
+
+	protected virtual void onTurnChanged(EventArgs e){
+
+		EventHandler handler = turnChanged;
+		if (handler != null) {
+				
+			handler(this, e);
+
+		}
+
+	}
+
+	protected virtual void onGameFinished(EventArgs e){
+
+		EventHandler handler = gameFinished;
+		if (handler != null) {
+				
+			handler(this, e);
+		
+		}
+
+	}
+	
+	public event EventHandler turnChanged;
+	public event EventHandler gameFinished;
 	
 }

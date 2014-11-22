@@ -53,6 +53,13 @@ public class DancerAI : Dancer_Player {
 	// Update is called once per frame
 	void Update () {
 
+		if (!DanceGameManager.isGamePlaying)
+			return;
+
+		if (DanceGameManager.turn == 0) //its not your turn
+			return;
+
+
 		currentTime = Time.time;
 		currentTimeDiff = currentTime - prevTimeTime;
 
@@ -75,8 +82,6 @@ public class DancerAI : Dancer_Player {
 
 			prevTimeTime = Time.time;
 		}
-
-
 
 	}
 }

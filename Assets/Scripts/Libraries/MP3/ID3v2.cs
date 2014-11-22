@@ -476,23 +476,27 @@ namespace mp3info
 					}
 				}
 				if(this.framesHash.Contains("TYE"))
-				{
-					StringBuilder sb = new StringBuilder();
-					byte [] bytes = ((id3v2Frame)this.framesHash["TYE"]).frameContents;
-					byte textEncoding;
+				{	
+					try{
+						StringBuilder sb = new StringBuilder();
+						byte [] bytes = ((id3v2Frame)this.framesHash["TYE"]).frameContents;
+						byte textEncoding;
 
-					for (int i = 0; i < bytes.Length; i++)
-					{
-						if (i == 0)
+						for (int i = 0; i < bytes.Length; i++)
 						{
-							//read the text encoding.
-							textEncoding = bytes[i];
+							if (i == 0)
+							{
+								//read the text encoding.
+								textEncoding = bytes[i];
+							}
+							else
+							{
+								sb.Append(System.Convert.ToChar(bytes[i]));
+							}
+							this.Year = sb.ToString();
 						}
-						else
-						{
-							sb.Append(System.Convert.ToChar(bytes[i]));
-						}
-						this.Year = sb.ToString();
+					}catch(Exception){
+
 					}
 				}
 				if(this.framesHash.Contains("TRK"))

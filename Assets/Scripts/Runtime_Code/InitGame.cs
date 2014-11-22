@@ -12,9 +12,9 @@ public class InitGame : MonoBehaviour {
 	void Start () {
 
 		//this side has to change to... try to find the file that has my audio file.. if u fail ... get a new one
-		Debug.Log ("PlayerPref "+PlayerPrefs.GetInt ("has_audio_files", 0));
-		if (PlayerPrefs.GetInt ("has_audio_files", 0) == 0) {
-		
+
+		//if (PlayerPrefs.GetInt ("has_audio_files", 0) == 0) {
+		if (!File.Exists(Application.persistentDataPath + "/audio_files_ref.dat")){
 			Instantiate (loading);
 			StartCoroutine (searchForMp3s ());
 
@@ -38,8 +38,6 @@ public class InitGame : MonoBehaviour {
 				BinaryFormatter binformat = new BinaryFormatter();
 				binformat.Serialize(audioFilesStream, audio_files);
 			}
-			
-			PlayerPrefs.SetInt ("has_audio_files",1);
 			
 		}catch(IOException){
 			

@@ -38,6 +38,12 @@ public class MenuControls : MonoBehaviour {
 
 		}
 
+		if (whichWindow == "main") {
+				
+			menuHeader.text = "Main Menu";
+		
+		}
+
 
 	}
 

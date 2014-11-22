@@ -61,4 +61,19 @@ public class Audio_File {
 		this.filename = filename;
 	}
 
+	/*public decimal getTempo(){
+
+		if (this.tempo == null) 
+			return 0m;		
+		
+		return this.tempo;
+
+	}*/ 
+
+	public void setTempo(int tempo){
+
+		this.tempo = tempo;
+
+	}
+
 }
