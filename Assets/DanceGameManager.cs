@@ -30,7 +30,7 @@ public class DanceGameManager : MonoBehaviour {
 	public Transform humanPos, aiPos;
 	public static GameObject activeDancePlayer = null;
 	
-	private string[] aiDancemoves = {"Alkaeda", "pushDowns", "grabLeftnRight", "legShuffleLeftnRight"};//this should be more dynamic as AI becomes more complex and more dances are made
+	private string[] aiDancemoves = {"Alkaeda", "pushDowns", "grabLeftnRight", "legShuffleLeftnRight", "pushUps"};//this should be more dynamic as AI becomes more complex and more dances are made
 
 	public static int turn = 0; //used for determining whose turn it is to dance
 	public static bool isGamePlaying = true;
@@ -50,6 +50,8 @@ public class DanceGameManager : MonoBehaviour {
 	public GameObject endGameWindow_vrsAI;
 	GameObject myAudioSource;
 
+	string kamcordVideoTitle = "";
+
 	void Awake(){
 		if (danceGameManager == null) {
 
@@ -63,7 +65,6 @@ public class DanceGameManager : MonoBehaviour {
 			}
 		}
 
-		Debug.Log ("Do you load again?");
 
 		//First First, check if the song is long enough to be danced to.
 		//if the song is more than 1 min its ok
@@ -73,21 +74,20 @@ public class DanceGameManager : MonoBehaviour {
 		TapForBPM.getGameTimerInstance ().turnChanged += turnChanged;
 		TapForBPM.getGameTimerInstance ().gameFinished += danceFinished;
 
-		Debug.Log ("Do you get here??");
-		Debug.Log (myMp3Player);
+
+
 		//Find Main Camera
 		mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
 		if (myMp3Player != null) {
 			//restart whatever song that is playing...
-			Debug.Log ("Do you get here too??");
 
 			myMp3Player.restart_Audio ();
+			myMp3Player.stopFetchingIfGameStarted();
 
-			Debug.Log ("Do you get here tthree??");
 		
-			Debug.Log ("The title name is " + myMp3Player.currentMp3Instance.getTitle ());
-			Debug.Log ("The file name is " + myMp3Player.currentMp3Instance.getAudioFileName ());
-			Debug.Log ("the bitrate is " + myMp3Player.currentMp3Instance.getBitrate ());
+			//Debug.Log ("The title name is " + myMp3Player.currentMp3Instance.getTitle ());
+			//Debug.Log ("The file name is " + myMp3Player.currentMp3Instance.getAudioFileName ());
+			//Debug.Log ("the bitrate is " + myMp3Player.currentMp3Instance.getBitrate ());
 
 			//find the audio source
 			//bring it to where the main camera is
@@ -100,14 +100,14 @@ public class DanceGameManager : MonoBehaviour {
 			//and the audio source object
 		}
 
-		Debug.Log ("So what happens here");
+
 		//get playerprefs infomation ie character, dance, AI or Not,
 
 		int selectedCharacter = PlayerPrefs.GetInt("chosenPlayer", 0);
 
 		if (PlayerPrefs.GetInt ("isVerseAI", 0) == 1) {//PlayerPrefs.GetInt ("isVerseAI", 0) == 1
 			isVersusAI = true;
-
+			kamcordVideoTitle = "Dancing with the Boogie Loops Azonto AI";
 			//instantiate player and AI
 			humanGameObject = Instantiate(danceCharacters[selectedCharacter], humanPos.transform.position, Quaternion.identity) as GameObject;
 			
@@ -118,7 +118,7 @@ public class DanceGameManager : MonoBehaviour {
 			aiGameObject.AddComponent<DancerAI>().AvailableDances = aiDancemoves;
 						
 		} else {
-			
+			kamcordVideoTitle = "Great Azonto Moves with Boogie Loops";
 			//instantiate the only player
 			humanGameObject = Instantiate(danceCharacters[selectedCharacter], humanPos.transform.position, Quaternion.identity) as GameObject;
 			humanGameObject.AddComponent<DanceDropSurface>();
@@ -158,6 +158,7 @@ public class DanceGameManager : MonoBehaviour {
 	}
 
 	void Start(){
+
 		turn = 0;
 		isGamePlaying = true;
 		Kamcord.StartRecording ();
@@ -169,6 +170,9 @@ public class DanceGameManager : MonoBehaviour {
 
 		if (activeDancePlayer != null)
 			mainCamera.transform.LookAt (trackingBodyPart);
+
+		//be checking the length of the audio ... if audio length is up restart
+
 
 	}
 
@@ -191,6 +195,7 @@ public class DanceGameManager : MonoBehaviour {
 
 			if (turn == 0){
 				//give the human player's speed to AI;
+				aiGameObject.GetComponent<Animator>().enabled = true;
 				aiGameObject.GetComponent<Animator> ().speed = activeAnimator.speed;
 				//hide the dance moves widgies
 				hideMovesWidgies();
@@ -212,7 +217,7 @@ public class DanceGameManager : MonoBehaviour {
 
 				showPlayerVitals();
 				humanGameObject.GetComponent<Animator>().enabled = true;
-
+				aiGameObject.GetComponent<Animator>().enabled = false;
 				//change camera focus
 				positionCamera_reset(humanGameObject);
 
@@ -229,15 +234,17 @@ public class DanceGameManager : MonoBehaviour {
 		hidePlayerVitals ();
 		hideAIVitals ();
 
+		Pause.pauseInstance.hidePauseButton ();
+
 	}
 
-	void hideMovesWidgies(){
+	public void hideMovesWidgies(){
 		//hide the dance moves widgies
 		HideMovesWidgets.getMovesWidgetInstance().hideMovesWidgets();
 
 	}
 
-	void showMovesWidgies(){
+	public void showMovesWidgies(){
 
 		HideMovesWidgets.getMovesWidgetInstance ().bringBackWidgets ();
 	
@@ -293,11 +300,22 @@ public class DanceGameManager : MonoBehaviour {
 
 	void danceFinished(object sender, EventArgs e){
 
+		Kamcord.Snapshot ("screenShot.png");
+
 		endGame ();
+
+	}
+	
+
+
+	void SnapshotReadyAtFilePath(string filepath){
+
+		Debug.Log (filepath);
 	
 	}
 
 	void endGame(){
+		Kamcord.SetVideoTitle (kamcordVideoTitle);
 
 		//disabling dancers
 		humanGameObject.GetComponent<Animator> ().enabled = false;
@@ -325,6 +343,40 @@ public class DanceGameManager : MonoBehaviour {
 
 	}
 
+	public void pauseGame(){
+		MP3_Player.mp3Instance.pause_audio ();
+		hideMovesWidgies ();
+
+		//disabling dancers
+		humanGameObject.GetComponent<Animator> ().enabled = false;
+		if(aiGameObject != null)//that is saying if i played with AI
+			aiGameObject.GetComponent<Animator> ().enabled = false;
+
+		TapForBPM.getGameTimerInstance ().bpmAnimation.enabled = false;
+		TapForBPM.getGameTimerInstance ().pausePlaying = true;
+
+		Kamcord.Pause ();
+		Time.timeScale = 0f;
+	
+	}
+
+	public void resumeGame(){
+		MP3_Player.mp3Instance.play_Paused_audio ();
+		showMovesWidgies ();
+
+		//disabling dancers
+		humanGameObject.GetComponent<Animator> ().enabled = true;
+		if(aiGameObject != null)//that is saying if i played with AI
+			aiGameObject.GetComponent<Animator> ().enabled = true;
+
+		TapForBPM.getGameTimerInstance ().bpmAnimation.enabled = true;
+		TapForBPM.getGameTimerInstance ().pausePlaying = false;
+
+		Kamcord.Resume ();
+		Time.timeScale = 1f;
+	
+	}
+
 	public static void changeSpeedOfActiveDance(float danceSpeed){
 
 		activeAnimator.speed = danceSpeed;
@@ -333,7 +385,23 @@ public class DanceGameManager : MonoBehaviour {
 
 	public void changeScene(int sceneNum){
 		myAudioSource.transform.parent = null;
+
+		restart ();
+
 		Application.LoadLevel (sceneNum);
+
+	}
+
+	public void restart(){
+		MP3_Player.mp3Instance.play_Paused_audio ();
+		//disabling dancers
+		humanGameObject.GetComponent<Animator> ().enabled = true;
+		if(aiGameObject != null)//that is saying if i played with AI
+			aiGameObject.GetComponent<Animator> ().enabled = true;
+		
+		TapForBPM.getGameTimerInstance ().bpmAnimation.enabled = true;
+		TapForBPM.getGameTimerInstance ().pausePlaying = false;
+		Time.timeScale = 1f;
 
 	}
 }

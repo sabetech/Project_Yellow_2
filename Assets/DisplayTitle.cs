@@ -4,15 +4,24 @@ using System;
 
 public class DisplayTitle : MonoBehaviour {
 
+	UILabel songTitle;
 	// Use this for initialization
 	void Start () {
 	
-		MP3_Player.getMp3Instance ().audioPlayed += audioPlayed;
-
+		//MP3_Player.getMp3Instance ().audioPlayed += audioPlayed;
+		songTitle = GetComponent<UILabel> ();
 	}
 
-	void audioPlayed(object sender, EventArgs e){
-		string theTitle = MP3_Player.getMp3Instance ().currentMp3Instance.getTitle ();
+
+	void Update(){
+		if (CurrentAudioPlaying.currentAudioPlaying != null)
+			songTitle.text = CurrentAudioPlaying.currentAudioPlaying;
+	
+	}
+
+	/*void audioPlayed(object sender, EventArgs e){
+		string theTitle = MP3_Player.getMp3Instance ().currentMp3File;
+
 		if (theTitle.Length >= 30) {
 
 			GetComponent<UILabel> ().text = theTitle.Substring (0, 30)+" ...";		
@@ -30,7 +39,7 @@ public class DisplayTitle : MonoBehaviour {
 		}
 
 		
-	}
+	}*/
 
 
 }

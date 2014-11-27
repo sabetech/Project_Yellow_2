@@ -6,7 +6,7 @@ using System.Globalization;
 public class TapForBPM : MonoBehaviour {
 
 	private UILabel currentBpm;
-	private Animator bpmAnimation;
+	public Animator bpmAnimation;
 	private int bpmAnimationHash;
 	public static decimal globalBpm = 125.000m;
 	public static decimal prevGlobalBpm = 125.000m;
@@ -27,9 +27,9 @@ public class TapForBPM : MonoBehaviour {
 			totalTime = float.Parse (danceTime, CultureInfo.InvariantCulture.NumberFormat) * 60f;
 			timeleft =  float.Parse (danceTime, CultureInfo.InvariantCulture.NumberFormat) * 60f;
 			swapTimer = float.Parse (danceTime, CultureInfo.InvariantCulture.NumberFormat) * 60f;
-			Debug.Log (danceTime);
+			//Debug.Log (danceTime);
 
-			Debug.Log ("lenght of time amdancing "+ totalTime);
+			//Debug.Log ("lenght of time amdancing "+ totalTime);
 
 		}catch(Exception){
 
@@ -75,10 +75,14 @@ public class TapForBPM : MonoBehaviour {
 
 	float previousTimetime = 0f;
 	bool stopPlaying = false;
+	public bool pausePlaying = false;
 	// Update is called once per frame
 	void Update () {
 
 		if (stopPlaying)
+			return;
+
+		if (pausePlaying)
 			return;
 
 		if (previousTimetime <= 0f) {

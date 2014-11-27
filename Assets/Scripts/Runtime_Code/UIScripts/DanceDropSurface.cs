@@ -21,6 +21,7 @@ public class DanceDropSurface : MonoBehaviour {
 
 	void OnDrop (GameObject go)
 	{
+		//Debug.Log ("Hey whats up");
 		DragDropItem ddo = go.GetComponent<DragDropItem> ();
 
 		string theDance = go.GetComponentInChildren<DanceDragItem> ().dance;

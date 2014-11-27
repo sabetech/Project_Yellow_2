@@ -3,6 +3,7 @@ using System.Collections;
 
 public class AICreativity_AtEnd : MonoBehaviour {
 
+	public GameObject aiTotals;
 	// Use this for initialization
 	void Start () {
 	
@@ -15,7 +16,8 @@ public class AICreativity_AtEnd : MonoBehaviour {
 
 	void OnEnable(){
 
-		GetComponent<UILabel> ().text = DanceGameManager.danceGameManager.aiGameObject.GetComponent<DancerAI> ().calculateCreativityIndex()+"";          
+		GetComponent<UILabel> ().text = (50 - DanceGameManager.danceGameManager.aiGameObject.GetComponent<DancerAI> ().calculateCreativityIndex()) + "/50";          
+		aiTotals.GetComponent<AITotal_AtEnd> ().calcAiTotal ();
 
 	}
 }

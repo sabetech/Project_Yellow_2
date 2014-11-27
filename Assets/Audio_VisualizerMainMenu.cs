@@ -8,24 +8,22 @@ public class Audio_VisualizerMainMenu : MonoBehaviour {
 	private int frequencyChannel = 0;
 	public int signalAmplitude = 2;
 	private float overAllSample;
+	private UISprite audioLevel;
 
 	// Use this for initialization
 	void Start () {
 
-		mainWindow = GetComponentInChildren<UISprite> ();
+		audioLevel = GetComponent<UISprite> ();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		//AudioListener.GetSpectrumData (samples,0, FFTWindow.Hamming);
-
-		//overAllSample = samples [32] * 1000;
-
-		//mainWindow.color = new Color(overAllSample, samples[13] * 1000, samples[54] * 1000, 1);
-
+		AudioListener.GetSpectrumData (samples,0, FFTWindow.Hamming);
 	
+		audioLevel.fillAmount = samples [0] + samples [0] + samples [0] + samples [0] +samples [0] + samples [0] + samples [0];
+
 	}
 
 

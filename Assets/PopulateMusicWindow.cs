@@ -13,9 +13,20 @@ public class PopulateMusicWindow : MonoBehaviour {
 	public GameObject gridItemParent;
 	public GameObject audioFileGridItem;
 
+	public GameObject gridOnlineItemParent;
+	public GameObject onlineAudioGridItem;
+
 	private MusicCollection musicCollection;
+	private List<Audio_File> currentSubAudioLibrary; //this is got from search results
+	private List<Audio_File> currentOnlineAudioLibrary;
+
 	public int currentStartNumber =0;
-	public int currentFinishNumber = 20;
+	public int currentFinishNumber = 10;
+
+	public UILabel lblSearchResults;
+
+	public bool maxSongsReached;
+
 
 	void Awake(){
 
@@ -37,8 +48,9 @@ public class PopulateMusicWindow : MonoBehaviour {
 
 	}
 
-	public void populateMusicWindow(){//nad advisable
+	public void populateMusicWindow(){ //nad advisable if you don't set limits Your Ram is in Danger... not like sheep or anything .. whatever
 
+		currentSubAudioLibrary = musicCollection.audioLibrary;
 		StartCoroutine(showMp3Files (musicCollection.audioLibrary));
 
 	}
@@ -46,14 +58,22 @@ public class PopulateMusicWindow : MonoBehaviour {
 	//over loaded :D
 	public void populateMusicWindow (List<Audio_File> audFiles, int start, int limit){
 
+		currentSubAudioLibrary = audFiles;
 		StartCoroutine (showMp3Files (audFiles, start, limit));
 
 	}
 
 	public void populateMusicWindow(int start, int limit) {
 
-		StartCoroutine(showMp3Files (musicCollection.audioLibrary, start, limit));
+		StartCoroutine(showMp3Files (currentSubAudioLibrary, start, limit));
 
+	}
+
+	public void populateOnlineMusicWindow(List<Audio_File> onlineAudios){
+
+		currentOnlineAudioLibrary = onlineAudios;
+		StartCoroutine (showOnlineAudios (currentOnlineAudioLibrary));
+	
 	}
 
 	//fix this function(); i am about to do so now :D
@@ -68,27 +88,37 @@ public class PopulateMusicWindow : MonoBehaviour {
 		
 		}
 
+		lblSearchResults.text = audiofiles.Count + " Songs";
+
 		yield return new WaitForEndOfFrame ();
 
 		//some safety check
-		if ((start + finish) > audiofiles.Count) {
+		if (finish >= audiofiles.Count) {
 				
-			finish = audiofiles.Count - start;
+			finish = audiofiles.Count;
+			maxSongsReached = true;
+	
+		} else {
+
+			maxSongsReached = false;
 		
 		}
 
-		Debug.Log ("Start "+start);
-		Debug.Log ("finsih" + finish);
+		currentStartNumber = start;
+		currentFinishNumber = finish;
+
+		onPageChanged (EventArgs.Empty);
 
 		for (int i=start; i < finish; i++) {
 
 			GameObject gridItem = NGUITools.AddChild (gridItemParent, audioFileGridItem);
-			mp3info.mp3info mp3information = new mp3info.mp3info (audiofiles [i].getAudioFileName ());
+			//mp3info.mp3info mp3information = new mp3info.mp3info (audiofiles [i].getAudioFileName ());
 
 			MusicClick mc = gridItem.GetComponent<MusicClick> ();
-			mc.setAudioFileName (audiofiles [i].getAudioFileName ());
+			mc.setAudioFile (audiofiles [i]);
+			mc.isLocalAudio = true;
 
-			try {
+			/*try {
 				mp3information.ReadAll ();
 
 				if (mp3information.hasID3v1) {
@@ -144,7 +174,16 @@ public class PopulateMusicWindow : MonoBehaviour {
 				}
 
 
+			}*/
+
+			string filename = audiofiles [i].getShortAudioFilename();
+			
+			if (filename.Length == 0){
+				gridItem.GetComponentInChildren<UILabel>().text = "Unknown Title";
+			}else{
+				gridItem.GetComponentInChildren<UILabel>().text = filename;
 			}
+			
 			yield return null;
 
 			if (gridItem.GetComponentInChildren<UILabel>().text == ""){
@@ -163,5 +202,70 @@ public class PopulateMusicWindow : MonoBehaviour {
 		gridItemParent.GetComponent<UIGrid> ().Reposition ();
 
 	}
+
+
+	IEnumerator showOnlineAudios(List<Audio_File> myOnlineAudios){
+		GameObject[] music_items = GameObject.FindGameObjectsWithTag ("onlineMusic");
+		
+		List<GameObject> musicitems = music_items.ToList ();
+		if (musicitems.Count > 0) {
+			
+			musicitems.ForEach (music => Destroy (music));		
+			
+		}
+		yield return new WaitForEndOfFrame ();
+
+		for (int i = 0; i < myOnlineAudios.Count; i++) {
+				
+			GameObject onlineGridItem = NGUITools.AddChild(gridOnlineItemParent, onlineAudioGridItem);
+			MusicClick mc = onlineGridItem.GetComponent<MusicClick> ();
+
+			mc.setAudioFile (myOnlineAudios [i]);
+			mc.isLocalAudio = false;
+
+			string filename = myOnlineAudios [i].getWebTitle();
+		
+			if (filename.Length == 0){
+				onlineGridItem.GetComponentInChildren<UILabel>().text = "Unknown Title";
+			}else{
+				if (filename.Length > 20){
+					filename = filename.Substring(0,20);
+				}
+				onlineGridItem.GetComponentInChildren<UILabel>().text = filename;
+			}
+			
+			yield return null;
+			
+			if (onlineGridItem.GetComponentInChildren<UILabel>().text == ""){
+				
+				onlineGridItem.GetComponentInChildren<UILabel>().text = "Unknown Title";
+				
+			}
+			
+			gridOnlineItemParent.transform.parent.GetComponent<UIDraggablePanel>().ResetPosition();
+			gridOnlineItemParent.GetComponent<UIGrid> ().Reposition ();
+			
+		}
+		
+		yield return new WaitForEndOfFrame ();
+		gridOnlineItemParent.transform.parent.GetComponent<UIDraggablePanel>().ResetPosition();
+		gridOnlineItemParent.GetComponent<UIGrid> ().Reposition ();
+
+
+	}
+
+
+	public virtual void onPageChanged(EventArgs e){
+		
+		EventHandler handler = pageChanged;
+		if (handler != null) {
+			
+			handler(this, e);
+			
+		}
+		
+	}
+	
+	public event EventHandler pageChanged;
 	
 }

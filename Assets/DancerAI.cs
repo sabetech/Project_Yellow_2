@@ -14,14 +14,6 @@ public class DancerAI : Dancer_Player {
 
 	//check whether it is the turn of the AI to dance
 
-	enum aiDanceStates{
-
-		enhanceCreativity, //when current creativity is higher than opponent
-		beatScore,
-		increaseEnergy
-
-	}
-
 	public string[] AvailableDances; //this will change once we have different Major dances
 	private int[] danceHashes; //this for speed
 
@@ -34,8 +26,8 @@ public class DancerAI : Dancer_Player {
 		danceHashes = new int[AvailableDances.Length];
 		initialDanceMove = Random.Range (0, 2);
 	
-		//get time unit time difference for the music
-		timeDifference = 60f / (float)TapForBPM.globalBpm; 
+		//get unit time difference for the music
+		timeDifference = unitTimeDiff;
 
 		for (int i=0; i<AvailableDances.Length; i++) {
 				
@@ -48,7 +40,7 @@ public class DancerAI : Dancer_Player {
 	float prevTimeTime = 0f;
 	float currentTimeDiff,currentTime = 0f;
 	int currentBeatWaitTime = 0;
-	int preferredBeatWaitTime = 4;
+	int preferredBeatWaitTime = 4;//an array
 
 	// Update is called once per frame
 	void Update () {
@@ -73,6 +65,8 @@ public class DancerAI : Dancer_Player {
 
 				//change the dance move of AI
 				int nextDance = Random.Range(0, danceHashes.Length-1);
+
+				//int tempNextDance = danceHashes[nextDance];
 				Debug.Log (AvailableDances[nextDance]);
 				this.changeDance(danceHashes[nextDance], 0.1f);
 

@@ -17,6 +17,8 @@ public class CloseSettings : MonoBehaviour {
 	}
 
 	void OnClick(){
+		if (UpdateMusicDB.isSearching)
+			return;
 
 		settingsWindow.SetActive (false);
 		showAllWidgies ();

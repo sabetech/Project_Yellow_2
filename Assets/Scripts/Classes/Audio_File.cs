@@ -10,6 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class Audio_File {
 
 	string filename;
+	string webTitle;
 	int tempo; //in BPM
 	//in the future we will include file type ... ie if we start supporting other audio files
 
@@ -17,8 +18,23 @@ public class Audio_File {
 		this.filename = filename;
 	}
 
+	public Audio_File(string filename, string webTitle){
+
+		this.filename = filename;
+		this.webTitle = webTitle;
+
+	}
+
 	public Audio_File(){
 
+	}
+
+	public void setWebTitle(string webtitle){
+		this.webTitle = webtitle;
+	}
+
+	public string getWebTitle(){
+		return this.webTitle;
 	}
 
 	public string getAudioFileName(){
@@ -33,7 +49,7 @@ public class Audio_File {
 
 		if (backSlashIndex != -1) {
 		
-			shortFileName = this.filename.Substring(backSlashIndex);
+			shortFileName = this.filename.Substring(backSlashIndex+1);
 			if (shortFileName.Length >= 20){
 
 				shortFileName = shortFileName.Substring(0, 20)+"...";
@@ -44,7 +60,7 @@ public class Audio_File {
 
 		if (forwardSlashIndex != -1) {
 				
-			shortFileName = this.filename.Substring(backSlashIndex);
+			shortFileName = this.filename.Substring(forwardSlashIndex+1);
 			if (shortFileName.Length >= 20){
 				
 				shortFileName = shortFileName.Substring(0, 20)+"...";

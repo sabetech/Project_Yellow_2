@@ -3,7 +3,9 @@ using System.Collections;
 
 public class MusicClick : MonoBehaviour {
 
-	private string audioFileName;
+	//private string audioFileName;
+	private Audio_File myAudioFile;
+	public bool isLocalAudio;
 	// Use this for initialization
 	void Start () {
 
@@ -18,20 +20,29 @@ public class MusicClick : MonoBehaviour {
 
 	void OnClick(){
 
-		play (audioFileName);
+		play (myAudioFile);
 		
 	}
 
-	public void setAudioFileName(string audFilename){
+	//public void setAudioFileName(string audFilename){
 
-		audioFileName = audFilename;
+	//	audioFileName = audFilename;
 
+	//}
+
+	public void setAudioFile(Audio_File audFile){
+	
+		myAudioFile = audFile;
+	
 	}
 
-	void play(string audio_filename){
+	void play(Audio_File audio_file){
 
-		MP3_Player.getMp3Instance ().play_audio_file (audio_filename);
-		Debug.Log (audio_filename);
+		if (this.isLocalAudio)
+			MP3_Player.getMp3Instance ().play_audio_file (audio_file);
+
+		if (!this.isLocalAudio)
+			MP3_Player.getMp3Instance ().playOnlineAudio (myAudioFile);
 
 	}
 

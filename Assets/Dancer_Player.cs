@@ -11,7 +11,7 @@ public class Dancer_Player : MonoBehaviour {
 	public int score = 0;
 	public float energy_level = 1f;
 	public float stamina = 0.2f;
-	public float currentEnergyRate = 0.011f;
+	//public float currentEnergyRate = 0.011f;
 	public Animator dancerAnimator;
 	//public static Dancer_Player dancerPlayerInstance;
 
@@ -21,27 +21,23 @@ public class Dancer_Player : MonoBehaviour {
 	Dictionary<int, int> creativityIndex;
 
 	private int thePreviousDanceHash = 0;
+	int[] danceMoves;
+
+	public float unitTimeDiff;
+	//LinkedList<int> danceMoves;
 
 	void Awake(){
 
-		//dancerPlayerInstance = this;
+
 		dancerAnimator = GetComponent<Animator> ();
 		this.creativityIndex = new Dictionary<int, int> ();
+		//this.danceMoves = new LinkedList<int> ();
+		//actually the bound is the number of danceMove
+		danceMoves = new int[5]{-1,-1,-1,-1,-1};
+
+		unitTimeDiff = 60f / (float)TapForBPM.globalBpm; 
 	
 	}
-
-	// Use this for initialization
-	void Start () {
-	
-
-
-	}
-
-	//public static Dancer_Player getDancerPlayerInstance(){
-
-	//	return dancerPlayerInstance;
-
-	//}
 
 	//The Charater logic goes here
 	/*
@@ -58,18 +54,14 @@ public class Dancer_Player : MonoBehaviour {
 	 * just brain dumping on here!
 
 	 */
-
-	// Update is called once per frame
-	void Update () {
 	
 
-
-	}
-
 	public int calculateCreativityIndex(){
+		Debug.Log (calcStdDev () * 10f);
 
-		creativity_index = (int)Math.Ceiling(calcStdDev ());
+		creativity_index = (int)Math.Ceiling(calcStdDev () * 10f);
 		Debug.Log ("Standard Dev " +calcStdDev ());
+
 		return creativity_index;
 	
 	}
@@ -107,8 +99,6 @@ public class Dancer_Player : MonoBehaviour {
 			return 0;				
 		}
 
-
-	
 	}
 
 	//you can pass the list of values as arguements instead of globals ... its nicer :-)
@@ -143,6 +133,11 @@ public class Dancer_Player : MonoBehaviour {
 
 	public event EventHandler energyChange;
 
+
+
+
+	int currentDanceMoveIndex = 0;
+	float prevTime = 0f;
 	public void changeDance(int danceHash, float transitionSpeed){
 
 
@@ -153,8 +148,8 @@ public class Dancer_Player : MonoBehaviour {
 		if (danceHash != thePreviousDanceHash) {
 
 			dancerAnimator.CrossFade (danceHash, transitionSpeed);
-			this.currentEnergyRate = 0.01f;
-			this.score += 10;
+			//this.currentEnergyRate = 0.01f;
+
 
 			//creativity index preparation starting here
 			if (this.creativityIndex.ContainsKey(danceHash)){
@@ -167,8 +162,48 @@ public class Dancer_Player : MonoBehaviour {
 
 			}
 
+			//this is to check and score you low if make predictable repeated moves
+			if (danceMoves[currentDanceMoveIndex % 5] == danceHash){
+
+				this.score += 5;
+
+			}else{
+
+				this.score += 10;
+
+			}
+
+			danceMoves[currentDanceMoveIndex % 5] = danceHash;
+
+			currentDanceMoveIndex++;
+
 			//if the time difference is the same as expected constant time diff from bpm
 			//Or x2 x4 x8 x16
+			//so basically check if the number is power of 2
+			float currentTime = Time.time;
+			float timeDiff = currentTime - prevTime;
+
+			//if this timeDiff value is a power of 2 score 20 for timing
+
+			//if timeDiff is a muliple of the unit beat time
+			if (timeDiff % unitTimeDiff <= (unitTimeDiff/4) || (timeDiff % unitTimeDiff >= (unitTimeDiff/4))){
+
+				this.score += 7;
+
+			}
+
+			//if the time diff is the product of the unitTime and a power of 2! awesome
+
+			//if (timeDiff/unitTimeDiff)
+			if ((Math.Log(timeDiff/unitTimeDiff) / Math.Log(2)) % 1 <= 0.2){
+
+				this.score += 10;//awesome you really good at this
+
+			}
+
+
+
+
 
 		}
 

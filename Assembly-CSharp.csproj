@@ -49,17 +49,26 @@
      <Compile Include="Assets\AICreativity_AtEnd.cs" />
      <Compile Include="Assets\AIScore_AtEnd.cs" />
      <Compile Include="Assets\AITotal_AtEnd.cs" />
+     <Compile Include="Assets\AudioStatus.cs" />
      <Compile Include="Assets\Audio_VisualizerMainMenu.cs" />
+     <Compile Include="Assets\BackHelp.cs" />
      <Compile Include="Assets\Boogie.cs" />
+     <Compile Include="Assets\BoogieWebApi.cs" />
      <Compile Include="Assets\CameraLookAt.cs" />
      <Compile Include="Assets\CharacterSelection.cs" />
+     <Compile Include="Assets\CloseErrMsg.cs" />
      <Compile Include="Assets\CloseMusicWindow.cs" />
      <Compile Include="Assets\CloseSettings.cs" />
+     <Compile Include="Assets\ContinuePlaying.cs" />
+     <Compile Include="Assets\CurrentAudioPlaying.cs" />
+     <Compile Include="Assets\CycleColors.cs" />
      <Compile Include="Assets\DanceAgain.cs" />
      <Compile Include="Assets\DanceGameManager.cs" />
      <Compile Include="Assets\DancerAI.cs" />
      <Compile Include="Assets\DancerWindow.cs" />
      <Compile Include="Assets\Dancer_Player.cs" />
+     <Compile Include="Assets\DataPathLocation.cs" />
+     <Compile Include="Assets\DisplayMusicPage.cs" />
      <Compile Include="Assets\DisplayTitle.cs" />
      <Compile Include="Assets\EnergyBar_AI.cs" />
      <Compile Include="Assets\EnergyBar_Visual.cs" />
@@ -68,11 +77,17 @@
      <Compile Include="Assets\GameSettings.cs" />
      <Compile Include="Assets\GetMusicChunk.cs" />
      <Compile Include="Assets\GoMainMenu.cs" />
+     <Compile Include="Assets\Help.cs" />
+     <Compile Include="Assets\HelpClose.cs" />
+     <Compile Include="Assets\HelpTopicDisplay.cs" />
      <Compile Include="Assets\HideMovesWidgets.cs" />
      <Compile Include="Assets\HumanTotal_AtEnd.cs" />
      <Compile Include="Assets\Kamcord\ExampleScripts\CaptureFrame.cs" />
      <Compile Include="Assets\Kamcord\ExampleScripts\RecordingGUI.cs" />
+     <Compile Include="Assets\KamcordGlobalInfo.cs" />
+     <Compile Include="Assets\ManageCloudAudios.cs" />
      <Compile Include="Assets\MenuControls.cs" />
+     <Compile Include="Assets\MyMusicTab.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -192,7 +207,10 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\NextWindow.cs" />
+     <Compile Include="Assets\OnlineMusic.cs" />
      <Compile Include="Assets\OpenSettings.cs" />
+     <Compile Include="Assets\Pause.cs" />
+     <Compile Include="Assets\PlayNextSong.cs" />
      <Compile Include="Assets\PlayerCreativity_AtEnd.cs" />
      <Compile Include="Assets\PlayerInfo.cs" />
      <Compile Include="Assets\PlayerScore_AtEnd.cs" />
@@ -234,9 +252,12 @@
      <Compile Include="Assets\SearchForAudio.cs" />
      <Compile Include="Assets\Share.cs" />
      <Compile Include="Assets\SliderChange.cs" />
+     <Compile Include="Assets\UpdateMusicDB.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_thumb_style.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_progress_style.xml" />
+     <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
@@ -285,6 +306,7 @@
      <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_progress.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_change_creds.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_web.xml" />
+     <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
      <None Include="Assets\Plugins\Android\kamcord\res\values-sw350dp-land\kamcord_styles.xml" />
@@ -335,6 +357,9 @@
      <None Include="Assets\Plugins\Android\kamcord\res\values-ja\kamcord_strings.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_merge_platform.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_tabbar_back_selector.xml" />
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>C:/Users/Public/Documents/Unity Projects/PROJECT_YELLOW_2/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">

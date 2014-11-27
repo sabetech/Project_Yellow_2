@@ -13,7 +13,7 @@ public class SearchForMp3Files{
 		//call DirSearch here with a starting directory
 
 		audio_files = new List<Audio_File> ();
-		DirSearch(persDataPath+"\\Music");//+"\\Music"
+		DirSearch(persDataPath);//+"\\Music"
 		//serialization goes here :D
 		//after you get all mp3, create a tree with it and serialize the tree
 
@@ -48,7 +48,7 @@ public class SearchForMp3Files{
 		}
 	}
 
-	//well in the future you can serialize after storing in arraylist
+	//well in the future you can serialize after storing in list
 	public List<Audio_File> getAudioFiles(){
 		return this.audio_files;
 	}

@@ -46,8 +46,8 @@ public class MusicCollection : MonoBehaviour{
 	public List<Audio_File> search(string searchString){
 
 		var searchResultList = (List<Audio_File>)audioLibrary.Where (aud =>
-		                   			 aud.getAudioFileName().Contains(
-					searchString)).ToList(); //fix this fix this fix this
+		                   			 aud.getAudioFileName().ToLower().Contains(
+					searchString.ToLower())).ToList(); //
 
 		return searchResultList;
 	}

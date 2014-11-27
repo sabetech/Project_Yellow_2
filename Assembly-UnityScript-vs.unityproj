@@ -54,8 +54,10 @@
      <Compile Include="Assets\FT_FreeSample\Script\VisibleBG.js" />
      <Compile Include="Assets\Loading Effect\Loading Effect.js" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_thumb_style.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_progress_style.xml" />
+     <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
@@ -104,6 +106,7 @@
      <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_seekbar_progress.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_change_creds.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_fragment_web.xml" />
+     <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
      <None Include="Assets\Plugins\Android\kamcord\res\values-sw350dp-land\kamcord_styles.xml" />
@@ -154,6 +157,9 @@
      <None Include="Assets\Plugins\Android\kamcord\res\values-ja\kamcord_strings.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\layout\z_kamcord_merge_platform.xml" />
      <None Include="Assets\Plugins\Android\kamcord\res\drawable\kamcord_tabbar_back_selector.xml" />
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>C:/Users/Public/Documents/Unity Projects/PROJECT_YELLOW_2/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">

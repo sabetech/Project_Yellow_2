@@ -1,31 +1,30 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PopulateMusicWindow.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ManageCloudAudios.cs">
     <Files>
-      <File FileName="Assets\ScoreBar_AI.cs" Line="46" Column="1" />
+      <File FileName="Assets\ScoreBar_AI.cs" Line="1" Column="1" />
       <File FileName="Assets\ScoreBar_Visual.cs" Line="1" Column="1" />
       <File FileName="Assets\PlayerCreativity_AtEnd.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Runtime_Code\UIScripts\MusicCollection.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Runtime_Code\UIScripts\DanceDropSurface.cs" Line="1" Column="1" />
-      <File FileName="Assets\DanceGameManager.cs" Line="334" Column="8" />
+      <File FileName="Assets\DanceGameManager.cs" Line="1" Column="1" />
       <File FileName="Assets\CharacterSelection.cs" Line="1" Column="1" />
-      <File FileName="Assets\DancerAI.cs" Line="4" Column="30" />
+      <File FileName="Assets\DancerAI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Runtime_Code\UIScripts\TapForBPM.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Runtime_Code\MP3_Player.cs" Line="31" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\MP3_Player.cs" Line="175" Column="3" />
       <File FileName="Assets\Audio_VisualizerMainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\PopulateMusicWindow.cs" Line="108" Column="42" />
+      <File FileName="Assets\PopulateMusicWindow.cs" Line="226" Column="44" />
       <File FileName="Assets\Scripts\Runtime_Code\InitGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Runtime_Code\SearchForMp3Files.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\MusicClick.cs" Line="1" Column="1" />
-      <File FileName="Assets\GoMainMenu.cs" Line="18" Column="53" />
+      <File FileName="Assets\Scripts\Runtime_Code\SearchForMp3Files.cs" Line="16" Column="25" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\MusicClick.cs" Line="45" Column="9" />
+      <File FileName="Assets\GoMainMenu.cs" Line="1" Column="1" />
       <File FileName="Assets\HideMovesWidgets.cs" Line="1" Column="1" />
       <File FileName="Assets\EnergyBar_Visual.cs" Line="1" Column="1" />
       <File FileName="Assets\EnergyBar_AI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\MP3File.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\Audio_File.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Classes\Audio_File.cs" Line="36" Column="15" />
       <File FileName="Assets\Scripts\Libraries\MP3\ID3v2.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Libraries\MP3\ID3v1.cs" Line="1" Column="1" />
-      <File FileName="Assets\DisplayTitle.cs" Line="1" Column="1" />
       <File FileName="Assets\OpenSettings.cs" Line="1" Column="1" />
       <File FileName="Assets\CloseSettings.cs" Line="1" Column="1" />
       <File FileName="Assets\FadeInSprite.cs" Line="1" Column="1" />
@@ -35,16 +34,39 @@
       <File FileName="Assets\PlayerInfo.cs" Line="1" Column="1" />
       <File FileName="Assets\Boogie.cs" Line="1" Column="1" />
       <File FileName="Assets\PlayerScore_AtEnd.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dancer_Player.cs" Line="129" Column="12" />
+      <File FileName="Assets\Dancer_Player.cs" Line="1" Column="1" />
       <File FileName="Assets\AIScore_AtEnd.cs" Line="1" Column="1" />
       <File FileName="Assets\AICreativity_AtEnd.cs" Line="1" Column="1" />
       <File FileName="Assets\AITotal_AtEnd.cs" Line="1" Column="1" />
       <File FileName="Assets\HumanTotal_AtEnd.cs" Line="1" Column="1" />
-      <File FileName="Assets\DanceAgain.cs" Line="17" Column="62" />
-      <File FileName="Assets\ProceedToScene.cs" Line="9" Column="29" />
-      <File FileName="Assets\NextWindow.cs" Line="21" Column="18" />
+      <File FileName="Assets\DanceAgain.cs" Line="1" Column="1" />
+      <File FileName="Assets\ProceedToScene.cs" Line="1" Column="1" />
+      <File FileName="Assets\NextWindow.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Runtime_Code\UIScripts\BackToMainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\MenuControls.cs" Line="43" Column="32" />
+      <File FileName="Assets\MenuControls.cs" Line="1" Column="1" />
+      <File FileName="Assets\GetMusicChunk.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Libraries\MP3\mp3info.cs" Line="1" Column="1" />
+      <File FileName="Assets\SearchForAudio.cs" Line="1" Column="1" />
+      <File FileName="Assets\DisplayMusicPage.cs" Line="1" Column="1" />
+      <File FileName="Assets\CloseErrMsg.cs" Line="1" Column="1" />
+      <File FileName="Assets\CycleColors.cs" Line="1" Column="1" />
+      <File FileName="Assets\Pause.cs" Line="1" Column="1" />
+      <File FileName="Assets\ContinuePlaying.cs" Line="1" Column="1" />
+      <File FileName="Assets\KamcordGlobalInfo.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlayNextSong.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\DanceDragItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\HelpTopicDisplay.cs" Line="1" Column="1" />
+      <File FileName="Assets\BackHelp.cs" Line="1" Column="1" />
+      <File FileName="Assets\HelpClose.cs" Line="1" Column="1" />
+      <File FileName="Assets\Help.cs" Line="1" Column="1" />
+      <File FileName="Assets\UpdateMusicDB.cs" Line="1" Column="1" />
+      <File FileName="Assets\MyMusicTab.cs" Line="1" Column="1" />
+      <File FileName="Assets\OnlineMusic.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Runtime_Code\UIScripts\SetupButton.cs" Line="62" Column="42" />
+      <File FileName="Assets\DisplayTitle.cs" Line="1" Column="1" />
+      <File FileName="Assets\CurrentAudioPlaying.cs" Line="1" Column="1" />
+      <File FileName="Assets\ManageCloudAudios.cs" Line="16" Column="28" />
+      <File FileName="Assets\BoogieWebApi.cs" Line="22" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

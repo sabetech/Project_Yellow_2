@@ -14,6 +14,12 @@ public class AITotal_AtEnd : MonoBehaviour {
 	}
 
 	void OnEnable(){
+
+
+	}
+
+	public void calcAiTotal(){
+
 		DancerAI aiScoreInfo = DanceGameManager.danceGameManager.aiGameObject.GetComponent<DancerAI> ();
 		GetComponent<UILabel> ().text = (aiScoreInfo.score + aiScoreInfo.creativity_index) + "";
 

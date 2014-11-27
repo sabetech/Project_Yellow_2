@@ -10,7 +10,7 @@ public class InitGame : MonoBehaviour {
 	public GameObject loading;
 	// Use this for initialization
 	void Start () {
-
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		//this side has to change to... try to find the file that has my audio file.. if u fail ... get a new one
 
 		//if (PlayerPrefs.GetInt ("has_audio_files", 0) == 0) {

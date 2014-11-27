@@ -22,15 +22,13 @@ public class SearchForAudio : MonoBehaviour {
 		MusicCollection musCollection = MusicCollection.GetMusicCollectionInstance();
 
 		List<Audio_File> searchResult = musCollection.search (searchString);
-		int limit = 20;
+		int limit = 10;
 
-		if (searchResult.Count < 20) {
+		if (searchResult.Count < limit) {
 		
 			limit = searchResult.Count;
 		
 		}
-
-		Debug.Log (searchResult.Count);
 
 		PopulateMusicWindow.getMusicWindow ().populateMusicWindow (searchResult, 0, limit);
 

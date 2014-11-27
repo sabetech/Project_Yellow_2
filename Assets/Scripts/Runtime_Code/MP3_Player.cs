@@ -9,7 +9,8 @@ public class MP3_Player : MonoBehaviour {
 
 	public static MP3_Player mp3Instance = null;
 	public string currentMp3File = "";
-	public MP3File currentMp3Instance = null;
+	public string currentMp3Instance = null;
+	public AudioClip defaultMp3File;
 
 	public static MP3_Player getMp3Instance(){
 
@@ -36,15 +37,43 @@ public class MP3_Player : MonoBehaviour {
 	void Start () {
 
 		audLib = MusicCollection.GetMusicCollectionInstance().audioLibrary;
-
-		play_audio_file (audLib[UnityEngine.Random.Range (0, audLib.Count - 1)].getAudioFileName());
-	
+		play_random_next ();
 	}
 
 
 	// Update is called once per frame
 	void Update () {	
 		
+	}
+
+
+	public void play_random_next(){
+		//StartCoroutine(play_audio_online("", true));
+
+		if (audLib == null) 
+			audLib = MusicCollection.GetMusicCollectionInstance ().audioLibrary;
+
+		if (audLib.Count < 1)
+			audLib = MusicCollection.GetMusicCollectionInstance ().audioLibrary;
+
+		if (audLib.Count > 0)
+			play_audio_file (audLib [UnityEngine.Random.Range (0, audLib.Count - 1)]);
+		else
+			play_audio (defaultMp3File);//play default track
+	
+	}
+
+	void play_audio(AudioClip defAudio){
+
+		audio.clip = defAudio;
+		StartCoroutine (play_audio());
+	
+	}
+
+	void monitorAudioProgress(){
+
+		Invoke ("restart_Audio", audio.clip.length); //replay audio when it has ended
+
 	}
 
 	void play_audio(MP3File mp3file){
@@ -57,34 +86,40 @@ public class MP3_Player : MonoBehaviour {
 
 	IEnumerator play_audio(){
 
+		if (audio.isPlaying)
+			audio.Stop ();
+
 		yield return new WaitForEndOfFrame ();
 		audio.Play ();
 
+		monitorAudioProgress ();//monitor when audio has ended
 
 	}
 
 	public void restart_Audio(){
 
+		CancelInvoke ();
 		stop_audio ();
 		StartCoroutine (play_audio ());
 	
 	}
 
-	public void play_audio_file(string filename){
+	public void play_audio_file(Audio_File filename){
 
 		StartCoroutine (play_audio_coroutine(filename));
 
 	}
 
-	IEnumerator play_audio_coroutine(string audioFilename){
+	IEnumerator play_audio_coroutine(Audio_File myAudFile){
+
+		string audioFilename = myAudFile.getAudioFileName ();
 
 		//check if file name exists before you continue koraa
 		if (!File.Exists (audioFilename)) {
 				
-			Debug.Log("Thrown an error");
+			//CloseErrMsg.errMsgInstance.showMessage();
 			return false;
 		}
-
 
 		if (audio.isPlaying) {
 			audio.Stop (); //if the audio is playing, stop it...
@@ -92,7 +127,7 @@ public class MP3_Player : MonoBehaviour {
 
 		this.currentMp3File = audioFilename;
 
-		this.currentMp3Instance = getID3TagInfo (audioFilename);
+		this.currentMp3Instance = myAudFile.getShortAudioFilename ();
 
 		string url = "file:///" + audioFilename;
 
@@ -100,20 +135,51 @@ public class MP3_Player : MonoBehaviour {
 
 		yield return wwwAudioClip;
 
-		audio.clip = wwwAudioClip.GetAudioClip (true,true); //do this for local songs
+		audio.clip = wwwAudioClip.GetAudioClip (false, true); //do this for local songs
 
 		audio.Play ();
 
+		CancelInvoke ();
+		monitorAudioProgress ();//monitor when audio has ended
+
+		CurrentAudioPlaying.currentAudioPlaying = myAudFile.getShortAudioFilename ();;
+
 		//raise audio is playing custom event here
-		onAudioPlayed (EventArgs.Empty);
+		//onAudioPlayed (EventArgs.Empty);
 
 	}
 
-	IEnumerator play_audio_online(string url, bool stream){
+	public void playOnlineAudio(Audio_File link){
 
-		yield return null;//wait for rasheeda :-)
+		//StartCoroutine(play_audio_online(link.getAudioFileName(), true));
+		StartCoroutine ("play_audio_online", link.getAudioFileName());
+
+		CurrentAudioPlaying.currentAudioPlaying = link.getWebTitle();
 
 	}
+
+
+
+	IEnumerator play_audio_online(string urlWeb){
+
+		WWW wwwOnlineAudioClip = new WWW(urlWeb);
+
+		CurrentAudioPlaying.audioStatus = "Loading Online Music - Please Wait";
+
+		yield return wwwOnlineAudioClip;//thanks rasheeda :-)
+
+		audio.clip = wwwOnlineAudioClip.GetAudioClip(false,true);
+		if (audio.isPlaying)
+			audio.Stop ();
+
+		audio.Play();
+		CurrentAudioPlaying.audioStatus = "Now Playing";
+
+		CancelInvoke ();
+		monitorAudioProgress ();//restart audio when its ends
+	}
+
+
 
 	public void stop_audio(){
 
@@ -121,6 +187,27 @@ public class MP3_Player : MonoBehaviour {
 			audio.Stop (); //if the audio is playing, stop it...
 		}
 
+	}
+
+	public void stopFetchingIfGameStarted(){
+
+		StopCoroutine ("play_audio_online");
+
+	
+	}
+
+	public void pause_audio(){
+
+		if (audio.isPlaying) {
+			audio.Pause();		
+		}
+	
+	}
+
+	public void play_Paused_audio() {
+
+		audio.Play ();
+	
 	}
 
 	public void volume_up(){
@@ -141,7 +228,7 @@ public class MP3_Player : MonoBehaviour {
 	MP3File getID3TagInfo(string filename){
 
 		if (!File.Exists (filename)) {
-			Debug.Log("Throw Similar error");
+			//Debug.Log("Throw Similar error");
 			return null;
 		}
 
