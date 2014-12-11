@@ -80,9 +80,9 @@ public class DanceGameManager : MonoBehaviour {
 		mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
 		if (myMp3Player != null) {
 			//restart whatever song that is playing...
-
-			myMp3Player.restart_Audio ();
 			myMp3Player.stopFetchingIfGameStarted();
+			myMp3Player.restart_Audio ();
+
 
 		
 			//Debug.Log ("The title name is " + myMp3Player.currentMp3Instance.getTitle ());
@@ -360,6 +360,12 @@ public class DanceGameManager : MonoBehaviour {
 	
 	}
 
+	void OnApplicationPause(){
+
+		pauseGame ();
+
+	}
+
 	public void resumeGame(){
 		MP3_Player.mp3Instance.play_Paused_audio ();
 		showMovesWidgies ();
@@ -386,7 +392,7 @@ public class DanceGameManager : MonoBehaviour {
 	public void changeScene(int sceneNum){
 		myAudioSource.transform.parent = null;
 
-		restart ();
+		restart (); 
 
 		Application.LoadLevel (sceneNum);
 
@@ -394,7 +400,7 @@ public class DanceGameManager : MonoBehaviour {
 
 	public void restart(){
 		MP3_Player.mp3Instance.play_Paused_audio ();
-		//disabling dancers
+		//enabling dancers
 		humanGameObject.GetComponent<Animator> ().enabled = true;
 		if(aiGameObject != null)//that is saying if i played with AI
 			aiGameObject.GetComponent<Animator> ().enabled = true;

@@ -22,6 +22,7 @@ public class BoogieWebApi : MonoBehaviour {
 	}
 
 	string apiResult;
+	public static float downloadProgress = 0f;
 	public string getOnlineAudios(){
 		try{
 

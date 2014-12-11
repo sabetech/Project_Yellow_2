@@ -11,6 +11,7 @@ public class MP3_Player : MonoBehaviour {
 	public string currentMp3File = "";
 	public string currentMp3Instance = null;
 	public AudioClip defaultMp3File;
+	bool isDownloadingOnlineAudio = false;
 
 	public static MP3_Player getMp3Instance(){
 
@@ -19,7 +20,7 @@ public class MP3_Player : MonoBehaviour {
 	}
 
 	void Awake (){ //singleton things
-
+		Debug.Log ("Do you get called again?");
 		if ((mp3Instance != null) && (mp3Instance != this)) {
 			Destroy (this.gameObject);
 			return;
@@ -31,6 +32,8 @@ public class MP3_Player : MonoBehaviour {
 		}
 		DontDestroyOnLoad (this.gameObject);
 
+		Debug.Log ("Do you get here again?");
+
 	}
 
 	private List<Audio_File> audLib;
@@ -38,12 +41,17 @@ public class MP3_Player : MonoBehaviour {
 
 		audLib = MusicCollection.GetMusicCollectionInstance().audioLibrary;
 		play_random_next ();
+		Debug.Log ("Do you get called again?");
 	}
 
 
 	// Update is called once per frame
 	void Update () {	
-		
+		if (isDownloadingOnlineAudio) {
+			if (wwwOnlineAudioClip != null)
+				CurrentAudioPlaying.audioStatus = "Loading Online Music - Please Wait " + Math.Truncate((wwwOnlineAudioClip.progress / 1f) * 100f) + "%";
+		}
+
 	}
 
 
@@ -159,14 +167,14 @@ public class MP3_Player : MonoBehaviour {
 	}
 
 
-
+	WWW wwwOnlineAudioClip;
 	IEnumerator play_audio_online(string urlWeb){
 
-		WWW wwwOnlineAudioClip = new WWW(urlWeb);
+		wwwOnlineAudioClip = new WWW(urlWeb);
 
-		CurrentAudioPlaying.audioStatus = "Loading Online Music - Please Wait";
-
+		isDownloadingOnlineAudio = true;
 		yield return wwwOnlineAudioClip;//thanks rasheeda :-)
+		isDownloadingOnlineAudio = false;
 
 		audio.clip = wwwOnlineAudioClip.GetAudioClip(false,true);
 		if (audio.isPlaying)

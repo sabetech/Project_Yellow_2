@@ -18,19 +18,23 @@ public class SearchForAudio : MonoBehaviour {
 	}
 
 	void OnSubmit(string searchString){
+		//on submit can be for online music .. check for that
+		if (PopulateMusicWindow.isLocalWindow) {
 
-		MusicCollection musCollection = MusicCollection.GetMusicCollectionInstance();
+			MusicCollection musCollection = MusicCollection.GetMusicCollectionInstance ();
 
-		List<Audio_File> searchResult = musCollection.search (searchString);
-		int limit = 10;
+			List<Audio_File> searchResult = musCollection.search (searchString);
+			int limit = 10;
 
-		if (searchResult.Count < limit) {
-		
-			limit = searchResult.Count;
-		
+			if (searchResult.Count < limit) {
+
+				limit = searchResult.Count;
+
+			}
+
+			PopulateMusicWindow.getMusicWindow ().populateMusicWindow (searchResult, 0, limit);
 		}
 
-		PopulateMusicWindow.getMusicWindow ().populateMusicWindow (searchResult, 0, limit);
-
+		//else search using api and get result
 	}
 }
