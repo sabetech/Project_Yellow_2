@@ -10,6 +10,7 @@ public class MP3_Player : MonoBehaviour {
 	public static MP3_Player mp3Instance = null;
 	public string currentMp3File = "";
 	public string currentMp3Instance = null;
+	public Audio_File currentAudioFile = null;
 	public AudioClip defaultMp3File;
 	bool isDownloadingOnlineAudio = false;
 
@@ -20,7 +21,7 @@ public class MP3_Player : MonoBehaviour {
 	}
 
 	void Awake (){ //singleton things
-		Debug.Log ("Do you get called again?");
+
 		if ((mp3Instance != null) && (mp3Instance != this)) {
 			Destroy (this.gameObject);
 			return;
@@ -32,7 +33,7 @@ public class MP3_Player : MonoBehaviour {
 		}
 		DontDestroyOnLoad (this.gameObject);
 
-		Debug.Log ("Do you get here again?");
+	
 
 	}
 
@@ -41,7 +42,7 @@ public class MP3_Player : MonoBehaviour {
 
 		audLib = MusicCollection.GetMusicCollectionInstance().audioLibrary;
 		play_random_next ();
-		Debug.Log ("Do you get called again?");
+
 	}
 
 
@@ -119,6 +120,7 @@ public class MP3_Player : MonoBehaviour {
 	}
 
 	IEnumerator play_audio_coroutine(Audio_File myAudFile){
+		currentAudioFile = myAudFile;
 
 		string audioFilename = myAudFile.getAudioFileName ();
 
@@ -214,7 +216,8 @@ public class MP3_Player : MonoBehaviour {
 
 	public void play_Paused_audio() {
 
-		audio.Play ();
+		if (!audio.isPlaying)
+			audio.Play ();
 	
 	}
 

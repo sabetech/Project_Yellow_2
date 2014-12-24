@@ -78,7 +78,7 @@ public class PopulateMusicWindow : MonoBehaviour {
 	}
 
 	//fix this function(); i am about to do so now :D
-	IEnumerator showMp3Files(List<Audio_File> audiofiles, int start=0, int finish=10){
+	IEnumerator showMp3Files(List<Audio_File> audiofiles, int start=0, int finish=30){
 
 		GameObject[] music_items = GameObject.FindGameObjectsWithTag ("music_item");
 
@@ -230,7 +230,7 @@ public class PopulateMusicWindow : MonoBehaviour {
 				onlineGridItem.GetComponentInChildren<UILabel>().text = "Unknown Title";
 			}else{
 				if (filename.Length > 20){
-					filename = filename.Substring(0,20);
+					filename = filename.Substring(0,20)+"...";
 				}
 				onlineGridItem.GetComponentInChildren<UILabel>().text = filename;
 			}

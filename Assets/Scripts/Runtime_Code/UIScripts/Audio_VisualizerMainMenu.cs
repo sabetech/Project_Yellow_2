@@ -20,7 +20,7 @@ public class Audio_VisualizerMainMenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		AudioListener.GetSpectrumData (samples,0, FFTWindow.Hamming);
+		AudioListener.GetSpectrumData (samples,0, FFTWindow.Hamming); //find which of the FFT windowing algorithm is fastest
 	
 		audioLevel.fillAmount = samples [0] + samples [0] + samples [0] + samples [0] +samples [0] + samples [0] + samples [0];
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class MusicClick : MonoBehaviour {
@@ -6,29 +7,63 @@ public class MusicClick : MonoBehaviour {
 	//private string audioFileName;
 	private Audio_File myAudioFile;
 	public bool isLocalAudio;
+	UISprite musicIcon;
 	// Use this for initialization
 	void Start () {
 
+		musicClickedEvent += musicClicked;
 
+		musicIcon = GetComponentInChildren<UISprite> ();
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		//check what audio file is playing and highlight it
+		if (this.myAudioFile == MP3_Player.mp3Instance.currentAudioFile) {
+
+			musicIcon.color = new Color32 (118,255,238,255);	
+
+		}
+
 	}
 
 	void OnClick(){
 
 		play (myAudioFile);
-		
+		musicIcon.color = new Color32 (118,255,238,255); //color green
+		onMusicClicked (EventArgs.Empty);
+
 	}
 
-	//public void setAudioFileName(string audFilename){
+	//check what audio file is play in highlight it
+	void OnEnable(){
 
-	//	audioFileName = audFilename;
+		if (this.myAudioFile == MP3_Player.mp3Instance.currentAudioFile) {
 
-	//}
+			musicIcon.color = new Color32 (118,255,238,255);	
+
+		}
+			
+	}
+
+	void musicClicked(object sender, EventArgs e){
+
+		resetColor ();
+	
+	}
+
+	void resetColor(){
+
+		if (this.myAudioFile != MP3_Player.mp3Instance.currentAudioFile) {
+				
+			musicIcon.color = new Color32(255,255,255,255);
+		
+		}
+
+	}
+
+	void OnDestroy() {
+
+		musicClickedEvent -= musicClicked;
+	
+	}
 
 	public void setAudioFile(Audio_File audFile){
 	
@@ -46,7 +81,16 @@ public class MusicClick : MonoBehaviour {
 
 	}
 
-
-
+	public static event EventHandler musicClickedEvent;
+	protected virtual void onMusicClicked(EventArgs e){
+		
+		EventHandler handler = musicClickedEvent;
+		if (handler != null) {
+			
+			handler(this, e);
+			
+		}
+		
+	}
 
 }

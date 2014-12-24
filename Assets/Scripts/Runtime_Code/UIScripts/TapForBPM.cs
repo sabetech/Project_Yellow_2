@@ -53,6 +53,9 @@ public class TapForBPM : MonoBehaviour {
 		currentBpm = GetComponentInChildren<UILabel> ();
 		bpmAnimation = GetComponentInChildren<Animator> ();
 		bpmAnimationHash = Animator.StringToHash ("BeatRythmLoop");
+		globalBpm = 125.000m;
+		prevGlobalBpm = 125.000m;
+
 		try{
 			currentBpm.text = globalBpm +"";
 			/*decimal audTempo = MP3_Player.getMp3Instance ().currentMp3Instance.getTempo ();
@@ -116,6 +119,8 @@ public class TapForBPM : MonoBehaviour {
 			onTurnChanged(EventArgs.Empty);
 		}
 
+		//remember slowly reduce the volume of the song when it is coming to end
+
 	}
 
 	float prevTime = 0f;
@@ -154,8 +159,14 @@ public class TapForBPM : MonoBehaviour {
 			return;
 		}
 
-		instantBpm = (60f / timeDiff );
+		//Mathf.clamp the bpm animation speed here
+		instantBpm = Mathf.Clamp((60f / timeDiff ), 40f, 159f); //max and min bpm so u don't get crazy dance speeds
+
+
 		decimalValue = Math.Round((decimal)instantBpm, 3);
+
+
+		Debug.Log (decimalValue);
 
 		pushIntoBpmArray (decimalValue);
 
@@ -163,7 +174,13 @@ public class TapForBPM : MonoBehaviour {
 		globalBpm = Math.Round (avgOfBpm, 3);
 		currentBpm.text =  globalBpm+ " ";
 
+
+
 		bpmAnimation.speed = ((bpmAnimation.speed * (float)TapForBPM.globalBpm) / (float)TapForBPM.prevGlobalBpm);
+
+
+		//Debug.Log (bpmAnimation.speed);
+
 		float dancerAnimatorSpeed = DanceGameManager.activeAnimator.speed;
 
 		//modify dance speed here!!!; here here
