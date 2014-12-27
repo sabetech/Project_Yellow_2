@@ -4,7 +4,7 @@ using System.Collections;
 public class CycleColors : MonoBehaviour {
 
 
-	float startBound =0f, endBound =1f;
+	//float startBound =0f, endBound =1f;
 	public float cycleSpeed = 3f;
 
 	public byte maxColorLimit = 255;
@@ -14,8 +14,8 @@ public class CycleColors : MonoBehaviour {
 	Color32 color32_R,color32_B,color32_Rl, color32_G,color32_Bl, color32_Gl;
 	float colorLerpTime = 0f;
 	Camera myCameraBackground;
-	Material floorMaterial;
-	TextMesh myComplimentTxtMsh;
+	//Material floorMaterial;
+
 
 	enum SwitchColorStates{
 
@@ -42,20 +42,10 @@ public class CycleColors : MonoBehaviour {
 
 		if (gameObject.tag == "dance_floor") {
 
-			floorMaterial = GetComponent<MeshRenderer>().material;
+			//floorMaterial = GetComponent<MeshRenderer>().material;
 			myCurrentColor = renderer.material.GetColor("_ReflectColor");
 
 		}
-
-		if (gameObject.tag == "player_stat_mesh") {
-				
-			myComplimentTxtMsh = GetComponent<TextMesh>();
-		
-		}
-
-
-
-
 							   // R  G  B  A
 		color32_Gl= new Color32 (maxColorLimit, 0, 0, maxAlpha);//green gets to lower
 		color32_B = new Color32 (maxColorLimit, 0, maxColorLimit, maxAlpha);//Blue gets high

@@ -27,6 +27,7 @@ public class Dancer_Player : MonoBehaviour {
 	//LinkedList<int> danceMoves;
 
 	public GameObject playerInfoTxtMesh;
+	public GameObject timeLeftTxtMesh;
 	public GameObject txtMeshPostion;
 
 	void Awake(){
@@ -229,7 +230,7 @@ public class Dancer_Player : MonoBehaviour {
 				//Debug.Log ("awesome 10");
 			}
 
-			if ((!this.isAI)&& (prevTime > 0f))
+			if ((!this.isAI)&& (prevTime > 0f) && (!timeLeftTxtMeshInstantiated))
 				showScoreTextMesh(moveChkSum);
 
 			prevTime = currentTime;
@@ -285,6 +286,7 @@ public class Dancer_Player : MonoBehaviour {
 		
 		}
 
+		playerInfoTxtMesh.GetComponent<PlayerStats> ().isCompliment = true;
 		playerInfoTxtMesh.GetComponent<PlayerStats> ().info = theInfo +" +" + score;
 
 		GameObject playerScoreInfo = Instantiate (playerInfoTxtMesh, txtMeshPostion.transform.position, txtMeshPostion.transform.localRotation) as GameObject;
@@ -296,12 +298,32 @@ public class Dancer_Player : MonoBehaviour {
 
 	}
 
-	public void showTimeLeft(){
+	public bool timeLeftTxtMeshInstantiated = false;
+	GameObject playerTimeLeftInfo;
+	public void showTimeLeft(int timeLeft){
+		//remember to cache the GetComponent calls... its slower on mobile devices
+
+		if (!timeLeftTxtMeshInstantiated) {
+
+			PlayerStats myPlayerTimeleft = timeLeftTxtMesh.GetComponent<PlayerStats> ();
+			myPlayerTimeleft.isCompliment = false;
+			myPlayerTimeleft.info = "Time Left: "+timeLeft;
+
+			playerTimeLeftInfo = Instantiate (timeLeftTxtMesh, txtMeshPostion.transform.position, txtMeshPostion.transform.localRotation) as GameObject;
+			timeLeftTxtMeshInstantiated = true;
+
+			playerTimeLeftInfo.GetComponent<PlayerStats>().destroyTextMesh(5.5f);
 
 
+		}
+
+		if (playerTimeLeftInfo != null) {
+
+			playerTimeLeftInfo.GetComponent<PlayerStats> ().info = "Time Left: " + timeLeft;
+			playerTimeLeftInfo.GetComponent<PlayerStats> ().resetWord();
+
+		}
 
 	}
-
-
 
 }

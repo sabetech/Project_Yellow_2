@@ -7,6 +7,8 @@ using System.Collections.Generic;
 public class ManageCloudAudios : MonoBehaviour {
 
 	private List<Audio_File> audioFiles;
+	public GameObject loadingCloudAudioMsg;
+
 	void OnEnable(){
 
 		StartCoroutine (getOnlineMusicList ());
@@ -14,13 +16,22 @@ public class ManageCloudAudios : MonoBehaviour {
 	}
 	
 	IEnumerator getOnlineMusicList(){
+		loadingCloudAudioMsg.SetActive (true);
+
+		yield return new WaitForSeconds (0.5f);
 		//all of this can be done in a coroutine so it doesn't hog the game
 		if (this.gameObject.transform.childCount == 0) {
+
+
 			audioFiles = new List<Audio_File>();
 			
 			//there are no online music loaded so loadit
 			string result = BoogieWebApi.boogieWebApi.getOnlineAudios();
 			yield return result;
+
+			loadingCloudAudioMsg.SetActive (false);
+
+			//done loading...
 			if (result == "0"){
 				
 				CurrentAudioPlaying.audioStatus = "No Music, Internet not Connected";
@@ -47,6 +58,7 @@ public class ManageCloudAudios : MonoBehaviour {
 			PopulateMusicWindow.musicWindowInstance.populateOnlineMusicWindow(audioFiles);
 			
 		}
+		loadingCloudAudioMsg.SetActive (false);
 
 	}
 

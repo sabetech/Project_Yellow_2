@@ -17,14 +17,14 @@ public class DancerAI : Dancer_Player {
 	public string[] AvailableDances; //this will change once we have different Major dances
 	private int[] danceHashes; //this for speed
 
-	int initialDanceMove;
-	float theMusicBPM;
+	//int initialDanceMove;
+	//float theMusicBPM;
 	float timeDifference;
-	int numOfMoves = 4;
+	//int numOfMoves = 4;
 
 	void Start () {
 		danceHashes = new int[AvailableDances.Length];
-		initialDanceMove = Random.Range (0, 2);
+		//initialDanceMove = Random.Range (0, 2);
 	
 		//get unit time difference for the music
 		timeDifference = unitTimeDiff;

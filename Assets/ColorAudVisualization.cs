@@ -5,35 +5,19 @@ using System;
 //Audio visualization using the colors .... adapted from cycle colors	
 
 public class ColorAudVisualization : MonoBehaviour {
-
-		
-	float startBound =0f, endBound =1f;
-	public float cycleSpeed = 3f;
 	
 	public byte maxColorLimit = 255;
 	public byte maxAlpha = 255;
 	
 	Color32 myCurrentColor;
 	Color32 color32_R,color32_B,color32_Rl, color32_G,color32_Bl, color32_Gl;
-	float colorLerpTime = 0f;
+	//float colorLerpTime = 0f;
 	Camera myCameraBackground;
-	Material floorMaterial;
+	//Material floorMaterial;
 
 	private float[] samples = new float[64];
 	
-	enum SwitchColorStates{
-		
-		moveBlueUp,
-		moveRedDown,
-		moveGreenUp,
-		moveBlueDown,
-		moveRedUp,
-		moveGreenDown
-		
-	}
-	
-	SwitchColorStates currentState;
-	
+
 	// Use this for initialization
 	void Start () {
 
@@ -47,7 +31,7 @@ public class ColorAudVisualization : MonoBehaviour {
 		}
 		
 		if (gameObject.tag == "dance_floor") {
-			floorMaterial = GetComponent<MeshRenderer>().material;
+			//floorMaterial = GetComponent<MeshRenderer>().material;
 			myCurrentColor = renderer.material.GetColor("_ReflectColor");
 			
 		}
@@ -62,8 +46,7 @@ public class ColorAudVisualization : MonoBehaviour {
 		color32_G = new Color32 (0, maxColorLimit, maxColorLimit, maxAlpha);// green gets to upper
 		color32_Bl = new Color32 (0, maxColorLimit, 0, maxAlpha);// blue gets to lower
 		color32_R = new Color32 (maxColorLimit, maxColorLimit, 0, maxAlpha); // Red get upper
-		
-		currentState = SwitchColorStates.moveBlueUp;
+
 		
 	}
 
@@ -83,7 +66,14 @@ public class ColorAudVisualization : MonoBehaviour {
 			myCurrentColor = color32_Rl;//very blue
 
 		}
-		
+
+		if (audioLevel >= 0.1f) {
+				
+			myCurrentColor = color32_G;
+
+		}
+
+
 		//move red down
 		if (audioLevel >= 0.3f) {
 

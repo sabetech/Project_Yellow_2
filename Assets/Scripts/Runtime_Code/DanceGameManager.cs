@@ -195,16 +195,16 @@ public class DanceGameManager : MonoBehaviour {
 			mainCameraTransform.LookAt (trackingBodyPart);
 
 		//if any point in time, the camera is not correctly focused on the dancing character, do so
-		if (Math.Abs(mainCameraTransform.position.x - activeDancePlayer.transform.position.x) >= 1.2f)
+		if (Math.Abs(mainCameraTransform.position.x - activeDancePlayer.transform.position.x) >= 1.0f)
 			positionCamera_reset (activeDancePlayer);
 
 
 		//also if the dancer gets too close to the camera, pull camera back
-		if (Math.Abs (mainCameraTransform.position.z - activeDancePlayer.transform.position.z) <= 2.5f) 
+		if (Math.Abs (mainCameraTransform.position.z - activeDancePlayer.transform.position.z) <= 3.5f) 
 			pullCameraBack(activeDancePlayer);
 
 		//if camera is too far, bring camera close
-		if (Math.Abs (mainCameraTransform.position.z - activeDancePlayer.transform.position.z) >= 4.7f)
+		if (Math.Abs (mainCameraTransform.position.z - activeDancePlayer.transform.position.z) >= 5f)
 			bringCameraClose (activeDancePlayer);
 
 	}

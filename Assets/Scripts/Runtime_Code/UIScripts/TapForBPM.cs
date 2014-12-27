@@ -79,6 +79,10 @@ public class TapForBPM : MonoBehaviour {
 	float previousTimetime = 0f;
 	bool stopPlaying = false;
 	public bool pausePlaying = false;
+
+	float secondsLeft;
+	int currentSecndsLeft;
+	int previousScndLeft = 6;
 	// Update is called once per frame
 	void Update () {
 
@@ -120,7 +124,50 @@ public class TapForBPM : MonoBehaviour {
 		}
 
 		//remember slowly reduce the volume of the song when it is coming to end
+		// if time is left with 3 sec for a player, reduce volume gradually and display Time left Info
 
+		if ((secondsLeft = swapTimer - timeleft) >= (60f - 5f)) {
+
+			currentSecndsLeft = Mathf.CeilToInt(60f - secondsLeft);
+
+			if (DanceGameManager.danceGameManager.isVersusAI){
+
+				//time is about to up for the current player in versus AI
+
+
+				//Debug.Log("The current Seconds left "+currentSecndsLeft);
+				//Debug.Log ("What is the previous seconds left "+previousScndLeft);
+
+				//check for AI too
+				if (previousScndLeft - currentSecndsLeft == 1){
+
+					previousScndLeft = currentSecndsLeft;
+					DanceGameManager.activeDancePlayer.GetComponent<Dancer_Player>().showTimeLeft(currentSecndsLeft);
+					Debug.Log ("Timing out "+currentSecndsLeft);
+
+					if (previousScndLeft == 1){
+
+						previousScndLeft = 6;
+
+					}
+				}
+
+			}else{
+
+				if (timeleft <= 5f){
+
+					//single player about to end
+					if (previousScndLeft - currentSecndsLeft == 1){
+						
+						previousScndLeft = currentSecndsLeft;
+						DanceGameManager.activeDancePlayer.GetComponent<Dancer_Player>().showTimeLeft(currentSecndsLeft);
+						
+					}
+				}
+
+			}
+		
+		}
 	}
 
 	float prevTime = 0f;
@@ -150,7 +197,7 @@ public class TapForBPM : MonoBehaviour {
 
 		//if the current time difference and the previous time difference r very wide
 		if (timeDiff >= (prevTimeDiff * 2)) {
-			Debug.Log ("u have rested ur taps");	
+			//Debug.Log ("u have rested ur taps");	
 			isFirstClick = true;
 		}
 
@@ -169,7 +216,7 @@ public class TapForBPM : MonoBehaviour {
 		decimalValue = Math.Round((decimal)instantBpm, 3);
 
 
-		Debug.Log (decimalValue);
+		//Debug.Log (decimalValue);
 
 		pushIntoBpmArray (decimalValue);
 

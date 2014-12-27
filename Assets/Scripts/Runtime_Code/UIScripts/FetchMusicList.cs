@@ -8,7 +8,7 @@ using System.Collections;
 public class FetchMusicList : MonoBehaviour {
 
 	public GameObject musicChoiceWindow;
-	private Transform musicChoiceWindowTransform;
+	//private Transform musicChoiceWindowTransform;
 
 	public GameObject mainMenuWin;
 
@@ -16,7 +16,7 @@ public class FetchMusicList : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		musicChoiceWindowTransform = musicChoiceWindow.transform;
+		//musicChoiceWindowTransform = musicChoiceWindow.transform;
 
 	}
 	
@@ -28,7 +28,7 @@ public class FetchMusicList : MonoBehaviour {
 
 	void showWindow(){
 
-		TweenPosition.Begin(musicChoiceWindow,0.5f, new Vector3(-809.9696f, 406.3738f, 0f));//this is bad I know ... will be fixed later
+		TweenPosition.Begin(musicChoiceWindow,0.5f, new Vector3(-809.9696f, 406.3738f, 0f)).method = UITweener.Method.EaseInOut;//this is bad I know ... will be fixed later
 
 		//also set the current main menu window to inactive
 		mainMenuWin.SetActive (false);

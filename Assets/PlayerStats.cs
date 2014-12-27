@@ -8,30 +8,29 @@ public class PlayerStats : MonoBehaviour {
 	float lerpLimit, lerpTime = 0f;
 	float lerpSpeed = 0.2f;
 	Transform cachedTransform;
-	Vector3 cachedNewPosition;
+	//Vector3 cachedNewPosition;
 	const float SCALE_SIZE = 0.05f;
 	const float END_POS = 1f;
 
-	public static bool isBusy = false;
+	public bool alive = false;
+	public bool isCompliment = true;
 	// Use this for initialization
 	void Start () {
 
 		cachedTransform = transform;
-		cachedNewPosition = new Vector3 (cachedTransform.localPosition.x,
-		                                 cachedTransform.localPosition.y + END_POS,
-		                                 cachedTransform.localPosition.z);
+		//cachedNewPosition = new Vector3 (cachedTransform.localPosition.x,
+		  //                               cachedTransform.localPosition.y + END_POS,
+		//                                 cachedTransform.localPosition.z);
 
 		myPlayerInfoDisplay = GetComponent<TextMesh> ();
 		lerpLimit = (float)info.Length;
 
-		//remember if the score is above 7, do cycle colors
-		//else be normal
-		isBusy = true;
+		alive = true;
 	}
 
 	int currentWord;
 	bool lerpingIsDone = false;
-	float lerpPosTime = 0;
+	//float lerpPosTime = 0;
 
 	// Update is called once per frame
 	void Update () {
@@ -45,18 +44,40 @@ public class PlayerStats : MonoBehaviour {
 
 		myPlayerInfoDisplay.text = info.Substring (0, currentWord);
 
-		if (lerpTime >= 1f) {
+		if ((lerpTime >= 1f) && (this.isCompliment)) {
+
 			lerpingIsDone = true;
-			smoothScaleOut();
-			smoothMoveUp();
+			smoothScaleOut ();
+			smoothMoveUp ();
 			destroyTextMesh ();
+
+		} else {
+			if (lerpTime >= 1f){
+				lerpingIsDone = true;
+
+			}
 		}
 
 	}
 
+	public void resetWord(){
+
+		lerpingIsDone = false;
+		//lerpTime = 0f;
+
+	}
+
+	public void setScale(){
+
+		transform.localScale.Set (transform.localScale.x + SCALE_SIZE,
+		                          transform.localScale.y + SCALE_SIZE,
+		                          transform.localScale.z + SCALE_SIZE);
+	
+	}
+
 	void smoothScaleOut(){
 
-		TweenScale.Begin (this.gameObject, 0.3f, new Vector3 (cachedTransform.localScale.x + SCALE_SIZE,
+		TweenScale.Begin (this.gameObject, 0.15f, new Vector3 (cachedTransform.localScale.x + SCALE_SIZE,
 		                                                      cachedTransform.localScale.y + SCALE_SIZE,
 		                                                      cachedTransform.localScale.z + SCALE_SIZE));
 	}
@@ -69,9 +90,18 @@ public class PlayerStats : MonoBehaviour {
 	
 	}
 
-	void destroyTextMesh(){
-		isBusy = false;
-		Destroy (this.gameObject, 1.5f);
+	public void destroyTextMesh(float deadTime = 0.9f){
+
+		alive = false;
+		Destroy (this.gameObject, deadTime);
+
+	}
+
+	void OnDestroy(){
+		Debug.Log ("Object is destroyed");
+
+		if (!this.isCompliment)
+			DanceGameManager.activeDancePlayer.GetComponent<Dancer_Player> ().timeLeftTxtMeshInstantiated = false;
 
 	}
 	

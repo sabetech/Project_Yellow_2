@@ -19,7 +19,7 @@ public class DanceDragItem : MonoBehaviour
 	int danceHash;
 
 	public GameObject groundEffect;
-	private Transform dancerTransform;
+	//private Transform dancerTransform;
 	GameObject theActivePlayer;
 
 
@@ -30,7 +30,7 @@ public class DanceDragItem : MonoBehaviour
 		try{
 		//get information about the human player so these draggable dances can work on him/her
 		dancerAnimator = theActivePlayer.GetComponent<Animator> ();
-		dancerTransform = theActivePlayer.transform;
+		//dancerTransform = theActivePlayer.transform;
 
 		danceHash = Animator.StringToHash (dance);
 		myAnimatorStateInfo = dancerAnimator.GetCurrentAnimatorStateInfo(0);

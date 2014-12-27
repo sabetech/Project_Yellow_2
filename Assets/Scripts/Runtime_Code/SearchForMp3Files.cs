@@ -6,7 +6,7 @@ public class SearchForMp3Files{
 
 
 	string[] mp3Files;
-	int count = 0;
+	//int count = 0;
 	List<Audio_File> audio_files;
 
 	public void searchDirectory(string persDataPath){
@@ -42,7 +42,7 @@ public class SearchForMp3Files{
 				DirSearch(d);
 			}
 		}
-		catch (System.Exception excpt) 
+		catch (System.Exception) 
 		{
 
 		}
