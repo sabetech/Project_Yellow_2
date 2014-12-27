@@ -15,6 +15,7 @@ public class CycleColors : MonoBehaviour {
 	float colorLerpTime = 0f;
 	Camera myCameraBackground;
 	Material floorMaterial;
+	TextMesh myComplimentTxtMsh;
 
 	enum SwitchColorStates{
 
@@ -40,9 +41,16 @@ public class CycleColors : MonoBehaviour {
 		}
 
 		if (gameObject.tag == "dance_floor") {
+
 			floorMaterial = GetComponent<MeshRenderer>().material;
 			myCurrentColor = renderer.material.GetColor("_ReflectColor");
 
+		}
+
+		if (gameObject.tag == "player_stat_mesh") {
+				
+			myComplimentTxtMsh = GetComponent<TextMesh>();
+		
 		}
 
 
@@ -158,6 +166,12 @@ public class CycleColors : MonoBehaviour {
 			renderer.material.SetColor("_ReflectColor", myCurrentColor);
 			renderer.material.color = (Color)myCurrentColor;
 
+		}
+
+		if (gameObject.tag == "player_stat_mesh") {
+				
+			renderer.material.color = (Color)myCurrentColor;
+		
 		}
 	}
 	

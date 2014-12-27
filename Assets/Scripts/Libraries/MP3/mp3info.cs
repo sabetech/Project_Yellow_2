@@ -72,7 +72,7 @@ namespace mp3info
 				}
 
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 				this.length = 0;
 			}

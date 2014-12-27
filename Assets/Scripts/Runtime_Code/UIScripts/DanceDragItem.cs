@@ -189,12 +189,12 @@ public class DanceDragItem : MonoBehaviour
 	}
 
 	//this must be a coroutine;;
-	void calcStandardDeviation(){
+	float calcStandardDeviation(){
 
 		float avg = calcAvg ();
 		float variance = calcVariance (avg);
 
-		float stdD = (float)Math.Sqrt (variance);
+		return (float)Math.Sqrt (variance);
 
 	}
 
@@ -240,7 +240,7 @@ public class DanceDragItem : MonoBehaviour
 
 					//fire up a discrepancy check!!
 					//after that show the awesome effect
-					awesomeEffect();
+					StartCoroutine(awesomeEffect());
 
 				}
 
@@ -250,18 +250,21 @@ public class DanceDragItem : MonoBehaviour
 
 	}
 
-	void awesomeEffect(){
-		Debug.Log ("Awesome Code running");
+	IEnumerator awesomeEffect(){
+
 		//do score calculation here and determine how much to award the player
-		//awesomeEffect goes here!
-		//StartCoroutine (showEffect());
+		float sd = calcStandardDeviation () * 2;
+		showEffect(Mathf.Clamp(Mathf.CeilToInt(Mathf.Abs (22f - sd)) ,0,22));
+
+		yield return null;
+
 
 	}
 
-	IEnumerator showEffect(){
+	void showEffect(int score){
 
-		yield return null;
-		Instantiate (groundEffect, dancerTransform.position, Quaternion.identity);
+		DanceGameManager.activeDancePlayer.GetComponent<Dancer_Player> ().score += score;
+		DanceGameManager.activeDancePlayer.GetComponent<Dancer_Player> ().showScoreTextMesh (score);
 
 	}
 }

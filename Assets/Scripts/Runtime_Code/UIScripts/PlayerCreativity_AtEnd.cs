@@ -16,7 +16,7 @@ public class PlayerCreativity_AtEnd : MonoBehaviour {
 
 	void OnEnable(){
 
-		GetComponent<UILabel>().text = (50 - DanceGameManager.danceGameManager.humanGameObject.GetComponent<Dancer_Player> ().calculateCreativityIndex ())+"/50";
+		GetComponent<UILabel>().text = Mathf.Abs(50 - DanceGameManager.danceGameManager.humanGameObject.GetComponent<Dancer_Player> ().calculateCreativityIndex ())+"/50";
 
 		//call a function to add the totals once you have the values
 		totals.GetComponent<HumanTotal_AtEnd> ().calculateTotalScore ();

@@ -22,6 +22,9 @@ public class DanceDropSurface : MonoBehaviour {
 	void OnDrop (GameObject go)
 	{
 		//Debug.Log ("Hey whats up");
+		if (go == null)
+			return;
+
 		DragDropItem ddo = go.GetComponent<DragDropItem> ();
 
 		string theDance = go.GetComponentInChildren<DanceDragItem> ().dance;
@@ -48,8 +51,11 @@ public class DanceDropSurface : MonoBehaviour {
 	void makeDraggedDanceActive(GameObject go){
 
 		//make the dropped object active
-		go.GetComponentInChildren<UISlicedSprite> ().color = Color.red;
-		go.GetComponent<DanceDragItem> ().isActiveDance = true;
+		if (go != null) {
+			go.GetComponentInChildren<UISlicedSprite> ().color = Color.red;
+			go.GetComponent<DanceDragItem> ().isActiveDance = true;		
+		}
+
 
 
 	}

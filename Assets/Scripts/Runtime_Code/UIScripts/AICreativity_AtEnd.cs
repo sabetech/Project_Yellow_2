@@ -16,7 +16,7 @@ public class AICreativity_AtEnd : MonoBehaviour {
 
 	void OnEnable(){
 
-		GetComponent<UILabel> ().text = (50 - DanceGameManager.danceGameManager.aiGameObject.GetComponent<DancerAI> ().calculateCreativityIndex()) + "/50";          
+		GetComponent<UILabel> ().text = Mathf.Abs(50 - DanceGameManager.danceGameManager.aiGameObject.GetComponent<DancerAI> ().calculateCreativityIndex()) + "/50";          
 		aiTotals.GetComponent<AITotal_AtEnd> ().calcAiTotal ();
 
 	}

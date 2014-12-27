@@ -127,7 +127,7 @@ public class MP3_Player : MonoBehaviour {
 		//check if file name exists before you continue koraa
 		if (!File.Exists (audioFilename)) {
 				
-			//CloseErrMsg.errMsgInstance.showMessage();
+			MusicErrorMessage.musicErrMsg.showMessage();
 			return false;
 		}
 

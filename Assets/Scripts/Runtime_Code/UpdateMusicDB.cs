@@ -14,13 +14,18 @@ public class UpdateMusicDB : MonoBehaviour {
 
 		//GetComponentInChildren<UILabel>().text = "Please Wait...";
 		pleaseWait.SetActive (true);
-		StartCoroutine(lookformp3Files ());
 
+		asyncLookForMp3Files ();
+	}
+
+	void asyncLookForMp3Files(){
+
+		StartCoroutine(lookformp3Files ());
 
 	}
 
 	IEnumerator lookformp3Files(){
-
+		yield return new WaitForSeconds (1);
 		yield return new WaitForEndOfFrame();
 		SearchForMp3Files searchDir = new SearchForMp3Files ();
 		

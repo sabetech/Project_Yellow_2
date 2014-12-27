@@ -157,11 +157,34 @@ public class DanceGameManager : MonoBehaviour {
 	
 	}
 
+	void pullCameraBack(GameObject focusedCharacter){
+
+		activeDancePlayer = focusedCharacter;
+
+		//pull back camera;
+		Vector3 cameraPullBack = new Vector3 (mainCameraTransform.position.x,
+		        		                      mainCameraTransform.position.y,
+		                		              mainCameraTransform.position.z + 4f);
+		
+		TweenPosition.Begin (mainCamera, 2f, cameraPullBack);
+
+	
+	}
+
+	void bringCameraClose(GameObject focusedCharacter){
+
+		positionCamera_reset (focusedCharacter);
+	}
+
+
+	Transform mainCameraTransform;
 	void Start(){
 
+		mainCameraTransform = mainCamera.transform;
 		turn = 0;
 		isGamePlaying = true;
 		Kamcord.StartRecording ();
+
 	}
 
 	//game manager is going to take care of the camera movements and such
@@ -169,11 +192,20 @@ public class DanceGameManager : MonoBehaviour {
 	void Update () {
 
 		if (activeDancePlayer != null)
-			mainCamera.transform.LookAt (trackingBodyPart);
+			mainCameraTransform.LookAt (trackingBodyPart);
 
 		//if any point in time, the camera is not correctly focused on the dancing character, do so
-		if (Math.Abs(mainCamera.transform.position.x - activeDancePlayer.transform.position.x) >= 1.2f)
+		if (Math.Abs(mainCameraTransform.position.x - activeDancePlayer.transform.position.x) >= 1.2f)
 			positionCamera_reset (activeDancePlayer);
+
+
+		//also if the dancer gets too close to the camera, pull camera back
+		if (Math.Abs (mainCameraTransform.position.z - activeDancePlayer.transform.position.z) <= 2.5f) 
+			pullCameraBack(activeDancePlayer);
+
+		//if camera is too far, bring camera close
+		if (Math.Abs (mainCameraTransform.position.z - activeDancePlayer.transform.position.z) >= 4.7f)
+			bringCameraClose (activeDancePlayer);
 
 	}
 
@@ -202,7 +234,7 @@ public class DanceGameManager : MonoBehaviour {
 				hideMovesWidgies();
 				//hideBpmInfo();
 				hidePlayerVitals();
-
+				//hideBpmInfo(); think about his later
 				showAIVitals();
 
 				//change camera focus
@@ -210,10 +242,11 @@ public class DanceGameManager : MonoBehaviour {
 				humanGameObject.GetComponent<Animator>().enabled = false;
 				turn = 1;
 
+
 			}else{
 
 				hideAIVitals();
-
+				//showBpmInfo(); think about this later
 				showMovesWidgies();
 
 				showPlayerVitals();
@@ -223,6 +256,7 @@ public class DanceGameManager : MonoBehaviour {
 				positionCamera_reset(humanGameObject);
 
 				turn = 0;
+
 
 			}
 				
@@ -369,9 +403,12 @@ public class DanceGameManager : MonoBehaviour {
 
 	public void resumeGame(){
 		MP3_Player.mp3Instance.play_Paused_audio ();
-		showMovesWidgies ();
 
-		//disabling dancers
+		if (turn == 0) {
+			showMovesWidgies ();
+			showBpmInfo ();
+		}
+		//enabling dancers
 		humanGameObject.GetComponent<Animator> ().enabled = true;
 		if(aiGameObject != null)//that is saying if i played with AI
 			aiGameObject.GetComponent<Animator> ().enabled = true;
@@ -397,7 +434,7 @@ public class DanceGameManager : MonoBehaviour {
 
 		Application.LoadLevel (sceneNum);
 
-	}
+	}	
 
 	public void restart(){
 		MP3_Player.mp3Instance.play_Paused_audio ();

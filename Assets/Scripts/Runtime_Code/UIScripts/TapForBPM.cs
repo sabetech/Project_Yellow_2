@@ -137,6 +137,9 @@ public class TapForBPM : MonoBehaviour {
 
 	void OnClick(){
 
+		if (DanceGameManager.turn == 1)
+			return;
+
 		bpmAnimation.Play (bpmAnimationHash, -1, 0f);
 
 		currentTime = Time.time;

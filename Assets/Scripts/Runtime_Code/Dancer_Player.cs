@@ -15,7 +15,7 @@ public class Dancer_Player : MonoBehaviour {
 	public Animator dancerAnimator;
 	//public static Dancer_Player dancerPlayerInstance;
 
-	bool isAI = false;
+	public bool isAI = false;
 
 	//Dictionary to handle creativity index
 	Dictionary<int, int> creativityIndex;
@@ -26,6 +26,9 @@ public class Dancer_Player : MonoBehaviour {
 	public float unitTimeDiff;
 	//LinkedList<int> danceMoves;
 
+	public GameObject playerInfoTxtMesh;
+	public GameObject txtMeshPostion;
+
 	void Awake(){
 
 
@@ -33,12 +36,18 @@ public class Dancer_Player : MonoBehaviour {
 		this.creativityIndex = new Dictionary<int, int> ();
 		//this.danceMoves = new LinkedList<int> ();
 		//actually the bound is the number of danceMove
-		danceMoves = new int[5]{-1,-1,-1,-1,-1};
+		danceMoves = new int[5]{-1,-1,-1,-1,-1};//remember this has to be dynamic when upgrading 
 
 		unitTimeDiff = 60f / (float)TapForBPM.globalBpm; 
 	
 	}
 
+	string[] compliments; //:)
+	void Start(){
+
+		compliments = new string[]{"Great","Cool","Neat","Legit", "Nice"};
+
+	}
 	//The Charater logic goes here
 	/*
 	 * ON ENERGY
@@ -57,10 +66,10 @@ public class Dancer_Player : MonoBehaviour {
 	
 
 	public int calculateCreativityIndex(){
-		Debug.Log (calcStdDev () * 10f);
+		//Debug.Log (calcStdDev () * 10f);
 
 		creativity_index = (int)Math.Ceiling(calcStdDev () * 10);
-		Debug.Log ("Standard Dev " +calcStdDev ());
+		//Debug.Log ("Standard Dev " +calcStdDev ());
 
 		//now when you are calculating creativity index and user does n't dance a particular dance at all... 
 		//Player will pay it dearly ...:(\
@@ -71,6 +80,9 @@ public class Dancer_Player : MonoBehaviour {
 			creativity_index += Mathf.Abs(this.creativityIndex.Count - danceMoves.Length) * 5;
 
 		}
+
+		creativity_index = Mathf.Clamp (creativity_index, 0, 50);
+
 
 		return creativity_index;
 	
@@ -149,9 +161,10 @@ public class Dancer_Player : MonoBehaviour {
 	int currentDanceMoveIndex = 0;
 	float prevTime = 0f;
 	public void changeDance(int danceHash, float transitionSpeed){
+		unitTimeDiff = 60f / (float)TapForBPM.globalBpm; 
 
-
-		//if the animation that was dropped is not the same as the previous then reset decreasing rate
+		int moveChkSum = 0;
+		//if the animation that was dropped is not the same as the previous then reset decreasing rate version 2 things
 
 		//the value for rate at which your energy reduces is actually related to the energy cost of the dance
 		//related to the stamina of the player or dancer
@@ -175,12 +188,14 @@ public class Dancer_Player : MonoBehaviour {
 			//this is to check and score you low if make predictable repeated moves
 			if (danceMoves[currentDanceMoveIndex % 5] == danceHash){
 
-				this.score += 5;
-
+				this.score += 2;
+				moveChkSum += 2;
+				//Debug.Log ("Low 2");
 			}else{
 
-				this.score += 10;
-
+				this.score += 5;
+				moveChkSum += 5;
+				//Debug.Log ("Not predict 5");
 			}
 
 			danceMoves[currentDanceMoveIndex % 5] = danceHash;
@@ -196,25 +211,97 @@ public class Dancer_Player : MonoBehaviour {
 			//if this timeDiff value is a power of 2 score 20 for timing
 
 			//if timeDiff is a muliple of the unit beat time
-			if (timeDiff % unitTimeDiff <= (unitTimeDiff/4) || (timeDiff % unitTimeDiff >= (unitTimeDiff/4))){
+			if (timeDiff % unitTimeDiff <= (unitTimeDiff/6) || (timeDiff % unitTimeDiff >= (unitTimeDiff/6))){ //makethis harder to attain... right now its prettyeasy to get
 
 				this.score += 7;
-
+				moveChkSum += 7;
+				//Debug.Log ("multipe 7");
 			}
 
 			//if the time diff is the product of the unitTime and a power of 2! awesome
 
 			//if (timeDiff/unitTimeDiff)
-			if ((Math.Log(timeDiff/unitTimeDiff) / Math.Log(2)) % 1 <= 0.2){
+			if ((Math.Log(timeDiff/unitTimeDiff) / Math.Log(2)) % 1 <= 0.2){//this is kinda ok ... make it harder later
 
 				this.score += 10;//awesome you really good at this
+				moveChkSum += 10;
 
+				//Debug.Log ("awesome 10");
 			}
 
+			if ((!this.isAI)&& (prevTime > 0f))
+				showScoreTextMesh(moveChkSum);
+
+			prevTime = currentTime;
 
 		}
 
 		thePreviousDanceHash = danceHash;
 
 	}
+
+	public void showScoreTextMesh(int score){
+
+		//first get that component 
+		//if that component is busy, instantiate another one on top of it
+		//make sure you specify dead times for the clone Text meshes
+		//when you are instantiated, smooth move up and scale out and die
+		//be instantiated as child to the dancer character close to his/head
+		//but Y rotation is tilted facing the camera everytime
+		string theInfo = "";
+		if (score < 3) {
+
+			theInfo = "OK";	
+
+		}
+
+		if (score < 6) {
+		
+			theInfo = "Good";
+		
+		}
+		else
+		if (score < 10) {
+				
+			theInfo = compliments[UnityEngine.Random.Range(0,5)];
+		
+		}
+		else
+		if (score < 13) {
+
+			theInfo = compliments[UnityEngine.Random.Range(0,5)];
+		
+		}
+		else
+		if (score < 20) {
+				
+			theInfo = "Excellent";
+		
+		}
+		else
+		if (score < 23) {
+				
+			theInfo = "Awesome";
+		
+		}
+
+		playerInfoTxtMesh.GetComponent<PlayerStats> ().info = theInfo +" +" + score;
+
+		GameObject playerScoreInfo = Instantiate (playerInfoTxtMesh, txtMeshPostion.transform.position, txtMeshPostion.transform.localRotation) as GameObject;
+
+		if (theInfo == "Awesome")
+			playerScoreInfo.AddComponent<CycleColors> ().cycleSpeed = 0.3f;
+
+		playerScoreInfo.transform.parent = this.gameObject.transform;
+
+	}
+
+	public void showTimeLeft(){
+
+
+
+	}
+
+
+
 }

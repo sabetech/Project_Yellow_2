@@ -16,6 +16,6 @@ public class GoMainMenu : MonoBehaviour {
 	void OnClick(){
 
 		DanceGameManager.danceGameManager.changeScene (1);
-
+		DanceGameManager.danceGameManager.restart ();
 	}
 }

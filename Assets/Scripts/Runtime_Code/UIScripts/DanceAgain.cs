@@ -14,7 +14,8 @@ public class DanceAgain : MonoBehaviour {
 
 	void OnClick(){
 		//load to a loading level before you load to main menu to avoid hiccups
-		DanceGameManager.danceGameManager.changeScene (3); //reload
 
+		DanceGameManager.danceGameManager.changeScene (3); //reload
+		DanceGameManager.danceGameManager.restart ();
 	}
 }

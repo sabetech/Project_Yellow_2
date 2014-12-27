@@ -36,7 +36,7 @@ public class SliderChange : MonoBehaviour {
 		}
 
 		PlayerPrefs.SetString ("danceTime", dispStepValue);
-		Debug.Log ("do you set on load?");
+		//Debug.Log ("do you set on load?");
 		danceTime.text = dispStepValue +" mins";
 
 	}

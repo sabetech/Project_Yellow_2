@@ -34,7 +34,7 @@ public class DancerAI : Dancer_Player {
 			danceHashes[i] = Animator.StringToHash(AvailableDances[i]);
 		
 		}
-
+		isAI = true;
 	}
 
 	float prevTimeTime = 0f;
@@ -67,7 +67,7 @@ public class DancerAI : Dancer_Player {
 				int nextDance = Random.Range(0, danceHashes.Length-1);
 
 				//int tempNextDance = danceHashes[nextDance];
-				Debug.Log (AvailableDances[nextDance]);
+				//Debug.Log (AvailableDances[nextDance]);
 				this.changeDance(danceHashes[nextDance], 0.1f);
 
 				currentBeatWaitTime = 0;
