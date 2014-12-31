@@ -105,7 +105,7 @@ public class DanceGameManager : MonoBehaviour {
 
 		if (PlayerPrefs.GetInt ("isVerseAI", 0) == 1) {//PlayerPrefs.GetInt ("isVerseAI", 0) == 1
 			isVersusAI = true;
-			kamcordVideoTitle = "Dancing with the Boogie Loops Azonto AI";
+
 			//instantiate player and AI
 			humanGameObject = Instantiate(danceCharacters[selectedCharacter], humanPos.transform.position, Quaternion.identity) as GameObject;
 			
@@ -116,7 +116,7 @@ public class DanceGameManager : MonoBehaviour {
 			aiGameObject.AddComponent<DancerAI>().AvailableDances = aiDancemoves;
 						
 		} else {
-			kamcordVideoTitle = "Great Azonto Moves with Boogie Loops";
+
 			//instantiate the only player
 			humanGameObject = Instantiate(danceCharacters[selectedCharacter], humanPos.transform.position, Quaternion.identity) as GameObject;
 			humanGameObject.AddComponent<DanceDropSurface>();
@@ -350,7 +350,8 @@ public class DanceGameManager : MonoBehaviour {
 	}*/
 
 	void endGame(){
-		Kamcord.SetVideoTitle (kamcordVideoTitle);//remember to set the video title with score info
+
+
 
 		//disabling dancers
 		humanGameObject.GetComponent<Animator> ().enabled = false;
@@ -360,21 +361,29 @@ public class DanceGameManager : MonoBehaviour {
 		isGamePlaying = false;
 		//hide screen controls etc
 		hideAllUIWidgies ();
+		//Boogie Battle
+
+		
 
 		if (!isVersusAI) {
 
+			kamcordVideoTitle = "I Danced with Boogie Loops and made "+humanGameObject.GetComponent<Dancer_Player>().score + " boogie points";
 			endGameWindow_singlePlayer.SetActive (true);
 			//showing the end game modal so set something active [Fade In trick]
 		} else {
 
+			kamcordVideoTitle = "I Boogie Battled and made "+humanGameObject.GetComponent<Dancer_Player>().score + " boogie points";
 			endGameWindow_vrsAI.SetActive(true);
 
 		}
+
+		Kamcord.SetVideoTitle (kamcordVideoTitle);//remember to set the video title with score info
 
 		TapForBPM.getGameTimerInstance ().turnChanged -= turnChanged;
 		TapForBPM.getGameTimerInstance ().gameFinished -= danceFinished;
 
 		Kamcord.StopRecording ();
+		MP3_Player.mp3Instance.fadeIn (2f);
 
 	}
 

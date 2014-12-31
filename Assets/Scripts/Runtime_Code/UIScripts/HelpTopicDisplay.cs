@@ -1,45 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections;
+using System.Linq;
 
 public class HelpTopicDisplay : MonoBehaviour {
+	
 
-	public string whichTopic;
-	public GameObject helpGrid;
-	public GameObject overviewWin, howToWin, scoringWin, aboutWin;
+	public GameObject topicWindow, parent;
+	GameObject currentTopicWindow;
+	Color activeTopicColor = new Color(0.002f,0.95f,0f,1f);
+	Color32 defaultColor = new Color32(255,255,255,255);
 
 	void OnClick(){
 
-		if (whichTopic == "overview") {
+		hidePreviousTopic ();
+		NGUITools.AddChild (parent,topicWindow);
 
-			hideHelpGrid();
-			overviewWin.SetActive(true);
+		//GetComponentInChildren<UISprite> ().color = TweenColor.Begin (this.gameObject, 0.2f, activeTopicColor);
+		TweenColor.Begin (this.gameObject, 0.2f, activeTopicColor);
+	}
 
+	void hidePreviousTopic(){
 
-		}
-		if (whichTopic == "scoring") {
+		GameObject.FindGameObjectsWithTag ("helpButtons").ToList ().ForEach (helpButton => resetColor (helpButton));		
 
-			hideHelpGrid();
-			scoringWin.SetActive(true);
-
-		}
-		if (whichTopic == "howtoplay") {
-
-			hideHelpGrid();
-			howToWin.SetActive(true);
-
-		}
-		if (whichTopic == "about") {
-
-			hideHelpGrid();
-			aboutWin.SetActive(true);
-
-		}
+		Destroy(GameObject.FindGameObjectWithTag ("helpTopic"));
 
 	}
 
-	void hideHelpGrid(){
+	void resetColor(GameObject button){
 
-		helpGrid.SetActive (false);
+		button.GetComponentInChildren<UISprite> ().color = defaultColor;
+
+
 
 	}
 }

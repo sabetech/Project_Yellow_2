@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour {
 	public string info = "";
 	TextMesh myPlayerInfoDisplay;
 	float lerpLimit, lerpTime = 0f;
-	float lerpSpeed = 0.2f;
+	public float lerpSpeed = 0.2f;
 	Transform cachedTransform;
 	//Vector3 cachedNewPosition;
 	const float SCALE_SIZE = 0.05f;
@@ -14,6 +14,8 @@ public class PlayerStats : MonoBehaviour {
 
 	public bool alive = false;
 	public bool isCompliment = true;
+
+	public bool notInGame = false;
 	// Use this for initialization
 	void Start () {
 
@@ -67,6 +69,14 @@ public class PlayerStats : MonoBehaviour {
 
 	}
 
+	public void showText(){
+
+		lerpTime = 0f;
+		lerpingIsDone = false;
+
+	
+	}
+
 	public void setScale(){
 
 		transform.localScale.Set (transform.localScale.x + SCALE_SIZE,
@@ -98,9 +108,9 @@ public class PlayerStats : MonoBehaviour {
 	}
 
 	void OnDestroy(){
-		Debug.Log ("Object is destroyed");
+		//Debug.Log ("Object is destroyed");
 
-		if (!this.isCompliment)
+		if ((!this.isCompliment) && (!notInGame))
 			DanceGameManager.activeDancePlayer.GetComponent<Dancer_Player> ().timeLeftTxtMeshInstantiated = false;
 
 	}

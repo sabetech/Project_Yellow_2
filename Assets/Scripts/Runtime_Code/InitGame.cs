@@ -6,12 +6,14 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 public class InitGame : MonoBehaviour {
+	//This initialization for the game ...
+
 
 	public GameObject loading;
+	public GameObject warningMsg;
 	// Use this for initialization
 	void Start () {
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
-		//this side has to change to... try to find the file that has my audio file.. if u fail ... get a new one
 
 		//if (PlayerPrefs.GetInt ("has_audio_files", 0) == 0) {
 		if (!File.Exists(Application.persistentDataPath + "/audio_files_ref.dat")){
@@ -23,8 +25,6 @@ public class InitGame : MonoBehaviour {
 			StartCoroutine(goToMainMenu());
 
 		}
-
-
 
 	}
 	
@@ -77,14 +77,39 @@ public class InitGame : MonoBehaviour {
 		return tmpDirectoryPath;
 	}
 
+	bool ready = false;
 	IEnumerator goToMainMenu() {
 		//then deserilize and go to main menu
 
 		MusicCollection.GetMusicCollectionInstance ().fetchMp3Files ();
+		PlayerStats myPlayerStats = warningMsg.GetComponent<PlayerStats> ();
 
-		yield return new WaitForSeconds (0.5f);
+		myPlayerStats.info = "Warning\nThis Game Contains flashing " +
+			"lights which may be a health harzard to\nPhotosensitive epileptic patients. " +
+				"Please be sure you do not have ANY health issues with\nflashing lights before continuing\n\n\n" +
+				"Tap To Coninue"; //warning info goes here
 
-		Application.LoadLevel (1);
+		Instantiate (warningMsg, transform.position, Quaternion.identity);
+
+		ready = true;
+
+
+		yield return null;
+
+		//Application.LoadLevel (1);
+
+	}
+
+	void OnGUI(){
+
+		if (!ready)
+			return;
+
+		if (Input.GetMouseButton (0)) {
+				
+			Application.LoadLevel(1);
+		
+		}
 
 	}
 }

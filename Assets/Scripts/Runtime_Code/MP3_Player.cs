@@ -233,6 +233,18 @@ public class MP3_Player : MonoBehaviour {
 		}
 	}
 
+	public void fadeOut(float fadeOutTime){ //in seconds
+
+		TweenVolume.Begin (audio.gameObject, fadeOutTime, 0.07f);
+
+	}
+
+	public void fadeIn(float fadeInTime){
+
+		TweenVolume.Begin (audio.gameObject, fadeInTime, 1f);
+
+	}
+
 	//Get information from Mp3 files
 	//Supports Mp3 files only for now... 
 	

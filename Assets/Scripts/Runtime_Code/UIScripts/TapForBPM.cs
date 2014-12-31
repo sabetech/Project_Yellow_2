@@ -83,6 +83,7 @@ public class TapForBPM : MonoBehaviour {
 	float secondsLeft;
 	int currentSecndsLeft;
 	int previousScndLeft = 6;
+	bool beganFadingOutAudio = false;
 	// Update is called once per frame
 	void Update () {
 
@@ -143,7 +144,7 @@ public class TapForBPM : MonoBehaviour {
 
 					previousScndLeft = currentSecndsLeft;
 					DanceGameManager.activeDancePlayer.GetComponent<Dancer_Player>().showTimeLeft(currentSecndsLeft);
-					Debug.Log ("Timing out "+currentSecndsLeft);
+					//Debug.Log ("Timing out "+currentSecndsLeft);
 
 					if (previousScndLeft == 1){
 
@@ -156,17 +157,28 @@ public class TapForBPM : MonoBehaviour {
 
 				if (timeleft <= 5f){
 
-					//single player about to end
+
 					if (previousScndLeft - currentSecndsLeft == 1){
 						
 						previousScndLeft = currentSecndsLeft;
 						DanceGameManager.activeDancePlayer.GetComponent<Dancer_Player>().showTimeLeft(currentSecndsLeft);
 						
 					}
+						
+				//when the song is about to finish, slowly decrease the volume in 5 secs
 				}
 
 			}
-		
+
+		}
+
+		if (timeleft <= 5f){
+			if (!beganFadingOutAudio){
+				
+				MP3_Player.mp3Instance.fadeOut(5f);
+				beganFadingOutAudio = true;
+				
+			}
 		}
 	}
 
