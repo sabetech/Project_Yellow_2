@@ -1,6 +1,6 @@
 # Project_Yellow_2
 
-> This game is based on a popular dance in Ghana and West Africa called Azonto. It caught the world by storm and I made a game extend that culture abroud and beyond
+> This game is based on a popular dance in Ghana and West Africa called Azonto. It caught the world by storm and I made a game extend that culture abroad and beyond
 
 
 ## Built With
